@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #003366;
+    width: 20%;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.sidebar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.main-content {
+    background-color: #f4f4f4;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 50px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Custom colors for each card */
+.card:nth-child(1) {
+    background-color: #e8f4ff;
+}
+
+.card:nth-child(2) {
+    background-color: #ffedf0;
+}
+
+.card:nth-child(3) {
+    background-color: #fff9e6;
+}
+
+.card:nth-child(4) {
+    background-color: #e8f4ff;
+}
+
+
+a{
+    text-decoration: none;
+}
