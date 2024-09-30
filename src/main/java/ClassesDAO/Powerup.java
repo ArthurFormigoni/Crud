@@ -1,14 +1,14 @@
 package ClassesDAO;
 
 public class Powerup {
-    String nome;
-    int quantidade;
-    String store_picture_url;
-    int id_powerup;
-    String initial_time;
-    String durucao;
-    String final_time;
-    int fk_id_pagamento_coins;
+    private String nome;
+    private int quantidade;
+    private String store_picture_url;
+    private int id_powerup;
+    private String initial_time;
+    private String durucao;
+    private String final_time;
+    private int fk_id_pagamento_coins;
 
     public Powerup(String nome, int quantidade, String store_picture_url, int id_powerup, String initial_time, String durucao, String final_time, int fk_id_pagamento_coins) {
         this.nome = nome;
