@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - User List</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
@@ -37,6 +38,7 @@
 
                 <div class="column"></div> <!-- Empty column for actions (edit/delete) -->
             </div>
+
 
             <!-- Repeat this block for each user -->
 
