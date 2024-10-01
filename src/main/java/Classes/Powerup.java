@@ -1,4 +1,4 @@
-package ClassesDAO;
+package Classes;
 
 public class Powerup {
     private String nome;

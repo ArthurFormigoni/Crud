@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UsuariosPremiumDAO {
+public class CoinsDAO {
 
-     private Connection conn;
+        private Connection conn;
         private PreparedStatement pstmt;
         private ResultSet rs;
 
@@ -98,7 +98,7 @@ public class UsuariosPremiumDAO {
             }
             desconectar();
             return true;
-
         }
 
 }
+
