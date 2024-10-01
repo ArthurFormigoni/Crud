@@ -1,6 +1,6 @@
 package ClassesDAO;
 
-public class Adm {
+public class Adm_ {
     String login;
     String senha;
     String nome;
@@ -10,7 +10,7 @@ public class Adm {
     String email;
     int id_adm;
 
-    public Adm(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
+    public Adm_(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
