@@ -86,6 +86,16 @@ public class Powerup {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Nome: " +this.nome+
+                "\nQuantidade: "+this.quantidade+
+                "\nStore_picutere_url: " +this.store_picture_url+
+                "\nId_powerup: "+this.id_powerup+
+                "\nInitial_time: "+this.initial_time+
+                "\nDuração"+this.durucao+
+                "\nFinal_time: "+this.final_time+
+                "\nFk_id_pagamento_coin: "+this.fk_id_pagamento_coins;
+    }
 
 }
