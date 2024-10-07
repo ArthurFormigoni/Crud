@@ -17,7 +17,7 @@ import java.sql.SQLException;
             try {
                 Class.forName("org.postgresql.Driver");
 
-                conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l", "avnadmin", "AVNS_IUFw8-OfVH7bf8zuL_l");
+                conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis", "avnadmin", "AVNS_IUFw8-OfVH7bf8zuL_l");
 
             } catch (SQLException sqle) {
                 sqle.printStackTrace();

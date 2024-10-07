@@ -11,7 +11,7 @@ import java.io.*;
 @WebServlet(name="adm",value = "/login")
 public class Adm extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String user = req.getParameter("txt");
         String senha = req.getParameter("pswd");
 

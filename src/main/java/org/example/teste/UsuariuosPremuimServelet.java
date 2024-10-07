@@ -20,8 +20,8 @@ public class UsuariuosPremuimServelet extends HttpServlet {
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-389b6280-arthurformigonisantos-8675.e.aivencloud.com:21288/dbVendas?ssl=require&user=avnadmin&password=AVNS_DvqnVzl6tcqAXu6S6LL", "avnadmin", "AVNS_DvqnVzl6tcqAXu6S6LL");
-
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
             String sql = "SELECT * FROM usuario";  // Substitua com a sua tabela de usuários
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -55,9 +55,8 @@ public class UsuariuosPremuimServelet extends HttpServlet {
             stmt.close();
             conn.close();
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("oi");
         }
 
         // A lista de usuários é adicionada ao request
