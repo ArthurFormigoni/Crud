@@ -1,5 +1,7 @@
 package ClassesDAO;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.*;
 
 public class PowerupDAO {
@@ -8,21 +10,27 @@ public class PowerupDAO {
     private ResultSet rs;
 
     public boolean conectar() {
+            Dotenv dotenv = Dotenv.load();
 
-        try {
-            Class.forName("org.postgresql.Driver");
+            String url = dotenv.get("DB_HOST");
+            String user = dotenv.get("DB_USER");
+            String password = dotenv.get("DB_PASSWORD");
 
-            conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l", "avnadmin", "AVNS_IUFw8-OfVH7bf8zuL_l");
-
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-            return false;
-        } catch (ClassNotFoundException cnfe) {
-            cnfe.printStackTrace();
-            return false;
-        }
-        return true;
+            try {
+                Class.forName("org.postgresql.Driver");
+                conn = DriverManager.getConnection(url, user, password);
+                System.out.println("Conexão estabelecida com sucesso!");
+                return true; // Retorna true se a conexão foi bem-sucedida
+            } catch (SQLException sqle) {
+                System.err.println("Erro de SQL: " + sqle.getMessage());
+                return false; // Retorna false em caso de falha
+            } catch (ClassNotFoundException cnfe) {
+                System.err.println("Driver não encontrado: " + cnfe.getMessage());
+                return false; // Retorna false se o driver não for encontrado
+            }
     }
+
+
 
     public void desconectar() {
         try {
