@@ -37,14 +37,14 @@ public class UsuariuosPremuimServelet extends HttpServlet {
             while (rs.next()) {
                 UsuariosPremium usuario = new UsuariosPremium();
                 usuario.setId_usuario(rs.getInt("id_usuario"));
-                usuario.setFk_id_ranking(rs.getInt("fk_id_ranking"));
-                usuario.setFk_id_plano(rs.getInt("fk_id_plano"));
+                usuario.setFk_ranking(rs.getInt("fk_ranking"));
+                usuario.setFk_plano(rs.getInt("fk_plano"));
                 usuario.setNome(rs.getString("nome"));
                 usuario.setEmail(rs.getString("email"));
                 usuario.setSenha(rs.getString("senha"));
                 usuario.setDt_nasc(rs.getDate("dt_nasc")); // Use java.sql.Date
-                usuario.setLevel(rs.getInt("level"));
-                usuario.setPicture_url(rs.getString("picture_url"));
+                usuario.setNivel(rs.getInt("nivel"));
+                usuario.setImagem_url(rs.getString("imagem_url"));
                 usuario.setPontos(rs.getInt("pontos"));
                 usuario.setDt_criacao(rs.getDate("dt_criacao")); // Use java.sql.Date
 

@@ -4,14 +4,14 @@ import java.sql.Date; // ou java.time.LocalDate se preferir
 
 public class UsuariosPremium {
     private int id_usuario;
-    private int fk_id_ranking;
-    private int fk_id_plano;
+    private int fk_ranking;
+    private int fk_plano;
     private String nome;
     private String email;
     private String senha;
     private Date dt_nasc; // ou LocalDate
-    private int level;
-    private String picture_url;
+    private int nivel;
+    private String imagem_url;
     private int pontos;
     private Date dt_criacao; // ou LocalDate
 
@@ -20,16 +20,16 @@ public class UsuariosPremium {
     public UsuariosPremium() {
     }
 
-    public UsuariosPremium(int id_usuario, int fk_id_ranking, int fk_id_plano, String nome, String email, String senha, Date dt_nasc, int level, String picture_url, int pontos, Date dt_criacao) {
+    public UsuariosPremium(int id_usuario, int fk_ranking, int fk_plano, String nome, String email, String senha, Date dt_nasc, int nivel, String imagem_url, int pontos, Date dt_criacao) {
         this.id_usuario = id_usuario;
-        this.fk_id_ranking = fk_id_ranking;
-        this.fk_id_plano = fk_id_plano;
+        this.fk_ranking = fk_ranking;
+        this.fk_plano = fk_plano;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.dt_nasc = dt_nasc;
-        this.level = level;
-        this.picture_url = picture_url;
+        this.nivel = nivel;
+        this.imagem_url = imagem_url;
         this.pontos = pontos;
         this.dt_criacao = dt_criacao;
     }
@@ -42,20 +42,20 @@ public class UsuariosPremium {
         this.id_usuario = id_usuario;
     }
 
-    public int getFk_id_ranking() {
-        return fk_id_ranking;
+    public int getFk_ranking() {
+        return fk_ranking;
     }
 
-    public void setFk_id_ranking(int fk_id_ranking) {
-        this.fk_id_ranking = fk_id_ranking;
+    public void setFk_ranking(int fk_ranking) {
+        this.fk_ranking = fk_ranking;
     }
 
-    public int getFk_id_plano() {
-        return fk_id_plano;
+    public int getFk_plano() {
+        return fk_plano;
     }
 
-    public void setFk_id_plano(int fk_id_plano) {
-        this.fk_id_plano = fk_id_plano;
+    public void setFk_plano(int fk_plano) {
+        this.fk_plano = fk_plano;
     }
 
     public String getNome() {
@@ -90,20 +90,20 @@ public class UsuariosPremium {
         this.dt_nasc = dt_nasc;
     }
 
-    public int getLevel() {
-        return level;
+    public int getNivel() {
+        return nivel;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
 
-    public String getPicture_url() {
-        return picture_url;
+    public String getImagem_url() {
+        return imagem_url;
     }
 
-    public void setPicture_url(String picture_url) {
-        this.picture_url = picture_url;
+    public void setImagem_url(String imagem_url) {
+        this.imagem_url = imagem_url;
     }
 
     public int getPontos() {
@@ -124,7 +124,7 @@ public class UsuariosPremium {
 
     public String toString() {
         return "Nome: " + this.nome + "Senha: " + this.senha + "Email: " + this.email + "Data Nacimento: " + this.dt_nasc +
-                "Level: " + this.level + "Url: " + this.picture_url + "Pontos: " + this.pontos + "Data Abertura: " + this.dt_criacao +
-                "Ranking: " + this.fk_id_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_id_plano;
+                "Level: " + this.nivel + "Url: " + this.imagem_url + "Pontos: " + this.pontos + "Data Abertura: " + this.dt_criacao +
+                "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano;
     }
 }

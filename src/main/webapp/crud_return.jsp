@@ -47,13 +47,13 @@
             %>
             <jsp:include page="mostra_user.jsp">
                 <jsp:param name="id" value="<%= String.valueOf(usuario.getId_usuario()) %>" />
-                <jsp:param name="id_ranking" value="<%= String.valueOf(usuario.getFk_id_ranking()) %>" />
-                <jsp:param name="id_plano" value="<%= String.valueOf(usuario.getFk_id_plano()) %>" />
+                <jsp:param name="id_ranking" value="<%= String.valueOf(usuario.getFk_ranking()) %>" />
+                <jsp:param name="id_plano" value="<%= String.valueOf(usuario.getFk_plano()) %>" />
                 <jsp:param name="nome" value="<%= usuario.getNome() %>" />
                 <jsp:param name="email" value="<%= usuario.getEmail() %>" />
                 <jsp:param name="senha" value="<%= usuario.getSenha() %>" />
                 <jsp:param name="data_nascimento" value="<%= usuario.getDt_nasc() %>" />
-                <jsp:param name="level" value="<%= String.valueOf(usuario.getLevel()) %>" />
+                <jsp:param name="level" value="<%= String.valueOf(usuario.getNivel()) %>" />
                 <jsp:param name="pontos" value="<%= String.valueOf(usuario.getPontos()) %>" />
                 <jsp:param name="data_criacao" value="<%= usuario.getDt_criacao() %>" />
             </jsp:include>
