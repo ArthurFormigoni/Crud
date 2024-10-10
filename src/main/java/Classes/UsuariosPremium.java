@@ -14,13 +14,15 @@ public class UsuariosPremium {
     private String imagem_url;
     private int pontos;
     private Date dt_criacao; // ou LocalDate
+    private String login;
+    private int fk_role_usuario;
 
     // Getters e setters
 
     public UsuariosPremium() {
     }
 
-    public UsuariosPremium(int id_usuario, int fk_ranking, int fk_plano, String nome, String email, String senha, Date dt_nasc, int nivel, String imagem_url, int pontos, Date dt_criacao) {
+    public UsuariosPremium(int id_usuario, int fk_ranking, int fk_plano, String nome, String email, String senha, Date dt_nasc, int nivel, String imagem_url, int pontos, Date dt_criacao, String login, int fk_role_usuario) {
         this.id_usuario = id_usuario;
         this.fk_ranking = fk_ranking;
         this.fk_plano = fk_plano;
@@ -32,6 +34,8 @@ public class UsuariosPremium {
         this.imagem_url = imagem_url;
         this.pontos = pontos;
         this.dt_criacao = dt_criacao;
+        this.login = login;
+        this.fk_role_usuario = fk_role_usuario;
     }
 
     public int getId_usuario() {
@@ -122,9 +126,25 @@ public class UsuariosPremium {
         this.dt_criacao = dt_criacao;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public int getFk_role_usuario() {
+        return fk_role_usuario;
+    }
+
+    public void setFk_role_usuario(int fk_role_usuario) {
+        this.fk_role_usuario = fk_role_usuario;
+    }
+
     public String toString() {
         return "Nome: " + this.nome + "Senha: " + this.senha + "Email: " + this.email + "Data Nacimento: " + this.dt_nasc +
                 "Level: " + this.nivel + "Url: " + this.imagem_url + "Pontos: " + this.pontos + "Data Abertura: " + this.dt_criacao +
-                "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano;
+                "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano+"login: "+this.login+"fk_role_usuario: "+this.fk_role_usuario;
     }
 }

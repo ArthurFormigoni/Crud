@@ -12,6 +12,11 @@
     <div class="table-cell"><%= request.getParameter("data_criacao") %></div>
     <div class="table-cell actions">
         <a href="#"><img src="pen 1.svg" alt="Edit"></a>
+
         <a href="#"><img src="trash 1.svg" alt="Delete"></a>
+        <form action="deletar_premuim" method="post">
+            <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
+            <input type="submit" value="Remover Premuim">
+        </form>
     </div>
 </div>

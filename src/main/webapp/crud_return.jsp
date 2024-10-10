@@ -8,19 +8,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - User List</title>
+
     <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
 <div class="container">
     <header>
-        <h1>CRUD</h1>
+        <h1>CRUD-Delfis!</h1>
+
     </header>
 
     <div class="content">
         <div class="header">
             <h2>Users</h2>
-            <button class="add-user-btn">ADD USER</button>
+            <button class="add-user-btn">Adicionar premuim a um usuario</button>
         </div>
 
         <div class="table">

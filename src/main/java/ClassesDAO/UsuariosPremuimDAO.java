@@ -107,6 +107,19 @@ import java.sql.SQLException;
             return true;
 
         }
-
+        public boolean deleteUser(int userId) {
+            try {
+                conectar();
+                pstmt = conn.prepareStatement("DELETE FROM usuario WHERE id_usuario = ?");
+                pstmt.setInt(1, userId);
+                pstmt.execute();
+            }catch (Exception e){
+                e.printStackTrace();
+                desconectar();
+                return false;
+            }
+            desconectar();
+            return true;
+        }
     }
 
