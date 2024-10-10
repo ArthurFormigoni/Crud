@@ -106,3 +106,21 @@ header h1 {
     cursor: pointer;
 }
 
+.navbar {
+    background-color: #003366;
+}
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar-brand:hover {
+    color: #cccccc;
+}
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+}
+.navbar-nav .nav-link:hover {
+    color: #cccccc;
+}

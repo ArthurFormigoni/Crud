@@ -10,6 +10,8 @@ public class Adm_ {
     String email;
     int id_adm;
 
+    public Adm_(){}
+
     public Adm_(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
         this.login = login;
         this.senha = senha;
