@@ -124,3 +124,8 @@ header h1 {
 .navbar-nav .nav-link:hover {
     color: #cccccc;
 }
+
+button{
+    border: white;
+    background: none;
+}

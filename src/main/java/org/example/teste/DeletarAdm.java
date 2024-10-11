@@ -1,20 +1,31 @@
 package org.example.teste;
 
+import Classes.Adm_;
+import ClassesDAO.AdmDAO;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+@WebServlet(name = "deletar_adm" ,value = "/deletar_adm")
+public class DeletarAdm extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        try {
+            int id = Integer.parseInt(request.getParameter("id_adm"));
 
-import Classes.Adm_;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
-
-@WebServlet(name = "admServelet", value = "/adm")
-public class AdmServelet extends HttpServlet {
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+            AdmDAO adm2 = new AdmDAO();
+            adm2.deleteAdm(2);
+            System.out.println("Deletou o registro com o ID: " + id);
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Erro ao deletar o registro: " + e.getMessage());
+        }
         List<Adm_> listaADM = new ArrayList<>();
         int a = 0;
 
