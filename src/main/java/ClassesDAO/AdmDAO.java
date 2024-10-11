@@ -101,4 +101,24 @@ public class AdmDAO {
         desconectar();
         return true;
     }
+    public boolean cadastrarADM(String usuario, String senha, String nome, String dt_nasc,String email){
+        try{
+            conectar();
+
+            pstmt = conn.prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 2");
+
+            pstmt.setString(1, usuario);
+            pstmt.setString(2, senha);
+            pstmt.setString(3, nome);
+            pstmt.setString(4, dt_nasc);
+            pstmt.setString(5, email);
+            pstmt.executeUpdate();
+
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
