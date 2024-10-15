@@ -51,6 +51,7 @@
 
         <div class="table">
             <div class="table-header">
+                <div class="column">imagem_url</div>
                 <div class="column">id_adm</div>
                 <div class="column">login</div>
                 <div class="column">nome</div>
@@ -58,7 +59,6 @@
                 <div class="column">senha</div>
                 <div class="column">dt_nasc</div>
                 <div class="column">dt_criacao</div>
-                <div class="column">imagem_url</div>
                 <div class="column"></div> <!-- Coluna vazia para ações (editar/excluir) -->
             </div>
 
@@ -69,6 +69,7 @@
                     for (Adm_ adm : administradores) {
             %>
             <jsp:include page="mostra_adm.jsp">
+                <jsp:param name="imagem_url" value="<%= adm.getImagem_url() %>" />
                 <jsp:param name="id_adm" value="<%= adm.getId_adm() %>" />
                 <jsp:param name="login" value="<%= adm.getLogin() %>" />
                 <jsp:param name="nome" value="<%= adm.getNome() %>" />
@@ -76,7 +77,6 @@
                 <jsp:param name="senha" value="<%= adm.getSenha() %>" />
                 <jsp:param name="dt_nasc" value="<%= adm.getData_nascimento() %>" />
                 <jsp:param name="dt_criacao" value="<%= adm.getDt_criacao() %>" />
-                <jsp:param name="imagem_url" value="<%= adm.getImagem_url() %>" />
             </jsp:include>
 
             <%

@@ -14,12 +14,11 @@ public class AdmDAO {
         Dotenv dotenv = Dotenv.load();
 
         String url = dotenv.get("DB_HOST");
-        String user = dotenv.get("DB_USER");
-        String password = dotenv.get("DB_PASSWORD");
+
 
         try {
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(url, user, password);
+            conn = DriverManager.getConnection(url);
             System.out.println("Conexão estabelecida com sucesso!");
             return true; // Retorna true se a conexão foi bem-sucedida
         } catch (SQLException sqle) {

@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="table-row">
+
+    <div class="table-cell"><div class="image-container">
+        <img src="<%= request.getParameter("imagem_url") %>" alt="123" class="imagem-redonda">
+    </div></div>
     <div class="table-cell"><%= request.getParameter("id_adm") %></div>
     <div class="table-cell"><%= request.getParameter("login") %></div>
     <div class="table-cell"><%= request.getParameter("nome") %></div>
@@ -8,7 +12,7 @@
     <div class="table-cell"><%= request.getParameter("senha") %></div>
     <div class="table-cell"><%= request.getParameter("dt_nasc") %></div>
     <div class="table-cell"><%= request.getParameter("dt_criacao") %></div>
-    <div class="table-cell"><%= request.getParameter("imagem_url") %></div>
+
     <div class="table-cell actions">
         <a href="#"><img src="pen 1.svg" alt="Edit"></a>
         <form action="deletar_adm" method="post">

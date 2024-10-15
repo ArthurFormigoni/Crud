@@ -20,7 +20,7 @@ public class DeletarAdm extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id_adm"));
 
             AdmDAO adm2 = new AdmDAO();
-            adm2.deleteAdm(2);
+            adm2.deleteAdm(id);
             System.out.println("Deletou o registro com o ID: " + id);
         }catch (Exception e) {
             e.printStackTrace();
