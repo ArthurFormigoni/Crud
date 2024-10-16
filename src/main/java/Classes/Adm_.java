@@ -85,7 +85,7 @@ public class Adm_ {
 
     public void setId_adm(int id_adm) {
         this.id_adm = id_adm;
-    }
+    };
 
 
     @Override
