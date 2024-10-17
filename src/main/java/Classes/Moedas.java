@@ -1,4 +1,7 @@
 package Classes;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Moedas {
     private int quantidade;
@@ -53,6 +56,7 @@ public class Moedas {
                 ", fk_pagamento=" + fk_pagamento +
                 '}';
     }
+
 
 
 }
