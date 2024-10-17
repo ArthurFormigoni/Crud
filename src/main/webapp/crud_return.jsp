@@ -8,44 +8,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - User List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-
-        <a class="navbar-brand" href="#">Delfis! ADM</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Usuário Premium</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ADM</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Moedas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Poderes</a>
-                </li>
-            </ul>
+<div id="header">
+    <div id="header-content">
+        <form action="home"><button type="submit"><a>Delfis</a></button></form>
+        <div id="menu">
+            <form action="usuarios_premuim"><button type="submit"><a >Usuário Premium</a></button></form>
+            <form action="adm"><button type="submit"><a >ADM</a></button></form>
+            <a >Moedas</a>
+            <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
         </div>
     </div>
-</nav>
+</div>
+<br><br><br><br>
 <div class="container">
-    <header>
+    <div id="header2">
         <h1>CRUD-Delfis!</h1>
-
-    </header>
+    </div>
 
     <div class="content">
-        <div class="header">
+        <div class="headers">
             <h2>Users</h2>
             <button class="add-user-btn">Adicionar premuim a um usuario</button>
         </div>

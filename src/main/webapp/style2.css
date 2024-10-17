@@ -11,10 +11,8 @@ body {
     padding: 20px;
 }
 
-headers h1 {
+#header2{
     text-align: center;
-    font-size: 48px;
-    margin: 20px 0;
 }
 
 .content {
@@ -107,6 +105,7 @@ headers h1 {
 
 
 button {
+    cursor: pointer;
     border: white;
     background: none;
 }

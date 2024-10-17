@@ -15,20 +15,20 @@
 <body>
 <div id="header">
     <div id="header-content">
-        <h1>Delfis</h1>
+        <form action="home"><button type="submit"><a>Delfis</a></button></form>
         <div id="menu">
-            <a href="">Usuário Premium</a>
-            <a href="">Usuários</a>
-            <a href="">ADM</a>
-            <a href="">Moedas</a>
+            <form action="usuarios_premuim"><button type="submit"><a >Usuário Premium</a></button></form>
+            <form action="adm"><button type="submit"><a href="">ADM</a></button></form>
+            <a >Moedas</a>
+            <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
         </div>
     </div>
 </div>
 <br><br><br><br>
 <div class="container">
-    <header>
+    <div id="header2">
         <h1>CRUD-Delfis!</h1>
-    </header>
+    </div>
 
     <div class="content">
         <div class="headers">
