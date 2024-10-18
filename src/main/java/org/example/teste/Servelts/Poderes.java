@@ -22,7 +22,7 @@ public class Poderes extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("Retunr_JSP/crud_return_poderes.jsp").forward(request, response);
+        request.getRequestDispatcher("Return_JSP/crud_return_poderes.jsp").forward(request, response);
 
     }
 

@@ -3,6 +3,7 @@ package org.example.teste.Servelts;
 
 
 import org.example.teste.Model.Adm_;
+import org.example.teste.Model.Moedas;
 import org.example.teste.Model.Powerup;
 import org.example.teste.Model.UsuariosPremium;
 
@@ -141,5 +142,46 @@ public class Listar {
             e.printStackTrace();
         }
         return listaPoderes;
+    }
+
+    public List listarMoedas(){
+        List<Moedas> listaMoedas = new ArrayList<>();
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");// Substitua com a sua tabela de usuários
+            PreparedStatement pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, \" +\n" +
+                    "            \"usuario.nome AS nome_usuario, \" +\n" +
+                    "            \"SUM(moedas.quantidade) AS total_moedas \" +\n" +
+                    "            \"FROM usuario \" +\n" +
+                    "            \"LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \" +\n" +
+                    "            \"WHERE usuario.id_usuario = ? \" + \n" +
+                    "            \"GROUP BY usuario.id_usuario, usuario.nome");
+            ResultSet rs = pstmt.executeQuery();
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado!");
+            } else {
+                System.out.println("Registros encontrados!");
+            }
+
+            // Processa os resultados do banco de dados e cria objetos UsuariosPremium
+            while (rs.next()) {
+                Moedas moedas = new Moedas();
+                moedas.setQuantidade(rs.getInt("quantidade"));
+
+
+
+                listaMoedas.add(moedas);
+            }
+            // Fecha os recursos do banco de dados
+            rs.close();
+            pstmt.close();
+            conn.close();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return listaMoedas;
     }
 }

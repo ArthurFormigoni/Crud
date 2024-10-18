@@ -107,5 +107,88 @@ public class CoinsDAO {
             return true;
         }
 
+    public boolean criarMoedas(int id_moedas,int quantidade){
+        try{
+            conectar();
+
+            pstmt = conn.prepareStatement("INSERT INTO moedas VALUES (?, ?, 2");
+
+            pstmt.setInt(1,id_moedas);
+            pstmt.setInt(2,quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean aumentarMoedas(int id_moedas, int fk_usuario, int quantidade){
+        try{
+            conectar();
+
+            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
+
+            pstmt.setInt(1,id_moedas);
+            pstmt.setInt(2,fk_usuario);
+            pstmt.setInt(3,quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean diminuirMoedas(int id_moedas, int fk_usuario, int quantidade) {
+        try {
+            conectar();
+
+            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade - ? WHERE id_moeda = ? AND fk_usuario = ? AND quantidade >= ?");
+
+            pstmt.setInt(1, id_moedas);
+            pstmt.setInt(2, fk_usuario);
+            pstmt.setInt(3, quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+    public boolean listarMoedas(int id_moedas, int fk_usuario, int quantidade, String nome) {
+        try {
+            conectar();
+            pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, \" +\n" +
+                    "            \"usuario.nome AS nome_usuario, \" +\n" +
+                    "            \"SUM(moedas.quantidade) AS total_moedas \" +\n" +
+                    "            \"FROM usuario \" +\n" +
+                    "            \"LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \" +\n" +
+                    "            \"WHERE usuario.id_usuario = ? \" + \n" +
+                    "            \"GROUP BY usuario.id_usuario, usuario.nome");
+
+
+            pstmt.setInt(1, id_moedas);
+            pstmt.setInt(2, fk_usuario);
+            pstmt.setInt(3, quantidade);
+            pstmt.setString(4, nome);
+
+            pstmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }
+
 

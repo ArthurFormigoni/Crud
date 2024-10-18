@@ -6,6 +6,7 @@ public class Moedas {
     private int fk_usuario;
     private int fk_pagamento;
 
+    public Moedas(){}
     public Moedas(int quantidade, int id_moedas, int fk_usuario, int fk_pagamento){
         this.quantidade = quantidade;
         this.id_moedas = id_moedas;
