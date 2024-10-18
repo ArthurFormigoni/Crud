@@ -1,0 +1,29 @@
+package org.example.teste.Servelts;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.*;
+
+@WebServlet(name="adm",value = "/login")
+public class Login extends HttpServlet {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String user = req.getParameter("txt");
+        String senha = req.getParameter("pswd");
+
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+
+        if (user.equals("ADM") && senha.equals("123")){
+            req.getRequestDispatcher("HTML/home_crud.html").forward(req, resp);
+        }else {
+            out.println("<html><body>");
+            out.println("<h1> Senha incorreta </h1>");
+            out.println("</body></html>");
+        }
+    }
+}
