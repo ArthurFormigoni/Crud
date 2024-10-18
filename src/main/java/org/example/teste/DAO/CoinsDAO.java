@@ -106,6 +106,63 @@ public class CoinsDAO {
             desconectar();
             return true;
         }
+    public boolean criarMoedas(int id_moedas,int quantidade){
+        try{
+            conectar();
+
+            pstmt = conn.prepareStatement("INSERT INTO moedas VALUES (?, ?, 2");
+
+            pstmt.setInt(1,id_moedas);
+            pstmt.setInt(2,quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean aumentarMoedas(int id_moedas, int fk_usuario, int quantidade){
+        try{
+            conectar();
+
+            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
+
+            pstmt.setInt(1,id_moedas);
+            pstmt.setInt(2,fk_usuario);
+            pstmt.setInt(3,quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean diminuirMoedas(int id_moedas, int fk_usuario, int quantidade) {
+        try {
+            conectar();
+
+            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade - ? WHERE id_moeda = ? AND fk_usuario = ? AND quantidade >= ?");
+
+            pstmt.setInt(1, id_moedas);
+            pstmt.setInt(2, fk_usuario);
+            pstmt.setInt(3, quantidade);
+
+            pstmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 
     public boolean criarMoedas(int id_moedas,int quantidade){
         try{
