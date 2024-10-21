@@ -12,7 +12,7 @@
     <div class="table-cell"><%= request.getParameter("initial_time") %></div>
     <div class="table-cell"><%= request.getParameter("duracao") %></div>
     <div class="table-cell"><%= request.getParameter("final_time") %></div>
-    <div class="table-cell"><%= request.getParameter("fk_id_pagamento_coins") %></div>
+
 
 
     <div class="table-cell actions">
