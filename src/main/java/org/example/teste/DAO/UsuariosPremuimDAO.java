@@ -1,6 +1,7 @@
 package org.example.teste.DAO;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import org.example.teste.Connection.Conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-    public class UsuariosPremuimDAO {
+    public class UsuariosPremuimDAO extends Conexao {
 
         private Connection conn;
         private PreparedStatement pstmt;
@@ -36,15 +37,6 @@ import java.sql.SQLException;
             }
         }
 
-        public void desconectar() {
-            try {
-                if (conn != null && !conn.isClosed()) {
-                    conn.close();
-                }
-            } catch (SQLException sqle) {
-                System.out.println(sqle.getMessage());
-            }
-        }
 
         //CRUD: C = CREATE - INSERT
         public boolean insert(String sql) {
