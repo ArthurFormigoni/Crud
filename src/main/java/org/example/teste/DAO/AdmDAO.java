@@ -14,11 +14,12 @@ public class AdmDAO {
         Dotenv dotenv = Dotenv.load();
 
         String url = dotenv.get("DB_HOST");
-
+        String user = dotenv.get("DB_USER");
+        String password = dotenv.get("DB_PASSWORD");
 
         try {
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/defaultdb?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
             System.out.println("Conexão estabelecida com sucesso!");
             return true; // Retorna true se a conexão foi bem-sucedida
         } catch (SQLException sqle) {

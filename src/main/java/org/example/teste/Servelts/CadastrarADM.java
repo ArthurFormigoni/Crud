@@ -23,14 +23,12 @@ public class CadastrarADM extends HttpServlet {
             String password = request.getParameter("password");
             String dt_nasc = request.getParameter("dt_nasc");
             String email = request.getParameter("email");
-            System.out.println(username);
             response.setContentType("text/html");
 
-            String regex1 = "[A-Za-z]{5,}";
+            String regex1 = "[A-Za-z]{4,}";
             String regex2 = "[a-z]{5,}";
-            String regex3 = "[a-zA-Z0-9]{5,}?:[@#$]";
-            //String regex4 = "^[0-9]{2}[/][0-9]{2}[/][0-9]{4}";
-            String regex5 = "^[a-z]{4,}[@][a-z].com";
+            String regex3 = "[a-zA-Z]{0,}[0-9]{0,}";
+            String regex5 = "^[a-z]{4,}[@][a-z]{5,}.com";
             PrintWriter out = response.getWriter();
 
             if (Pattern.matches(regex1, nome)){
