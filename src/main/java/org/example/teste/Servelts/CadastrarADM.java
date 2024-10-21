@@ -34,6 +34,8 @@ public class CadastrarADM extends HttpServlet {
             if ((Pattern.matches(regex1, nome))&&(Pattern.matches(regex2, username))&&(Pattern.matches(regex3, password))&&(Pattern.matches(regex5, email))){
                 AdmDAO admDAO = new AdmDAO();
                 admDAO.cadastrarADM(nome, username, password, dt_nasc, email);
+                request.setAttribute("verificar", 2);
+                request.getRequestDispatcher("Return_JSP/cadastro_return").forward(request, response);
 
             }else {
                 out.println("<html>");
@@ -41,9 +43,9 @@ public class CadastrarADM extends HttpServlet {
                 out.println("<title>Erro</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Erro ao cadastrar</h1>");
+                out.println("<h1>Erro</h1>");
                 out.println("<body>");
-                out.println("<html>");
+                out.println("</html>");
             }
 
         }catch (Exception e) {

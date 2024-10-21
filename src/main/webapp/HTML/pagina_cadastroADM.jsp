@@ -21,6 +21,16 @@
             <button class="sla">Cadastrar</button>
         </form>
     </div>
+    <% int teste=0;
+        if (request.getAttribute("verificar") != null){
+            teste = (int) request.getAttribute("verificar");
+        }
+        if (teste==1){
+    %>
+    <p id="incorreto">Dados inseridos incorretamente</p>
+    <%}
+
+    %>
 
 </div>
 </body>
