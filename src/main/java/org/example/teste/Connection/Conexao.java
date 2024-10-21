@@ -1,5 +1,7 @@
 package org.example.teste.Connection;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,6 +11,11 @@ public class Conexao {
     private Connection conn;
 
     protected boolean conectar(){
+        Dotenv dotenv = Dotenv.load();
+
+        String url = dotenv.get("DB_HOST");
+        String user = dotenv.get("DB_USER");
+        String password = dotenv.get("DB_PASSWORD");
 
         try{
 
@@ -16,8 +23,7 @@ public class Conexao {
             Class.forName("org.postgresql.Driver");
 
             // Estabelece a conexão com o Banco de Dados
-            conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require","avnadmin", "AVNS_IUFw8-OfVH7bf8zuL_l");
-
+            conn = DriverManager.getConnection(url, user, password);
             // Retornar true caso a conexão ocorrer sem nenhum problema
             return true;
 

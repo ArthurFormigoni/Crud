@@ -2,6 +2,7 @@ package org.example.teste.Servelts;
 
 
 
+import org.example.teste.Connection.Conexao;
 import org.example.teste.Model.Adm_;
 import org.example.teste.Model.Moedas;
 import org.example.teste.Model.Powerup;
@@ -11,9 +12,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listar {
+public class Listar extends Conexao {
 
-    public List listarUsuarioPremuim(){
+    public List listarUsuarioPremuim (){
         List<UsuariosPremium> listaUsuarios = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
         try {
