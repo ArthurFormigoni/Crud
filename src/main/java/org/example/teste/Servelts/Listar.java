@@ -108,7 +108,7 @@ public class Listar {
             // Configuração da conexão (substitua com seus dados)
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
-            String sql = "SELECT * FROM powerup";  // Substitua com a sua tabela de usuários
+            String sql = "select * from powerup";  // Substitua com a sua tabela de usuários
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
