@@ -31,10 +31,11 @@ public class Login extends HttpServlet {
                 adm.setSenha(rs.getString("senha"));
                 adm.setLogin(rs.getString("login"));
                 if (user.equals(adm.getLogin()) && senha.equals(adm.getSenha())) {
-                    System.out.println("a");
                     req.getRequestDispatcher("HTML/home_crud.html").forward(req, resp);
                 }
             }
+            req.setAttribute("teste", 1);
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
 
         }catch (SQLException  | ClassNotFoundException a){
             a.printStackTrace();
