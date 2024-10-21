@@ -14,19 +14,8 @@ public class AdmDAO extends Conexao {
 
 
 
-    //CRUD: C = CREATE - INSERT
-    public boolean insert(String sql) {
-        conectar();
-        try {
-            pstmt = conn.prepareStatement("INSERT INTO adm (nome, email) VALUES (?, ?)");
-            pstmt.execute();
-        } catch (SQLException sqe) {
-            sqe.printStackTrace();
-            return false;
-        }
-        desconectar();
-        return true;
-    }
+
+
 
     //CRUD: R = READ - SELECT
     public ResultSet select(String sql) {
@@ -34,7 +23,7 @@ public class AdmDAO extends Conexao {
         ResultSet rset = null;
         try {
 
-            pstmt = conn.prepareStatement("Select * From adm");
+            pstmt = conn.prepareStatement("Select * From Adm");
             rset = pstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,7 +36,7 @@ public class AdmDAO extends Conexao {
     public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("UPDATE adm SET nome = ?, email = ? WHERE id = ?");
+            pstmt = conn.prepareStatement("UPDATE Adm SET nome = ?, email = ? WHERE id = ?");
 
             pstmt.execute();
         } catch (SQLException e) {
@@ -58,22 +47,8 @@ public class AdmDAO extends Conexao {
         return true;
     }
 
-    //CRUD: D = DELETE - DELETE
-    public boolean delete(String sql) {
-        try {
-            conectar();
-
-            pstmt = conn.prepareStatement("DELETE FROM administradores WHERE id = ?");
-            pstmt.executeUpdate();
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        desconectar();
-        return true;
-    }
     public boolean cadastrarADM(String usuario, String senha, String nome, String dt_nasc,String email){
         try{
             conectar();
