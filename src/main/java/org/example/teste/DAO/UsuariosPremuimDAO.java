@@ -79,8 +79,7 @@ import java.sql.SQLException;
         public boolean AddPremiumUser(int userId) {
             try {
                 conectar();
-                pstmt = conn.prepareStatement("update usuario set fk_plano = 2\n" +
-                        "where id_usuario = ?");
+                pstmt = conn.prepareStatement("update usuario set fk_plano = 2 where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
