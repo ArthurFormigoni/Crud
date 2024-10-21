@@ -33,7 +33,7 @@
     <div class="content">
         <div class="headers">
             <h2>Administradores</h2>
-            <button class="add-user-btn">Adicionar Administrador</button>
+            <form action="pagina_adm"><button class="add-user-btn" type="submit">Adicionar Administrador</button></form>
         </div>
 
         <div class="table">

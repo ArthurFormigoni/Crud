@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "cadastro", value = "/cadastrar_adm")
 
 public class CadastrarADM extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
             String nome = request.getParameter("name");
