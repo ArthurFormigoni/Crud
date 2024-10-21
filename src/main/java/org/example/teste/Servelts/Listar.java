@@ -12,18 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Listar {
-    private Connection conn;
-    private PreparedStatement pstmt;
-    private ResultSet rs;
+
     public List listarUsuarioPremuim(){
         List<UsuariosPremium> listaUsuarios = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
         try {
-            // Configuração da conexão (substitua com seus dados) Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
+            // Configuração da conexão (substitua com seus dados)
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/defaultdb?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l" );
-            pstmt = conn.prepareStatement("SELECT * FROM usuario");
-            ResultSet rs = pstmt.executeQuery();
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usuario");
+            ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
 
@@ -51,7 +49,7 @@ public class Listar {
             }
             // Fecha os recursos do banco de dados
             rs.close();
-            pstmt.close();
+            stmt.close();
             conn.close();
 
         } catch (SQLException | ClassNotFoundException e) {
