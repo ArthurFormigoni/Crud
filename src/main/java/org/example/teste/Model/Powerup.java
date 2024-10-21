@@ -9,11 +9,10 @@ public class Powerup {
     private String initial_time;
     private String durucao;
     private String final_time;
-    private int fk_id_pagamento_coins;
 
     public Powerup(){}
 
-    public Powerup(String nome, int quantidade, String imagem_loja_url, int id_powerup, int preco_moedas, String initial_time, String durucao, String final_time, int fk_id_pagamento_coins) {
+    public Powerup(String nome, int quantidade, String imagem_loja_url, int id_powerup, int preco_moedas, String initial_time, String durucao, String final_time) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.imagem_loja_url = imagem_loja_url;
@@ -22,7 +21,7 @@ public class Powerup {
         this.initial_time = initial_time;
         this.durucao = durucao;
         this.final_time = final_time;
-        this.fk_id_pagamento_coins = fk_id_pagamento_coins;
+
     }
 
     public String getNome() {
@@ -89,13 +88,6 @@ public class Powerup {
         this.final_time = final_time;
     }
 
-    public int getFk_id_pagamento_coins() {
-        return fk_id_pagamento_coins;
-    }
-
-    public void setFk_id_pagamento_coins(int fk_id_pagamento_coins) {
-        this.fk_id_pagamento_coins = fk_id_pagamento_coins;
-    }
 
     @Override
     public String toString() {
@@ -106,8 +98,7 @@ public class Powerup {
                 "\nPreço_moedas"+this.preco_moedas+
                 "\nInitial_time: "+this.initial_time+
                 "\nDuração"+this.durucao+
-                "\nFinal_time: "+this.final_time+
-                "\nFk_id_pagamento_coin: "+this.fk_id_pagamento_coins;
+                "\nFinal_time: "+this.final_time;
     }
 
 }

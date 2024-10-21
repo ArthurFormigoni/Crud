@@ -15,7 +15,7 @@ public class AdmDAO extends Conexao {
     public boolean insert(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("INSERT INTO adm (nome, email) VALUES (?, ?)");
+            pstmt = conn.prepareStatement(sql);
             pstmt.execute();
         } catch (SQLException sqe) {
             sqe.printStackTrace();
@@ -31,7 +31,7 @@ public class AdmDAO extends Conexao {
         ResultSet rset = null;
         try {
 
-            pstmt = conn.prepareStatement("Select * From adm");
+            pstmt = conn.prepareStatement(sql);
             rset = pstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,7 +44,7 @@ public class AdmDAO extends Conexao {
     public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("UPDATE adm SET nome = ?, email = ? WHERE id = ?");
+            pstmt = conn.prepareStatement(sql);
 
             pstmt.execute();
         } catch (SQLException e) {
@@ -60,7 +60,7 @@ public class AdmDAO extends Conexao {
         try {
             conectar();
 
-            pstmt = conn.prepareStatement("DELETE FROM administradores WHERE id = ?");
+            pstmt = conn.prepareStatement(sql);
             pstmt.executeUpdate();
 
 

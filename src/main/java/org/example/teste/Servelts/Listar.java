@@ -130,7 +130,6 @@ public class Listar {
                 poderes.setInitial_time(rs.getString("initial_time"));
                 poderes.setDurucao(rs.getString("duracao")); // Use java.sql.Date
                 poderes.setFinal_time(rs.getString("final_time"));
-                poderes.setFk_id_pagamento_coins(rs.getInt("fk_pagamento_moedas"));
 
 
                 listaPoderes.add(poderes);

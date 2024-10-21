@@ -65,7 +65,6 @@
                 <jsp:param name="initial_time" value="<%= pwe.getInitial_time() %>" />
                 <jsp:param name="duracao" value="<%= pwe.getDurucao() %>" />
                 <jsp:param name="final_time" value="<%= pwe.getFinal_time() %>" />
-                <jsp:param name="fk_id_pagamento_coins" value="<%= pwe.getFk_id_pagamento_coins() %>" />
             </jsp:include>
 
             <%
