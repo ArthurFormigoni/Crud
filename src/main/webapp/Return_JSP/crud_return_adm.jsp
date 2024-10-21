@@ -18,7 +18,7 @@
         <form action="home"><button type="submit"><a>Delfis</a></button></form>
         <div id="menu">
             <form action="usuarios_premuim"><button type="submit"><a >Usuário Premium</a></button></form>
-            <form action="adm"><button type="submit"><a href="">ADM</a></button></form>
+            <form action="adm"><button type="submit"><a >ADM</a></button></form>
             <a >Moedas</a>
             <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
         </div>
