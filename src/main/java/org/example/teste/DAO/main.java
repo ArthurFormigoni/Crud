@@ -7,7 +7,7 @@ public class main {
         //METODO CONECTAR
         aa.deleteUser(1);
         System.out.println("CONEXÂO");
-        conexao1.conectar();
+
 
 
     }
