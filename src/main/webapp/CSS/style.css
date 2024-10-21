@@ -78,3 +78,8 @@ button:hover{
     color: #064273;
 
 }
+
+#incorreto{
+    color: red;
+    text-align: center;
+}
