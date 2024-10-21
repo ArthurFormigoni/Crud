@@ -1,5 +1,7 @@
 package org.example.teste.Model;
 
+import org.example.teste.DAO.AdmDAO;
+
 public class Adm_ {
     String login;
     String senha;
@@ -86,7 +88,7 @@ public class Adm_ {
     public void setId_adm(int id_adm) {
         this.id_adm = id_adm;
     }
-    ;
+
 
 
     @Override
