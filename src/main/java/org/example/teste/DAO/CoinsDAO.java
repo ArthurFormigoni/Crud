@@ -164,22 +164,12 @@ public class CoinsDAO {
         }
 
     }
-    public boolean listarMoedas(int id_moedas, int fk_usuario, int quantidade, String nome) {
+    public boolean listarMoedas( int fk_usuario, int quantidade, String nome) {
         try {
             conectar();
-            pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, \" +\n" +
-                    "            \"usuario.nome AS nome_usuario, \" +\n" +
-                    "            \"SUM(moedas.quantidade) AS total_moedas \" +\n" +
-                    "            \"FROM usuario \" +\n" +
-                    "            \"LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \" +\n" +
-                    "            \"WHERE usuario.id_usuario = ? \" + \n" +
-                    "            \"GROUP BY usuario.id_usuario, usuario.nome");
+            pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, usuario.nome AS nome_usuario, SUM(moedas.quantidade) AS total_moedas FROM usuario LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario GROUP BY usuario.id_usuario ORDER BY total_moedas desc ");
 
 
-            pstmt.setInt(1, id_moedas);
-            pstmt.setInt(2, fk_usuario);
-            pstmt.setInt(3, quantidade);
-            pstmt.setString(4, nome);
 
             pstmt.executeUpdate();
             return true;

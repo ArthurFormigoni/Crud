@@ -110,7 +110,8 @@ import java.sql.SQLException;
         public boolean deleteUser(int userId) {
             try {
                 conectar();
-                pstmt = conn.prepareStatement("DELETE FROM usuario WHERE id_usuario = ?");
+                pstmt = conn.prepareStatement("update usuario set fk_plano = 1\n" +
+                        "where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
