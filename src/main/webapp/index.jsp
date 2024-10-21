@@ -16,7 +16,10 @@
             <label for="chk" aria-hidden="true">Portal Delfis!</label>
             <input type="text" name="txt" placeholder="User name" required>
             <input type="password" name="pswd" placeholder="Password" required>
-            <% int teste = (int) request.getAttribute("teste");
+            <% int teste=0;
+                if (request.getAttribute("teste") != null){
+                teste = (int) request.getAttribute("teste");
+            }
                 if (teste==1){
             %>
             <p id="incorreto">Senha ou usuario incorreto</p>
