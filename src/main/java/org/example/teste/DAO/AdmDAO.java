@@ -104,7 +104,7 @@ public class AdmDAO {
         try{
             conectar();
 
-            pstmt = conn.prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 2");
+            pstmt = conn.prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 10");
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, senha);
