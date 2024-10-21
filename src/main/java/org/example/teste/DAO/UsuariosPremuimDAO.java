@@ -76,14 +76,16 @@ import java.sql.SQLException;
         }
 
         //CRUD: U = UPDATE - UPDATE
-        public boolean update(String sql) {
-            conectar();
+        public boolean AddPremiumUser(int userId) {
             try {
-                pstmt = conn.prepareStatement(sql);
-
+                conectar();
+                pstmt = conn.prepareStatement("update usuario set fk_plano = 2\n" +
+                        "where id_usuario = ?");
+                pstmt.setInt(1, userId);
                 pstmt.execute();
-            } catch (SQLException e) {
+            }catch (Exception e){
                 e.printStackTrace();
+                desconectar();
                 return false;
             }
             desconectar();
