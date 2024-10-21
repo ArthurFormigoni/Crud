@@ -31,17 +31,11 @@ public class CadastrarADM extends HttpServlet {
             String regex5 = "^[a-z]{4,}[@][a-z]{5,}.com";
             PrintWriter out = response.getWriter();
 
-            if (Pattern.matches(regex1, nome)){
-                if (Pattern.matches(regex2, username)){
-                    if (Pattern.matches(regex3, password)){
-                        if (Pattern.matches(regex5, email)){
-                            AdmDAO admDAO = new AdmDAO();
-                            admDAO.cadastrarADM(nome, username, password, dt_nasc, email);
-                        }
-                    }
-                }
-            }
-            else {
+            if ((Pattern.matches(regex1, nome))&&(Pattern.matches(regex2, username))&&(Pattern.matches(regex3, password))&&(Pattern.matches(regex5, email))){
+                AdmDAO admDAO = new AdmDAO();
+                admDAO.cadastrarADM(nome, username, password, dt_nasc, email);
+
+            }else {
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Erro</title>");
