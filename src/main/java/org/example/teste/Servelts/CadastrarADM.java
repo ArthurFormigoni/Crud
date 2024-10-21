@@ -12,7 +12,7 @@ import org.example.teste.DAO.AdmDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cadastrar_adm", value = "/cadastrar_adm")
+@WebServlet(name = "cadastro", value = "/cadastrar_adm")
 
 public class CadastrarADM extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class CadastrarADM extends HttpServlet {
             else {
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Erro ao cadastrar</title>");
+                out.println("<title>Erro</title>");
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>Erro ao cadastrar</h1>");
