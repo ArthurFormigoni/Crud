@@ -39,7 +39,7 @@ public class Conexão {
                 conn.close();
             }
 
-            //Retorna true ao fechar a conexão ou se ela ja estava fechada antes
+            //Retorna true ao fechar a conexão ou se ela ja estava fechada antes.
             return true;
 
         }catch (SQLException sqle){
