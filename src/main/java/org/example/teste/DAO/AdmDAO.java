@@ -75,7 +75,7 @@ public class AdmDAO extends Conexao {
         try{
             conectar();
 
-            pstmt = conn.prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 10");
+            pstmt = getConn().prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 10");
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, senha);
@@ -93,14 +93,14 @@ public class AdmDAO extends Conexao {
     }
     public boolean deleteAdm(int admId) {
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
-            pstmt = conn.prepareStatement("DELETE FROM adm WHERE id_adm = ?");
+            conectar();
+            pstmt = getConn().prepareStatement("DELETE FROM adm WHERE id_adm = ?");
             pstmt.setInt(1, admId);
             pstmt.execute();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+
         } finally {
             desconectar();
         }
