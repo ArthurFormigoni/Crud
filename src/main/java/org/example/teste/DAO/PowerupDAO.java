@@ -56,19 +56,17 @@ public class PowerupDAO extends Conexao {
     }
 
     //CRUD: D = DELETE - DELETE
-    public boolean delete(String sql) {
+    public boolean delete(int id_powerup) {
         try {
-            conectar();
-
-            pstmt = conn.prepareStatement(sql);
-            pstmt.executeUpdate();
-
-
-        } catch (SQLException e) {
+            pstmt = conn.prepareStatement("DELETE FROM powerup WHERE id_powerup = ?");
+            pstmt.setInt(1, id_powerup);
+            pstmt.execute();
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
+        } finally {
+            desconectar();
         }
-        desconectar();
         return true;
     }
 }
