@@ -100,6 +100,7 @@ public class AdmDAO extends Conexao {
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+
         } finally {
             desconectar();
         }
