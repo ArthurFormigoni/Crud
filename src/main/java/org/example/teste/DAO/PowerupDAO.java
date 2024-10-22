@@ -15,7 +15,8 @@ public class PowerupDAO extends Conexao {
     public boolean insert(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement("INSERT INTO nome_da_tabela (coluna1, coluna2, coluna3)" +
+                    " VALUES ('valor1', 'valor2', 'valor3')");
             pstmt.execute();
         } catch (SQLException sqe) {
             sqe.printStackTrace();
@@ -31,7 +32,7 @@ public class PowerupDAO extends Conexao {
         ResultSet rset = null;
         try {
 
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement("SELECT coluna1, coluna2 FROM nome_da_tabela WHERE condicao");
             rset = pstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,7 +45,8 @@ public class PowerupDAO extends Conexao {
     public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement("UPDATE nome_da_tabela SET coluna1 = 'novo_valor1', coluna2 = 'novo_valor2' WHERE condição");
+
 
             pstmt.execute();
         } catch (SQLException e) {
