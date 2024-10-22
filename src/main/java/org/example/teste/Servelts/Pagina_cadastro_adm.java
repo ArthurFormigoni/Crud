@@ -11,7 +11,7 @@ import org.example.teste.DAO.AdmDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cadastrar_adm", value = "/cadastrar_adm")
+@WebServlet(name = "pagina_adm", value = "/pagina_adm")
 
 public class Pagina_cadastro_adm extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
