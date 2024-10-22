@@ -82,7 +82,7 @@ public class CoinsDAO extends Conexao {
         try{
             conectar();
 
-            pstmt = conn.prepareStatement("INSERT INTO moedas VALUES (?, ?, 2");
+            pstmt = getConn().prepareStatement("INSERT INTO moedas VALUES (?, ?, 2");
 
             pstmt.setInt(1,id_moedas);
             pstmt.setInt(2,quantidade);
@@ -100,7 +100,7 @@ public class CoinsDAO extends Conexao {
         try{
             conectar();
 
-            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
 
             pstmt.setInt(1,id_moedas);
             pstmt.setInt(2,fk_usuario);
@@ -121,7 +121,7 @@ public class CoinsDAO extends Conexao {
         try {
             conectar();
 
-            pstmt = conn.prepareStatement("UPDATE moedas SET quantidade = quantidade - ? WHERE id_moeda = ? AND fk_usuario = ? AND quantidade >= ?");
+            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = quantidade - ? WHERE id_moeda = ? AND fk_usuario = ? AND quantidade >= ?");
 
             pstmt.setInt(1, id_moedas);
             pstmt.setInt(2, fk_usuario);
@@ -138,7 +138,7 @@ public class CoinsDAO extends Conexao {
     public boolean listarMoedas( int fk_usuario, int quantidade, String nome) {
         try {
             conectar();
-            pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, usuario.nome AS nome_usuario, SUM(moedas.quantidade) AS total_moedas FROM usuario LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario GROUP BY usuario.id_usuario ORDER BY total_moedas desc ");
+            pstmt = getConn().prepareStatement("SELECT usuario.id_usuario AS usuario_id, usuario.nome AS nome_usuario, SUM(moedas.quantidade) AS total_moedas FROM usuario LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario GROUP BY usuario.id_usuario ORDER BY total_moedas desc ");
 
 
 

@@ -13,29 +13,8 @@ import java.sql.SQLException;
 
         private Connection conn;
         private PreparedStatement pstmt;
-        private ResultSet rs;
 
-        public boolean conectar() {
 
-            Dotenv dotenv = Dotenv.load();
-
-            String url = dotenv.get("DB_HOST");
-            String user = dotenv.get("DB_USER");
-            String password = dotenv.get("DB_PASSWORD");
-
-            try {
-                Class.forName("org.postgresql.Driver");
-                conn = DriverManager.getConnection(url, user, password);
-                System.out.println("Conexão estabelecida com sucesso!");
-                return true; // Retorna true se a conexão foi bem-sucedida
-            } catch (SQLException sqle) {
-                System.err.println("Erro de SQL: " + sqle.getMessage());
-                return false; // Retorna false em caso de falha
-            } catch (ClassNotFoundException cnfe) {
-                System.err.println("Driver não encontrado: " + cnfe.getMessage());
-                return false; // Retorna false se o driver não for encontrado
-            }
-        }
 
 
         //CRUD: C = CREATE - INSERT
@@ -71,7 +50,7 @@ import java.sql.SQLException;
         public boolean AddPremiumUser(int userId) {
             try {
                 conectar();
-                pstmt = conn.prepareStatement("update usuario set fk_plano = 2 where id_usuario = ?");
+                pstmt = getConn().prepareStatement("update usuario set fk_plano = 2 where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
@@ -103,8 +82,23 @@ import java.sql.SQLException;
         public boolean deleteUser(int userId) {
             try {
                 conectar();
-                pstmt = conn.prepareStatement("update usuario set fk_plano = 1\n" +
+                pstmt = getConn().prepareStatement("update usuario set fk_plano = 1\n" +
                         "where id_usuario = ?");
+                pstmt.setInt(1, userId);
+                pstmt.execute();
+            }catch (Exception e){
+                e.printStackTrace();
+                desconectar();
+                return false;
+            }
+            desconectar();
+            return true;
+        }
+
+        public boolean listarUsuarios(int userId) {
+            try {
+                conectar();
+                pstmt = getConn().prepareStatement("select * from adm = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
