@@ -58,4 +58,7 @@ public class Conexao {
         }
     }
 
+    public Connection getConn() {
+        return conn;
+    }
 }

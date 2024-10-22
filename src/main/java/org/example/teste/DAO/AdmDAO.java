@@ -94,7 +94,7 @@ public class AdmDAO extends Conexao {
     public boolean deleteAdm(int admId) {
         try {
             conectar();
-            pstmt = conn.prepareStatement("DELETE FROM adm WHERE id_adm = ?");
+            pstmt = getConn().prepareStatement("DELETE FROM adm WHERE id_adm = ?");
             pstmt.setInt(1, admId);
             pstmt.execute();
         } catch (Exception e) {
