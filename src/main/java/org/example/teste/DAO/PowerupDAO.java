@@ -45,7 +45,7 @@ public class PowerupDAO extends Conexao {
     public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("UPDATE nome_da_tabela SET coluna1 = 'novo_valor1', coluna2 = 'novo_valor2' WHERE condição");
+            pstmt = conn.prepareStatement("UPDATE nome_da_tabela SET coluna1 = 'novo_valor1', coluna2 = 'novo_valor2' WHERE ?");
 
 
             pstmt.execute();
