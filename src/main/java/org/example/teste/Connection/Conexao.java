@@ -11,6 +11,7 @@ public class Conexao {
     private Connection conn;
 
     protected boolean conectar(){
+
         Dotenv dotenv = Dotenv.load();
 
         String url = dotenv.get("DB_HOST");
