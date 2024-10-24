@@ -97,7 +97,7 @@ import java.sql.SQLException;
         public boolean listarUsuarios(int userId) {
             try {
                 conectar();
-                pstmt = getConn().prepareStatement("select * from adm = ?");
+                pstmt = getConn().prepareStatement("select * from adm = ?")  ;
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
