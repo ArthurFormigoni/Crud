@@ -12,7 +12,8 @@ public class Moedas {
     private int fk_pagamento;
     //Atributos - Fim
 
-    //Métodos - Início
+
+//Métodos - Início
     //Construtor - Início
 
     public Moedas(){}

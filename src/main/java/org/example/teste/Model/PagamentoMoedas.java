@@ -1,13 +1,23 @@
+//Importações  - Início
+
 package org.example.teste.Model;
 
 import java.sql.Timestamp;
 
+//Importações - Fim
+
+//Classe - Início
 public class PagamentoMoedas {
+
+    //Atributos - Início
     private int id_pagamento_moedas;
     private Timestamp dt_inicial;
     private Timestamp dt_expirado;
     private int fk_usuario;
+    //Atributos - Fim
 
+    // Métodos - Início
+        //Construtor - Início
     public PagamentoMoedas(int id_pagamento_moedas, Timestamp dt_inicial, Timestamp dt_expirado, int fk_usuario) {
         this.id_pagamento_moedas = id_pagamento_moedas;
         this.dt_inicial = dt_inicial;
