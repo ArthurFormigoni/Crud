@@ -1,6 +1,10 @@
+
 package org.example.teste.Model;
 
+
+
 public class Moedas {
+   
     private int quantidade;
     private int id_moedas;
     private int fk_usuario;
@@ -13,6 +17,8 @@ public class Moedas {
         this.fk_usuario = fk_usuario;
         this.fk_pagamento = fk_pagamento;
     }
+
+
 
     public int getQuantidade() {
         return quantidade;
@@ -45,6 +51,9 @@ public class Moedas {
     public void setFk_pagamento(int fk_pagamento) {
         this.fk_pagamento = fk_pagamento;
     }
+
+
+
     @Override
     public String toString() {
         return "Coins{" +
@@ -54,7 +63,6 @@ public class Moedas {
                 ", fk_pagamento=" + fk_pagamento +
                 '}';
     }
-
 
 
 }
