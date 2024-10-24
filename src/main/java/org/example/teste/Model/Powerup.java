@@ -1,6 +1,12 @@
+//Importações  - Início
+
 package org.example.teste.Model;
 
+//Importações - Fim
+
+//Classe - Início
 public class Powerup {
+    //Atributos - Início
     private String nome;
     private int quantidade;
     private String imagem_loja_url;
@@ -9,7 +15,10 @@ public class Powerup {
     private String initial_time;
     private String durucao;
     private String final_time;
+    //Atributos - Fim
 
+// Métodos - Início
+    //Construtor - Início
     public Powerup(){}
 
     public Powerup(String nome, int quantidade, String imagem_loja_url, int id_powerup, int preco_moedas, String initial_time, String durucao, String final_time) {
@@ -23,6 +32,10 @@ public class Powerup {
         this.final_time = final_time;
 
     }
+    //Construtor - Fim
+
+    //Getters e Setters - Início
+
 
     public String getNome() {
         return nome;
@@ -87,8 +100,10 @@ public class Powerup {
     public void setFinal_time(String final_time) {
         this.final_time = final_time;
     }
+    //Getters e Setters - Fim
 
 
+    //toString - Início
     @Override
     public String toString() {
         return "Nome: " +this.nome+
@@ -99,6 +114,7 @@ public class Powerup {
                 "\nInitial_time: "+this.initial_time+
                 "\nDuração"+this.durucao+
                 "\nFinal_time: "+this.final_time;
-    }
+    }//toString - Fim
 
-}
+
+}//Métodos e Classe - Fim

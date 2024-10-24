@@ -1,19 +1,32 @@
+//Importações  - Início
+
 package org.example.teste.Model;
 
 import java.sql.Timestamp;
 
+//Importações - Fim
+
+//Classe - Início
 public class PagamentoMoedas {
+
+    //Atributos - Início
     private int id_pagamento_moedas;
     private Timestamp dt_inicial;
     private Timestamp dt_expirado;
     private int fk_usuario;
+    //Atributos - Fim
 
+    // Métodos - Início
+        //Construtor - Início
     public PagamentoMoedas(int id_pagamento_moedas, Timestamp dt_inicial, Timestamp dt_expirado, int fk_usuario) {
         this.id_pagamento_moedas = id_pagamento_moedas;
         this.dt_inicial = dt_inicial;
         this.dt_expirado = dt_expirado;
         this.fk_usuario = fk_usuario;
     }
+        //Construtor - Fim
+
+    //Getters e Setters - Início
 
     public int getId_pagamento_moedas() {
         return id_pagamento_moedas;
@@ -46,7 +59,11 @@ public class PagamentoMoedas {
     public void setFk_usuario(int fk_usuario) {
         this.fk_usuario = fk_usuario;
     }
+    //Getters e Setters - Fim
 
+
+
+    //toString - Início
     @Override
     public String toString() {
         return "Pagamento_moedas{" +
@@ -55,5 +72,6 @@ public class PagamentoMoedas {
                 ", dt_expirado=" + dt_expirado +
                 ", fk_usuario=" + fk_usuario +
                 '}';
-    }
-}
+    }//toString - Fim
+
+}//Métodos e Classe - Fim

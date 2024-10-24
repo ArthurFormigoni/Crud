@@ -1,8 +1,14 @@
+//Importações  - Início
+
 package org.example.teste.Model;
 
 import java.sql.Date; // ou java.time.LocalDate se preferir
 
+//Importações - Fim
+
+//Classe - Início
 public class UsuariosPremium {
+    //Atributos - Início
     private int id_usuario;
     private int fk_ranking;
     private int fk_plano;
@@ -16,8 +22,10 @@ public class UsuariosPremium {
     private Date dt_criacao; // ou LocalDate
     private String login;
     private int fk_role_usuario;
+    //Atributos - Fim
 
-    // Getters e setters
+// Métodos - Início
+    //Construtor - Início
 
     public UsuariosPremium() {
     }
@@ -37,7 +45,9 @@ public class UsuariosPremium {
         this.login = login;
         this.fk_role_usuario = fk_role_usuario;
     }
+    //Construtor - Fim
 
+    //Getters e Setters - Início
     public int getId_usuario() {
         return id_usuario;
     }
@@ -141,10 +151,13 @@ public class UsuariosPremium {
     public void setFk_role_usuario(int fk_role_usuario) {
         this.fk_role_usuario = fk_role_usuario;
     }
+    //Getters e Setters - Fim
 
+    //toString - Início
     public String toString() {
         return "Nome: " + this.nome + "Senha: " + this.senha + "Email: " + this.email + "Data Nacimento: " + this.dt_nasc +
                 "Level: " + this.nivel + "Url: " + this.imagem_url + "Pontos: " + this.pontos + "Data Abertura: " + this.dt_criacao +
                 "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano+"login: "+this.login+"fk_role_usuario: "+this.fk_role_usuario;
-    }
-}
+    }//toString - Fim
+
+}//Métodos e Classe - Fim
