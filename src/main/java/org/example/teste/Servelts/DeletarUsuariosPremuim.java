@@ -14,7 +14,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "deletar_premuim",value = "/deletar_premuim")
+@WebServlet(name = "deletar_usuario_premuim",value = "/deletar_usuario_premuim")
 public class DeletarUsuariosPremuim extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -24,12 +24,12 @@ public class DeletarUsuariosPremuim extends HttpServlet {
 
             UsuariosPremuimDAO usa = new UsuariosPremuimDAO();
             usa.deleteUser(id);
-            System.out.println("Deletou o registro com o ID: " + id);
+            System.out.println("Deletou o premium com o ID: " + id);
 
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Erro ao deletar o registro: " + e.getMessage());
+            System.out.println("Erro ao deletar o premium: " + e.getMessage());
         }
         Listar mostra = new Listar();
         // A lista de usuários é adicionada ao request
