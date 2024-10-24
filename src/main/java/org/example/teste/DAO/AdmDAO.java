@@ -75,12 +75,12 @@ public class AdmDAO extends Conexao {
         try{
             conectar();
 
-            pstmt = getConn().prepareStatement("INSERT INTO adm VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 10");
+            pstmt = getConn().prepareStatement("INSERT INTO adm (login, senha, nome, dt_nasc, imagem_url, dt_criacao, email, id_adm) VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 12);");
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, senha);
             pstmt.setString(3, nome);
-            pstmt.setString(4, dt_nasc);
+            pstmt.setDate(4,  java.sql.Date.valueOf(dt_nasc));
             pstmt.setString(5, email);
             pstmt.executeUpdate();
 
