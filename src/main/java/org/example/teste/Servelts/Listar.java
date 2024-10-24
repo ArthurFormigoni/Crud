@@ -2,10 +2,7 @@ package org.example.teste.Servelts;
 
 
 
-import org.example.teste.Model.Adm_;
-import org.example.teste.Model.Moedas;
-import org.example.teste.Model.Powerup;
-import org.example.teste.Model.UsuariosPremium;
+import org.example.teste.Model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -143,36 +140,48 @@ public class Listar {
         return listaPoderes;
     }
 
-    public List listarMoedas(){
-        List<Moedas> listaMoedas = new ArrayList<>();
+    public List<Usuario_Moedas> listarMoedas() {
+        List<Usuario_Moedas> listaMoedas = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");// Substitua com a sua tabela de usuários
-            PreparedStatement pstmt = conn.prepareStatement("SELECT usuario.id_usuario AS usuario_id, \" +\n" +
-                    "            \"usuario.nome AS nome_usuario, \" +\n" +
-                    "            \"SUM(moedas.quantidade) AS total_moedas \" +\n" +
-                    "            \"FROM usuario \" +\n" +
-                    "            \"LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \" +\n" +
-                    "            \"WHERE usuario.id_usuario = ? \" + \n" +
-                    "            \"GROUP BY usuario.id_usuario, usuario.nome");
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
+
+            // Consulta SQL corrigida
+            String sql = "SELECT usuario.id_usuario AS usuario_id, " +
+                    "usuario.nome AS nome_usuario, " +
+                    "SUM(moedas.quantidade) AS total_moedas " +
+                    "FROM usuario " +
+                    "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario " +
+                    // Defina o valor desse parâmetro no pstmt
+                    "GROUP BY usuario.id_usuario, usuario.nome";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            // Definir o parâmetro "?" na query
+
+
+
             ResultSet rs = pstmt.executeQuery();
+
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
             } else {
                 System.out.println("Registros encontrados!");
             }
 
-            // Processa os resultados do banco de dados e cria objetos UsuariosPremium
+            // Processa os resultados do banco de dados e cria objetos Usuario_Moedas
             while (rs.next()) {
-                Moedas moedas = new Moedas();
-                moedas.setQuantidade(rs.getInt("quantidade"));
-
-
+                Usuario_Moedas moedas = new Usuario_Moedas();
+                moedas.setId_usuario(rs.getInt("usuario_id"));
+                moedas.setNome(rs.getString("nome_usuario"));
+                moedas.setTotal_moedas(rs.getInt("total_moedas"));
 
                 listaMoedas.add(moedas);
             }
+
             // Fecha os recursos do banco de dados
             rs.close();
             pstmt.close();
@@ -181,6 +190,8 @@ public class Listar {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         return listaMoedas;
     }
 }
+
