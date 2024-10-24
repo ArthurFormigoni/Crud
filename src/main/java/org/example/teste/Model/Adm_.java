@@ -1,8 +1,7 @@
 package org.example.teste.Model;
 
-import org.example.teste.DAO.AdmDAO;
-
 public class Adm_ {
+    //atributos
     String login;
     String senha;
     String nome;
@@ -11,7 +10,7 @@ public class Adm_ {
     String dt_criacao;
     String email;
     int id_adm;
-
+//metodo contrutor
     public Adm_(){}
 
     public Adm_(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
@@ -24,6 +23,8 @@ public class Adm_ {
         this.email = email;
         this.id_adm = id_adm;
     }
+
+    //getters e setters
 
     public String getLogin() {
         return login;
@@ -90,7 +91,7 @@ public class Adm_ {
     }
 
 
-
+//toString
     @Override
     public String toString() {
         return "Login: "+this.login+

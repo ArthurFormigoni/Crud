@@ -63,16 +63,15 @@ import java.sql.SQLException;
         }
 
         //CRUD: D = DELETE - DELETE
-        public boolean delete(String sql) {
+        public boolean delete(int userId) {
             try {
                 conectar();
-
-                pstmt = conn.prepareStatement(sql);
-                pstmt.executeUpdate();
-
-
-            } catch (SQLException e) {
+                pstmt = getConn().prepareStatement("update usuario set fk_plano = 1 where id_usuario = ?");
+                pstmt.setInt(1, userId);
+                pstmt.execute();
+            }catch (Exception e){
                 e.printStackTrace();
+                desconectar();
                 return false;
             }
             desconectar();
