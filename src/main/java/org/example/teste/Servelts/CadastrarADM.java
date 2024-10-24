@@ -35,7 +35,7 @@ public class CadastrarADM extends HttpServlet {
                 AdmDAO admDAO = new AdmDAO();
                 admDAO.cadastrarADM(nome, username, password, dt_nasc, email);
                 request.setAttribute("verificar", 2);
-                request.getRequestDispatcher("Return_JSP/cadastro_return").forward(request, response);
+                request.getRequestDispatcher("Return_JSP/cadastro_return.jsp").forward(request, response);
 
             }else {
                 out.println("<html>");

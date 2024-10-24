@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="CSS/styleCadastro.css">
 </head>
 <body>
-<form action="cadastro_concluido">
+<form action="home">
 <h1>Usuário Administrador Cadastrado!</h1>
-<button class="button" onclick="window.location.href='http://localhost:8080/Delfis_war_exploded/'">Voltar para a Página Inicial</button>
+<button class="button" type="submit">Voltar para a Página Inicial</button>
 </form>
 </body>
 </html>
