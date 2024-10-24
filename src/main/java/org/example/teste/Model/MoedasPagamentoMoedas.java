@@ -1,10 +1,11 @@
 package org.example.teste.Model;
 
 public class MoedasPagamentoMoedas {
+    //Atributos - Início
     private int id_moedas_pagamento_moedas;
     private int fk_moedas;
     private int fk_pagamento_moedas;
-
+ // Atributos - Fim
     public MoedasPagamentoMoedas(int id_moedas_pagamento_moedas, int fk_moedas, int fk_pagamento_moedas){
         this.id_moedas_pagamento_moedas = id_moedas_pagamento_moedas;
         this.fk_moedas = fk_moedas;
