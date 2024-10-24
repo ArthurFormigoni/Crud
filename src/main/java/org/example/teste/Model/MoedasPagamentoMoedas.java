@@ -11,11 +11,16 @@ public class MoedasPagamentoMoedas {
     private int fk_moedas;
     private int fk_pagamento_moedas;
     //Atributos - Fim
+
+    //Construtor - Início
     public MoedasPagamentoMoedas(int id_moedas_pagamento_moedas, int fk_moedas, int fk_pagamento_moedas){
         this.id_moedas_pagamento_moedas = id_moedas_pagamento_moedas;
         this.fk_moedas = fk_moedas;
         this.fk_pagamento_moedas = fk_pagamento_moedas;
     }
+    //Construtor - Fim
+
+    //Getters e Setters - Início
 
     public int getId_moedas_pagamento_moedas() {
         return id_moedas_pagamento_moedas;
@@ -41,6 +46,7 @@ public class MoedasPagamentoMoedas {
         this.fk_pagamento_moedas = fk_pagamento_moedas;
     }
 
+    //Getters e Setters - Fim
 
     //toString - Início
     @Override
