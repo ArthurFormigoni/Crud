@@ -75,7 +75,7 @@ public class AdmDAO extends Conexao {
         try{
             conectar();
 
-            pstmt = getConn().prepareStatement("INSERT INTO adm (login, senha, nome, dt_nasc, imagem_url, dt_criacao, email, id_adm) VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 12);");
+            pstmt = getConnection().prepareStatement("INSERT INTO adm (login, senha, nome, dt_nasc, imagem_url, dt_criacao, email, id_adm) VALUES (?, ?, ?, ?, 'imagem_url_adm', current_date, ?, 12);");
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, senha);
@@ -94,7 +94,7 @@ public class AdmDAO extends Conexao {
     public boolean deleteAdm(int admId) {
         try {
             conectar();
-            pstmt = getConn().prepareStatement("DELETE FROM adm WHERE id_adm = ?");
+            pstmt = getConnection().prepareStatement("DELETE FROM adm WHERE id_adm = ?");
             pstmt.setInt(1, admId);
             pstmt.execute();
         } catch (Exception e) {

@@ -5,21 +5,23 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.teste.Connection.Conexao;
 import org.example.teste.Model.Adm_;
 import org.example.teste.Model.Powerup;
 
 import java.io.*;
-import java.sql.*;
+        import java.sql.*;
 
 @WebServlet(name="adm",value = "/login")
 public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Conexao conexao = new Conexao();
+        conexao.conectar();
         String user = req.getParameter("txt");
         String senha = req.getParameter("pswd");
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
+            Connection conn = conexao.getConn();
             String sql = "select * from adm";  // Substitua com a sua tabela de usuários
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -37,7 +39,7 @@ public class Login extends HttpServlet {
             req.setAttribute("teste", 1);
             req.getRequestDispatcher("index.jsp").forward(req, resp);
 
-        }catch (SQLException  | ClassNotFoundException a){
+        }catch (SQLException   a){
             a.printStackTrace();
         }
     }
