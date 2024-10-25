@@ -1,3 +1,5 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
 
 import java.io.IOException;
@@ -6,9 +8,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+//Importações - Fim
 
+//Classe - Início
 @WebServlet(name = "admServelet", value = "/adm")
 public class AdmServelet extends HttpServlet {
+
+    // Métodos - Início
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Listar mostra = new Listar();
@@ -21,4 +27,4 @@ public class AdmServelet extends HttpServlet {
         request.getRequestDispatcher("Return_JSP/crud_return_adm.jsp").forward(request, response);
 
     }
-}
+}//Métodos e Classe - Fim
