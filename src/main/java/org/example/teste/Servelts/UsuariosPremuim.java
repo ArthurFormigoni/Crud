@@ -1,3 +1,5 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
 
 import java.io.IOException;
@@ -5,12 +7,13 @@ import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+//Importações - Fim
 
 
 @WebServlet(name = "usuartios_premuim", value = "/usuarios_premuim")
 public class UsuariosPremuim extends HttpServlet {
 
-
+    // Métodos - Início
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Listar mostra = new Listar();
 
@@ -27,4 +30,4 @@ public class UsuariosPremuim extends HttpServlet {
 
     }
 
-}
+}//Métodos e Classe - Fim
