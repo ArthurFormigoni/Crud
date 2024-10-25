@@ -18,8 +18,9 @@
         <div id="menu">
             <form action="usuarios_premuim"><button type="submit"><a >Usuário Premium</a></button></form>
             <form action="adm"><button type="submit"><a >ADM</a></button></form>
-            <a >Moedas</a>
+            <form action="moedas"><button type="submit"><a >Moedas</a></button></form>
             <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
+            <a href="https://delfis-project.github.io/delfis-restrict-area">Grafico</a>
         </div>
     </div>
 </div>

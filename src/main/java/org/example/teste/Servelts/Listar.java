@@ -2,22 +2,22 @@ package org.example.teste.Servelts;
 
 
 
+import org.example.teste.Connection.Conexao;
 import org.example.teste.Model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listar {
+public class Listar extends Conexao {
 
     public List listarUsuarioPremuim(){
         List<UsuariosPremium> listaUsuarios = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM usuario");
+            conectar();
+            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM usuario");
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
@@ -47,9 +47,9 @@ public class Listar {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            conn.close();
+            getConnection().close();
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException  e) {
             e.printStackTrace();
         }
         return listaUsuarios;
@@ -60,9 +60,8 @@ public class Listar {
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM adm");
+            conectar();
+            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM adm");
             ResultSet rs = stmt.executeQuery();
 
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
@@ -90,9 +89,9 @@ public class Listar {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            conn.close();
+            getConnection().close();
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return listaADM;
@@ -103,10 +102,9 @@ public class Listar {
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
+            conectar();
             String sql = "select * from powerup";  // Substitua com a sua tabela de usuários
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
@@ -132,10 +130,10 @@ public class Listar {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            conn.close();
+            getConnection().close();
 
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (SQLException sql) {
+            sql.printStackTrace();
         }
         return listaPoderes;
     }
@@ -145,10 +143,7 @@ public class Listar {
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(
-                    "jdbc:postgresql://pg-23037034-germinare-1db6.f.aivencloud.com:27088/dbDelfis?ssl=require&user=avnadmin&password=AVNS_IUFw8-OfVH7bf8zuL_l");
-
+            conectar();
             // Consulta SQL corrigida
             String sql = "SELECT usuario.id_usuario AS usuario_id, " +
                     "usuario.nome AS nome_usuario, " +
@@ -158,7 +153,7 @@ public class Listar {
                     // Defina o valor desse parâmetro no pstmt
                     "GROUP BY usuario.id_usuario, usuario.nome";
 
-            PreparedStatement pstmt = conn.prepareStatement(sql);
+            PreparedStatement pstmt = getConnection().prepareStatement(sql);
 
             // Definir o parâmetro "?" na query
 
@@ -185,9 +180,9 @@ public class Listar {
             // Fecha os recursos do banco de dados
             rs.close();
             pstmt.close();
-            conn.close();
+            getConnection().close();
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

@@ -50,7 +50,7 @@ import java.sql.SQLException;
         public boolean AddPremiumUser(int userId) {
             try {
                 conectar();
-                pstmt = getConn().prepareStatement("update usuario set fk_plano = 2 where id_usuario = ?");
+                pstmt = getConnection().prepareStatement("update usuario set fk_plano = 2 where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
@@ -66,7 +66,7 @@ import java.sql.SQLException;
         public boolean delete(int userId) {
             try {
                 conectar();
-                pstmt = getConn().prepareStatement("update usuario set fk_plano = 1 where id_usuario = ?");
+                pstmt =getConnection().prepareStatement("update usuario set fk_plano = 1 where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
@@ -81,7 +81,7 @@ import java.sql.SQLException;
         public boolean deleteUser(int userId) {
             try {
                 conectar();
-                pstmt = getConn().prepareStatement("update usuario set fk_plano = 1\n" +
+                pstmt = getConnection().prepareStatement("update usuario set fk_plano = 1\n" +
                         "where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
@@ -97,7 +97,7 @@ import java.sql.SQLException;
         public boolean listarUsuarios(int userId) {
             try {
                 conectar();
-                pstmt = getConn().prepareStatement("select * from adm = ?")  ;
+                pstmt = getConnection().prepareStatement("select * from adm = ?")  ;
                 pstmt.setInt(1, userId);
                 pstmt.execute();
             }catch (Exception e){
