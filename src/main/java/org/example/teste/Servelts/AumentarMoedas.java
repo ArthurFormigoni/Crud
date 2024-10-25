@@ -52,6 +52,6 @@ public class AumentarMoedas extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("Return_JSP/crud_return_moedas.jsp").forward(request, response);
+        request.getRequestDispatcher("Return_JSP/aumentar_return_moedas.jsp").forward(request, response);
     }
 }

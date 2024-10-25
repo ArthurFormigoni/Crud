@@ -2,6 +2,8 @@ package org.example.teste.DAO;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import org.example.teste.Connection.Conexao;
+import org.postgresql.util.PGInterval;
+import org.w3c.dom.Text;
 
 import java.sql.*;
 
@@ -12,11 +14,17 @@ public class PowerupDAO extends Conexao {
 
 
     //CRUD: C = CREATE - INSERT
-    public boolean insert(String sql) {
+    public boolean insert(String nome, int qnt, String img, int id_powerup, int preco, double duracao) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("INSERT INTO nome_da_tabela (coluna1, coluna2, coluna3)" +
-                    " VALUES ('valor1', 'valor2', 'valor3')");
+            pstmt = conn.prepareStatement("INSERT INTO powerup (nome, quantidade, imagem_loja_url, id_powerup, preco_moedas, duracao)" +
+                    " VALUES (''?'', ?, ''?'', ?, ?, ?)");//Ver se o [INTERVAL] é String ou não para colocar entre ('')
+            pstmt.setString(1, nome);
+            pstmt.setInt(2, qnt);
+            pstmt.setString(3, img);
+            pstmt.setInt(4, id_powerup);
+            pstmt.setInt(5, preco);
+            pstmt.setDouble(5, duracao);
             pstmt.execute();
         } catch (SQLException sqe) {
             sqe.printStackTrace();
@@ -27,12 +35,13 @@ public class PowerupDAO extends Conexao {
     }
 
     //CRUD: R = READ - SELECT
-    public ResultSet select(String sql) {
+    public ResultSet select(int id_powerup) {
         conectar();
         ResultSet rset = null;
         try {
 
-            pstmt = conn.prepareStatement("SELECT coluna1, coluna2 FROM nome_da_tabela WHERE condicao");
+            pstmt = conn.prepareStatement("SELECT * FROM powerup WHERE id_powerup = ?");
+            pstmt.setInt(1, id_powerup);
             rset = pstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
