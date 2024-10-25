@@ -16,31 +16,22 @@ import java.io.*;
 public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Conexao conexao = new Conexao();
-        conexao.conectar();
-        String user = req.getParameter("txt");
-        String senha = req.getParameter("pswd");
+        // Define o tipo de conteúdo da resposta como HTML
+        resp.setContentType("text/html");
+
+        // Obtém um objeto PrintWriter para escrever a resposta diretamente ao cliente, se necessário
+        PrintWriter out = resp.getWriter();
+
         try {
-            Connection conn = conexao.getConn();
-            String sql = "select * from adm";  // Substitua com a sua tabela de usuários
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-            resp.setContentType("text/html");
-            PrintWriter out = resp.getWriter();
-
-            while (rs.next()) {
-                Adm_ adm = new Adm_();
-                adm.setSenha(rs.getString("senha"));
-                adm.setLogin(rs.getString("login"));
-                if (user.equals(adm.getLogin()) && senha.equals(adm.getSenha())) {
-                    req.getRequestDispatcher("HTML/home_crud.html").forward(req, resp);
-                }
-            }
-            req.setAttribute("teste", 1);
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
-
-        }catch (SQLException   a){
-            a.printStackTrace();
+            // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
+            req.getRequestDispatcher("/HTML/home_crud.html").forward(req, resp);
+        } catch (Exception e) {
+            // Tratamento de erro para caso a página não seja encontrada ou ocorra algum problema no encaminhamento
+            e.printStackTrace();
+            out.println("<h3>Erro ao carregar a página home_crud.</h3>");
+        } finally {
+            // Fecha o PrintWriter após o uso
+            out.close();
         }
     }
 }

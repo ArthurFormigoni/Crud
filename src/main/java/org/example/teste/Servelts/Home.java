@@ -12,9 +12,10 @@ import java.io.*;
 public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        // Define o tipo de conteúdo da resposta como HTML
         resp.setContentType("text/html");
-        req.getRequestDispatcher("HTML/home_crud.html").forward(req, resp);
 
+        // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
+        req.getRequestDispatcher("/HTML/home_crud.html").forward(req, resp);
     }
 }
