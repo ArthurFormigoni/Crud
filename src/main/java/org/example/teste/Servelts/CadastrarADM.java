@@ -31,7 +31,7 @@ public class CadastrarADM extends HttpServlet {
             String email = request.getParameter("email");
             response.setContentType("text/html");
 
-            String regex1 = "[A-Za-z]{4,}";
+            String regex1 = "[A-Za-z]{3,}";
             String regex2 = "[a-z]{5,}";
             String regex3 = "[a-zA-Z]{0,}[0-9]{0,}";
             String regex5 = "^[a-z]{4,}[@][a-z]{5,}.com";
