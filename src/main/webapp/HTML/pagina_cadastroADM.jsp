@@ -14,7 +14,7 @@
         <form action="cadastrar_adm" >
             <label for="chk" aria-hidden="true">Delfis!</label>
             <input type="text" name="name" placeholder="Name" required>
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="Login" placeholder="Login" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="date" name="dt_nasc" placeholder="Date of birth" required>
             <input type="text" name="email" placeholder="Email" required>
