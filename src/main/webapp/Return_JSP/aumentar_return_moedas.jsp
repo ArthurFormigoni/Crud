@@ -1,13 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ryansousa-ieg
-  Date: 25/10/2024
-  Time: 09:45
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aumentar Moedas</title>
     <link rel="stylesheet" href="CSS/styleCadastro.css">
 </head>
