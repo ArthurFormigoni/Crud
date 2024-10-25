@@ -1,3 +1,5 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
 
 import org.example.teste.Model.UsuariosPremium;
@@ -13,10 +15,14 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+//Importações - Fim
 
+
+//Classe - Início
 @WebServlet(name = "deletar_usuario_premuim",value = "/deletar_usuario_premuim")
 public class DeletarUsuariosPremuim extends HttpServlet {
 
+    // Métodos - Início
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
@@ -39,4 +45,4 @@ public class DeletarUsuariosPremuim extends HttpServlet {
         PrintWriter out = response.getWriter();
         request.getRequestDispatcher("Return_JSP/crud_return_adm.jsp").forward(request, response);
     }
-}
+}//Métodos e Classe - Fim
