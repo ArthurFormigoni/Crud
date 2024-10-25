@@ -1,3 +1,5 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
 
 import jakarta.servlet.ServletException;
@@ -11,9 +13,14 @@ import org.example.teste.Model.Powerup;
 
 import java.io.*;
         import java.sql.*;
+//Importações - Fim
 
+
+//Classe - Início
 @WebServlet(name="adm",value = "/login")
 public class Login extends HttpServlet {
+
+    // Métodos - Início
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Define o tipo de conteúdo da resposta como HTML
@@ -34,4 +41,4 @@ public class Login extends HttpServlet {
             out.close();
         }
     }
-}
+}//Métodos e Classe - Fim
