@@ -1,4 +1,7 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
+
 import java.util.regex.Pattern;
 
 
@@ -12,9 +15,12 @@ import org.example.teste.DAO.AdmDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cadastro", value = "/cadastrar_adm")
+//Importações - Fim
 
+//Classe - Início
+@WebServlet(name = "cadastro", value = "/cadastrar_adm")
 public class CadastrarADM extends HttpServlet {
+    // Métodos - Início
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
@@ -54,4 +60,4 @@ public class CadastrarADM extends HttpServlet {
 
     }
 
-}
+}//Métodos e Classe - Fim
