@@ -1,6 +1,6 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
-
-
 
 import org.example.teste.Connection.Conexao;
 import org.example.teste.Model.*;
@@ -8,9 +8,13 @@ import org.example.teste.Model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+//Importações - Fim
 
+
+//Classe - Início
 public class Listar extends Conexao {
 
+    // Métodos - Início
     public List listarUsuarioPremuim(){
         List<UsuariosPremium> listaUsuarios = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
@@ -188,5 +192,5 @@ public class Listar extends Conexao {
 
         return listaMoedas;
     }
-}
+}//Métodos e Classe - Fim
 

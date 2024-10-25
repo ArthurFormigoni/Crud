@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.*;
 //Importações - Fim
 
+
+//Classe - Início
 @WebServlet(name="home",value = "/home")
 public class Home extends HttpServlet {
     @Override
