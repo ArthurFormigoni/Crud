@@ -107,4 +107,26 @@ public class AdmDAO extends Conexao {
         return true;
     }
 
+    public boolean updateAdm(String login, String senha, String nome, String dt_nasc , String email,int id_adm){
+        try {
+            conectar();
+            pstmt = getConn().prepareStatement("update adm set login = ? , senha = ?, nome = ? , dt_nasc =?, email =?  WHERE id_adm = ?");
+            pstmt.setString(1,login);
+            pstmt.setString(2,senha);
+            pstmt.setString(3,nome);
+            pstmt.setDate(4,java.sql.Date.valueOf(dt_nasc));
+            pstmt.setString(5,email);
+            pstmt.setInt(6,id_adm);
+            pstmt.executeUpdate();
+
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        finally {
+            desconectar();
+        }
+    }
+
 }

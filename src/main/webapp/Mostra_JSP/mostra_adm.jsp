@@ -14,7 +14,10 @@
     <div class="table-cell"><%= request.getParameter("dt_criacao") %></div>
 
     <div class="table-cell actions">
-        <a href="#"><img src="Imagens/pen%201.svg" alt="Edit"></a>
+        <form action="update_adm">
+            <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
+            <button type="submit"><img src="Imagens/pen%201.svg" alt="Edit"></button>
+        </form>
         <form action="deletar_adm" method="post">
             <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
             <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>

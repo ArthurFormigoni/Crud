@@ -101,6 +101,47 @@ public class Listar extends Conexao {
         return listaADM;
     }
 
+    public Adm_ listarAdmID(int id){
+        Adm_ adm = new Adm_();
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            conectar();
+            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM adm where id_adm = ? ");
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado!");
+
+            } else {
+                System.out.println("Registros encontrados!");
+
+            }
+
+            // Processa os resultados do banco de dados e cria objetos Adm_
+            while (rs.next()) {
+                adm.setId_adm(rs.getInt("id_adm")); // Aqui está correto
+                adm.setLogin(rs.getString("login")); // Aqui está correto
+                adm.setSenha(rs.getString("senha")); // Aqui está correto
+                adm.setNome(rs.getString("nome")); // Aqui está correto
+                adm.setEmail(rs.getString("email")); // Aqui está correto
+                adm.setData_nascimento(rs.getString("dt_nasc")); // Converte o Date para String
+                adm.setImagem_url(rs.getString("imagem_url")); // Aqui está correto
+                adm.setDt_criacao(rs.getString("dt_criacao")); // Converte o Date para String
+
+
+            }
+            // Fecha os recursos do banco de dados
+            rs.close();
+            stmt.close();
+            getConnection().close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return adm;
+    }
     public List listarPoderes(){
         List<Powerup> listaPoderes = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
