@@ -32,12 +32,13 @@ public class CoinsDAO extends Conexao {
         }
 
         //CRUD: R = READ - SELECT
-        public ResultSet select(String sql) {
+        public ResultSet select( int idUser ) {
             conectar();
             ResultSet rset = null;
             try {
 
-                pstmt = conn.prepareStatement(sql);
+                pstmt = conn.prepareStatement("SELECT quantidade FROM moedas WHERE fk_usuario = ?");
+                pstmt.setInt(1, idUser);
                 rset = pstmt.executeQuery();
             } catch (SQLException e) {
                 e.printStackTrace();
