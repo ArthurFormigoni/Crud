@@ -16,7 +16,7 @@ import java.io.*;
 @WebServlet(name="home",value = "/home")
 public class Home extends HttpServlet {
     @Override
-    // Métodos - Início
+    // Métodos - Início.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Define o tipo de conteúdo da resposta como HTML
         resp.setContentType("text/html");
