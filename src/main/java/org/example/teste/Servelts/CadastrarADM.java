@@ -25,7 +25,7 @@ public class CadastrarADM extends HttpServlet {
 
         try {
             String nome = request.getParameter("name");
-            String username = request.getParameter("username");
+            String username = request.getParameter("Login");
             String password = request.getParameter("password");
             String dt_nasc = request.getParameter("dt_nasc");
             String email = request.getParameter("email");
