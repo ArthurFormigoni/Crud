@@ -22,18 +22,20 @@ public class AumentarMoedas extends HttpServlet {
     // Métodos - Início
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String idMoedasParam = request.getParameter("id_moedas");
-            String fkUsuarioParam = request.getParameter("fk_moedas");
             String quantidadeParam = request.getParameter("quantidade");
+            String idMoedasParam = request.getParameter("id_moedas");
+            String fkUsuarioParam = request.getParameter("fk_usuario");
+
 
             // Verifica se os parâmetros não são nulos
             if (idMoedasParam != null && fkUsuarioParam != null && quantidadeParam != null) {
+                int quantidade = Integer.parseInt(quantidadeParam);
                 int idMoedas = Integer.parseInt(idMoedasParam);
                 int fkUsuario = Integer.parseInt(fkUsuarioParam);
-                int quantidade = Integer.parseInt(quantidadeParam);
+
 
                 CoinsDAO coinsDAO = new CoinsDAO();
-                coinsDAO.aumentarMoedas(idMoedas, fkUsuario, quantidade);
+                coinsDAO.aumentarMoedas(quantidade,idMoedas, fkUsuario);
                 System.out.println("Aumentou as moedas do usuário com o registro ID: " + fkUsuario);
             } else {
                 System.out.println("Parâmetros não fornecidos corretamente.");

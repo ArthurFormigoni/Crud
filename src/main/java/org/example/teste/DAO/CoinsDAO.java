@@ -97,15 +97,15 @@ public class CoinsDAO extends Conexao {
         }
     }
 
-    public boolean aumentarMoedas(int id_moedas, int fk_usuario, int quantidade){
+    public boolean aumentarMoedas(int quantidade, int id_moedas, int fk_usuario){
         try{
             conectar();
 
-            pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
+            pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moedas = ? AND fk_usuario = ?");
+            pstmt.setInt(1,quantidade);
+            pstmt.setInt(2,id_moedas);
+            pstmt.setInt(3,fk_usuario);
 
-            pstmt.setInt(1,id_moedas);
-            pstmt.setInt(2,fk_usuario);
-            pstmt.setInt(3,quantidade);
 
             pstmt.executeUpdate();
             return true;

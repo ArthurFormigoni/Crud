@@ -13,8 +13,9 @@
     <div class="signup">
         <form action="aumentar_moedas" >
             <label for="chk" aria-hidden="true">Delfis!</label>
-            <input type="text" name="name" placeholder="Name" required>
             <input type="text" name="quantidade" placeholder="quantidade" required>
+            <input type="text" name="fk_usuario" placeholder="fk_usuario" required>
+            <input type="text" name="id_moedas" placeholder="id_moedas" required>
             <button class="sla">Adicionar</button>
         </form>
     </div>
