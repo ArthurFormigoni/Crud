@@ -80,4 +80,23 @@ public class PowerupDAO extends Conexao {
         }
         return true;
     }
+    public boolean adicionar_poder(String nome, int duracao, int preco, int quantidade){
+        conectar();
+        try{
+            pstmt = conn.prepareStatement("INSERT INTO powerup(nome, quantidade, imagem_loja_url, id_powerup, preco_moedas, initial_time, duracao, final_time, is_updated, is_deleted) VALUES (?, ?, 'imagem_url', 3, ?, CURRENT_TIMESTAMP, INTERVAL'? minutes', false, false)");
+            pstmt.setString(1, nome);
+            pstmt.setInt(2, quantidade);
+            pstmt.setInt(3, preco);
+            pstmt.setInt(4, duracao);
+            pstmt.execute();
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        finally {
+            desconectar();
+        }
+        return true;
+    }
 }
