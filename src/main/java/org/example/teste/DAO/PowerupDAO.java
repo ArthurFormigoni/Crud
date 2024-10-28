@@ -4,70 +4,70 @@ import io.github.cdimascio.dotenv.Dotenv;
 import org.example.teste.Connection.Conexao;
 import org.postgresql.util.PGInterval;
 import org.w3c.dom.Text;
-
 import java.sql.*;
 
+// Classe DAO para manipulação de dados da tabela "powerup"
 public class PowerupDAO extends Conexao {
     private Connection conn;
     private PreparedStatement pstmt;
     private ResultSet rs;
 
-
-    //CRUD: C = CREATE - INSERT
+    // CREATE: insere um novo registro de powerup
     public boolean insert(String nome, int qnt, String img, int id_powerup, int preco, double duracao) {
         conectar();
         try {
             pstmt = conn.prepareStatement("INSERT INTO powerup (nome, quantidade, imagem_loja_url, id_powerup, preco_moedas, duracao)" +
-                    " VALUES (''?'', ?, ''?'', ?, ?, ?)");//Ver se o [INTERVAL] é String ou não para colocar entre ('')
+                    " VALUES (?, ?, ?, ?, ?, ?)");
             pstmt.setString(1, nome);
             pstmt.setInt(2, qnt);
             pstmt.setString(3, img);
             pstmt.setInt(4, id_powerup);
             pstmt.setInt(5, preco);
-            pstmt.setDouble(5, duracao);
+            pstmt.setDouble(6, duracao);
             pstmt.execute();
         } catch (SQLException sqe) {
             sqe.printStackTrace();
             return false;
+        } finally {
+            desconectar();
         }
-        desconectar();
         return true;
     }
 
-    //CRUD: R = READ - SELECT
+    // READ: consulta registros de powerup pelo ID
     public ResultSet select(int id_powerup) {
         conectar();
         ResultSet rset = null;
         try {
-
             pstmt = conn.prepareStatement("SELECT * FROM powerup WHERE id_powerup = ?");
             pstmt.setInt(1, id_powerup);
             rset = pstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            desconectar();
         }
-        desconectar();
         return rset;
     }
 
-    //CRUD: U = UPDATE - UPDATE
+    // UPDATE: executa uma atualização com a consulta SQL fornecida
     public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("UPDATE nome_da_tabela SET coluna1 = 'novo_valor1', coluna2 = 'novo_valor2' WHERE ?");
-
-
+            pstmt = conn.prepareStatement(sql);
             pstmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        } finally {
+            desconectar();
         }
-        desconectar();
         return true;
     }
 
-    //CRUD: D = DELETE - DELETE
+    // DELETE: exclui um registro de powerup pelo ID
     public boolean delete(int id_powerup) {
+        conectar();
         try {
             pstmt = conn.prepareStatement("DELETE FROM powerup WHERE id_powerup = ?");
             pstmt.setInt(1, id_powerup);
