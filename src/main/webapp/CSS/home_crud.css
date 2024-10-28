@@ -1,4 +1,5 @@
 body {
+    /* Define a fonte e configura o layout para ocupar toda a altura da visualização. */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body {
 }
 
 .sidebar {
+    /* Configura a barra lateral com fundo escuro e centraliza o conteúdo. */
     background-color: #003366;
     width: 20%;
     padding: 20px;
@@ -18,6 +20,7 @@ body {
 }
 
 .sidebar img {
+    /* Define a aparência da imagem na barra lateral, tornando-a circular. */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -25,16 +28,19 @@ body {
 }
 
 .sidebar h1 {
+    /* Configura o título na barra lateral. */
     margin: 0;
     font-size: 24px;
 }
 
 .sidebar p {
+    /* Define as margens e o tamanho da fonte para os parágrafos na barra lateral. */
     margin: 5px 0;
     font-size: 16px;
 }
 
 .main-content {
+    /* Configura a área principal com fundo claro e organiza o conteúdo. */
     background-color: #f4f4f4;
     width: 80%;
     padding: 20px;
@@ -45,7 +51,7 @@ body {
 }
 
 .card {
-
+    /* Define a aparência dos cartões, incluindo tamanho e distribuição do conteúdo. */
     width: 200px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -53,30 +59,33 @@ body {
     padding: 20px;
     text-align: center;
     margin: 10px;
-    transition: transform 0.2s;
+    transition: transform 0.2s; /* Habilita a transição na transformação. */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .card:hover {
+    /* Aplica um movimento ao passar o mouse sobre o cartão. */
     transform: translateY(-5px);
 }
 
 .card img {
+    /* Define o tamanho da imagem dentro do cartão. */
     width: 50px;
     height: 60px;
     margin-bottom: 10px;
 }
 
 .card p {
+    /* Configura as margens e o tamanho da fonte para o texto no cartão. */
     margin: 0;
     font-size: 18px;
     font-weight: bold;
     color: #333;
 }
 
-/* Custom colors for each card */
+/* Cores personalizadas para cada cartão */
 .card:nth-child(1) {
     background-color: #e8f4ff;
 }
@@ -93,12 +102,13 @@ body {
     background-color: #e8f4ff;
 }
 
-
-a{
+a {
+    /* Remove o sublinhado dos links. */
     text-decoration: none;
 }
 
-button{
+button {
+    /* Define o cursor e a aparência do botão. */
     cursor: pointer;
     border: white;
     background: none;

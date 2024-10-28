@@ -1,4 +1,5 @@
-body{
+body {
+    /* Configura o layout do corpo da página, centralizando o conteúdo e definindo a cor de fundo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,7 +9,9 @@ body{
     font-family: 'Jost', sans-serif;
     background: #064273 no-repeat center/ cover;
 }
-.main{
+
+.main {
+    /* Define o contêiner principal com dimensões fixas, cor de fundo, bordas arredondadas e sombra */
     width: 350px;
     height: 600px;
     background: #064273;
@@ -16,17 +19,23 @@ body{
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
-#chk{
+
+#chk {
+    /* Esconde o elemento de entrada (checkbox) para uso em interações */
     display: none;
 }
-.signup{
+
+.signup {
+    /* Define o contêiner de inscrição ocupando 100% da largura e altura, com cor de fundo e cor do texto */
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100%;
     background-color: #064273;
     color: #fff;
 }
-label{
+
+label {
+    /* Configura os rótulos com cor, tamanho de fonte, margem e efeitos de transição ao serem interagidos */
     color: #fff;
     font-size: 2.3em;
     justify-content: center;
@@ -36,7 +45,9 @@ label{
     cursor: pointer;
     transition: .5s ease-in-out;
 }
-input{
+
+input {
+    /* Define o formato e layout dos campos de entrada, incluindo margens e bordas arredondadas */
     width: 60%;
     height: 20px;
     background: #e0dede;
@@ -48,7 +59,9 @@ input{
     outline: none;
     border-radius: 5px;
 }
-button{
+
+button {
+    /* Define o botão com dimensões, cor do texto, cor de fundo, tamanho da fonte e características visuais */
     width: 60%;
     height: 40px;
     margin: 10px auto;
@@ -65,25 +78,34 @@ button{
     transition: .2s ease-in;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
+    /* Altera a cor de fundo do botão ao passar o cursor sobre ele */
     background: #ffffff;
 }
-.login{
+
+.login {
+    /* Define um contêiner para o login com altura específica e aplica efeitos de transformação */
     height: 460px;
     background: #eee;
     border-radius: 60% / 10%;
     transform: translateY(-180px);
     transition: .8s ease-in-out;
 }
-.login label{
-    color: #064273;
 
+.login label {
+    /* Especifica a cor do texto para os rótulos dentro do contêiner de login */
+    color: #064273;
 }
-.sla:hover{
+
+.sla:hover {
+    /* Muda a cor do texto e o fundo ao passar o mouse sobre elementos com a classe 'sla' */
     color: #064273;
     background-color: #fff;
 }
-#incorreto{
+
+#incorreto {
+    /* Define a cor do texto e o alinhamento para mensagens de erro */
     color: red;
     text-align: center;
 }
