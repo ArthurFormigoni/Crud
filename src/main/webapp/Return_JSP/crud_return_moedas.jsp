@@ -35,7 +35,7 @@
     <div class="content">
         <div class="headers">
             <h2>Moedas</h2>
-            <form action="aumentar_moedas"><button class="add-user-btn" type="submit">Adicionar Moedas</button></form>
+            <form action="pagina_aumentae_moedas"><button class="add-user-btn" type="submit">Adicionar Moedas</button></form>
         </div>
 
         <div class="table">
