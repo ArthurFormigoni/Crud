@@ -34,7 +34,9 @@
     <div class="content">
         <div class="headers">
             <h2>Poderes</h2>
+            <form action="poderes_page">
             <button class="add-user-btn">Adicionar poderes</button>
+            </form>
         </div>
 
         <div class="table">

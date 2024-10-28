@@ -148,7 +148,7 @@ public class Listar extends Conexao {
         try {
             // Configuração da conexão (substitua com seus dados)
             conectar();
-            String sql = "select * from powerup";  // Substitua com a sua tabela de usuários
+            String sql = "select * from powerup where is_deleted is false";  // Substitua com a sua tabela de usuários
             PreparedStatement stmt = getConnection().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
