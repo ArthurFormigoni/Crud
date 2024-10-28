@@ -22,7 +22,7 @@ public class AdicionarPoder extends HttpServlet {
 
         PowerupDAO pdao = new PowerupDAO();
 
-        pdao.adicionarPoder(nome, quantidade, preco, duracao);
+        pdao.adicionar_poder(nome, quantidade, preco, duracao);
         req.getRequestDispatcher("Return_JSP/adicionar_poder_return.jsp").forward(req, resp);
 
     }

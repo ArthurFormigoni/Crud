@@ -17,9 +17,21 @@ public class CoinsDAO extends Conexao {
 
 
 
+        //CRUD: C = CREATE - INSERT
+        public boolean insert(String sql) {
+            conectar();
+            try {
+                pstmt = conn.prepareStatement(sql);
+                pstmt.execute();
+            } catch (SQLException sqe) {
+                sqe.printStackTrace();
+                return false;
+            }
+            desconectar();
+            return true;
+        }
 
         //CRUD: R = READ - SELECT
-    //Mostra quantas moedas um usuário específico tem
         public ResultSet select( int idUser ) {
             conectar();
             ResultSet rset = null;
@@ -36,7 +48,37 @@ public class CoinsDAO extends Conexao {
         }
 
         //CRUD: U = UPDATE - UPDATE
-    //Adiciona moedas ao BD_Delfis!
+        public boolean update(String sql) {
+            conectar();
+            try {
+                pstmt = conn.prepareStatement(sql);
+
+                pstmt.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+            desconectar();
+            return true;
+        }
+
+        //CRUD: D = DELETE - DELETE
+        public boolean delete(String sql) {
+            try {
+                conectar();
+
+                pstmt = conn.prepareStatement(sql);
+                pstmt.executeUpdate();
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+            desconectar();
+            return true;
+        }
+
     public boolean criarMoedas(int id_moedas,int quantidade){
         try{
             conectar();
@@ -55,17 +97,15 @@ public class CoinsDAO extends Conexao {
         }
     }
 
-
-    //Aumenta a quantidade de moedas de um usuário em específico
-    public boolean aumentarMoedas(int id_moedas, int fk_usuario, int quantidade){
+    public boolean aumentarMoedas(int quantidade, int id_moedas, int fk_usuario){
         try{
             conectar();
 
-            pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moeda = ? AND fk_usuario = ?");
+            pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moedas = ? AND fk_usuario = ?");
+            pstmt.setInt(1,quantidade);
+            pstmt.setInt(2,id_moedas);
+            pstmt.setInt(3,fk_usuario);
 
-            pstmt.setInt(1,id_moedas);
-            pstmt.setInt(2,fk_usuario);
-            pstmt.setInt(3,quantidade);
 
             pstmt.executeUpdate();
             return true;
@@ -78,7 +118,6 @@ public class CoinsDAO extends Conexao {
         }
     }
 
-    //Diminui a quantidade de moedas de um usuário em específico
     public boolean diminuirMoedas(int id_moedas, int fk_usuario, int quantidade) {
         try {
             conectar();
@@ -97,8 +136,6 @@ public class CoinsDAO extends Conexao {
         }
 
     }
-
-    //Mostra Quantas moedas TODOS os usuários tem
     public boolean listarMoedas( int fk_usuario, int quantidade, String nome) {
         try {
             conectar();
@@ -113,6 +150,26 @@ public class CoinsDAO extends Conexao {
             return false;
         }
 
+    }
+    public boolean substituirMoedas(int quantidade, int id_moedas, int fk_usuario){
+        try{
+            conectar();
+
+            pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = ? WHERE id_moedas = ? AND fk_usuario = ?");
+            pstmt.setInt(1,quantidade);
+            pstmt.setInt(2,id_moedas);
+            pstmt.setInt(3,fk_usuario);
+
+
+            pstmt.executeUpdate();
+            return true;
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }
 

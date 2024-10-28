@@ -10,10 +10,10 @@
 
 
     <div class="table-cell actions">
-        <a href="#"><img src="Imagens/pen%201.svg" alt="Edit"></a>
-        <form  >
+        <form action="update_moedas">
             <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
-            <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
+            <button type="submit"><img src="Imagens/pen%201.svg" alt="Edit"></button>
         </form>
     </div>
+
 </div>
