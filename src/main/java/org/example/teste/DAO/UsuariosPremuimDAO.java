@@ -81,7 +81,7 @@ import java.sql.SQLException;
         public boolean deleteUser(int userId) {
             try {
                 conectar();
-                pstmt = getConnection().prepareStatement("update usuario set fk_plano = 1\n" +
+                pstmt = getConnection().prepareStatement("update usuario set fk_plano = 1" +
                         "where id_usuario = ?");
                 pstmt.setInt(1, userId);
                 pstmt.execute();
@@ -94,19 +94,5 @@ import java.sql.SQLException;
             return true;
         }
 
-        public boolean listarUsuarios(int userId) {
-            try {
-                conectar();
-                pstmt = getConnection().prepareStatement("select * from adm = ?")  ;
-                pstmt.setInt(1, userId);
-                pstmt.execute();
-            }catch (Exception e){
-                e.printStackTrace();
-                desconectar();
-                return false;
-            }
-            desconectar();
-            return true;
-        }
     }
 
