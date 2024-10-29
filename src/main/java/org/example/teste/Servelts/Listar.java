@@ -21,7 +21,52 @@ public class Listar extends Conexao {
         try {
             // Configuração da conexão (substitua com seus dados)
             conectar();
-            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM usuario");
+            PreparedStatement stmt = getConn().prepareStatement("select * from usuario join plano on plano.id_plano = usuario.fk_plano where fk_plano = 2");
+            ResultSet rs = stmt.executeQuery();
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado!");
+
+            } else {
+                System.out.println("Registros encontrados!");
+
+            }
+
+            // Processa os resultados do banco de dados e cria objetos UsuariosPremium
+            while (rs.next()) {
+                UsuariosPremium usuario = new UsuariosPremium();
+                usuario.setId_usuario(rs.getInt("id_usuario"));
+                usuario.setFk_ranking(rs.getInt("fk_ranking"));
+                usuario.setFk_plano(rs.getInt("fk_plano"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setDt_nasc(rs.getDate("dt_nasc")); // Use java.sql.Date
+                usuario.setNivel(rs.getInt("nivel"));
+                usuario.setImagem_url(rs.getString("imagem_url"));
+                usuario.setPontos(rs.getInt("pontos"));
+                usuario.setDt_criacao(rs.getDate("dt_criacao")); // Use java.sql.Date
+
+                listaUsuarios.add(usuario);
+            }
+            // Fecha os recursos do banco de dados
+            rs.close();
+            stmt.close();
+            getConnection().close();
+
+        } catch (SQLException  e) {
+            e.printStackTrace();
+        }
+        return listaUsuarios;
+    }
+
+    public List listarUsuario(){
+
+        List<UsuariosPremium> listaUsuarios = new ArrayList<>();
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            conectar();
+            PreparedStatement stmt = getConn().prepareStatement("select * from usuario join plano on plano.id_plano = usuario.fk_plano where fk_plano = 1");
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
@@ -65,7 +110,7 @@ public class Listar extends Conexao {
         try {
             // Configuração da conexão (substitua com seus dados)
             conectar();
-            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM adm");
+            PreparedStatement stmt = getConn().prepareStatement("SELECT * FROM adm");
             ResultSet rs = stmt.executeQuery();
 
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
@@ -107,7 +152,7 @@ public class Listar extends Conexao {
         try {
             // Configuração da conexão (substitua com seus dados)
             conectar();
-            PreparedStatement stmt = getConnection().prepareStatement("SELECT * FROM adm where id_adm = ? ");
+            PreparedStatement stmt = getConn().prepareStatement("SELECT * FROM adm where id_adm = ? ");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 
@@ -149,7 +194,7 @@ public class Listar extends Conexao {
             // Configuração da conexão (substitua com seus dados)
             conectar();
             String sql = "select * from powerup where is_deleted is false";  // Substitua com a sua tabela de usuários
-            PreparedStatement stmt = getConnection().prepareStatement(sql);
+            PreparedStatement stmt = getConn().prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
                 System.out.println("Nenhum registro encontrado!");
@@ -198,7 +243,7 @@ public class Listar extends Conexao {
                     // Defina o valor desse parâmetro no pstmt
                     "GROUP BY usuario.id_usuario, usuario.nome";
 
-            PreparedStatement pstmt = getConnection().prepareStatement(sql);
+            PreparedStatement pstmt = getConn().prepareStatement(sql);
 
             // Definir o parâmetro "?" na query
 

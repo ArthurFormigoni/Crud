@@ -33,7 +33,7 @@
     <div class="content">
         <div class="headers">
             <h2>Users</h2>
-            <button class="add-user-btn">Adicionar premuim a um usuario</button>
+            <form action="adicionar_premuim"><button type="submit" class="add-user-btn">Adicionar premuim a um usuario</button></form>
         </div>
 
         <div class="table">

@@ -13,10 +13,10 @@
     <div class="table-cell actions">
         <a href="#"><img src="Imagens/pen%201.svg" alt="Edit"></a>
 
-        <a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a>
-        <form action="deletar_premuim" method="post">
-            <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
-            <input type="submit" value="Remover Premuim">
+
+        <form action="deletar_usuario_premuim" method="post">
+            <input type="hidden" name="id_user" value="<%= request.getParameter("id") %>">
+            <button type="submit"><a ><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
         </form>
     </div>
 </div>
