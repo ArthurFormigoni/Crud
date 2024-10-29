@@ -23,7 +23,6 @@
             <input type="text" name="name" placeholder="Name" required>
             <input type="text" name="qtd" placeholder="Quantidade" required>
             <input type="number" name="preco" placeholder="Preco" required>
-            <input type="number" name="duracao" placeholder="Duracao" required>
             <button class="sla">Adicionar</button>
         </form>
     </div>

@@ -17,12 +17,11 @@ public class AdicionarPoder extends HttpServlet {
         String nome = req.getParameter("name");
         int quantidade = Integer.parseInt(req.getParameter("qtd"));
         int preco = Integer.parseInt(req.getParameter("preco"));
-        int duracao = Integer.parseInt(req.getParameter("duracao"));
         resp.setContentType("text/html");
 
         PowerupDAO pdao = new PowerupDAO();
 
-        pdao.adicionar_poder(nome, quantidade, preco, duracao);
+        pdao.adicionar_poder(nome, quantidade, preco);
         req.getRequestDispatcher("Return_JSP/adicionar_poder_return.jsp").forward(req, resp);
 
     }
