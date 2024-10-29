@@ -1,4 +1,5 @@
 body {
+    /* Define a fonte padrão, cor de fundo e remove margens e preenchimentos */
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     margin: 0;
@@ -6,16 +7,19 @@ body {
 }
 
 .container {
+    /* Define a largura e centraliza o contêiner com preenchimento */
     width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
-#header2{
+#header2 {
+    /* Centraliza o texto no cabeçalho */
     text-align: center;
 }
 
 .content {
+    /* Define a aparência do conteúdo com cor de fundo, bordas arredondadas, preenchimento e sombra */
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -23,6 +27,7 @@ body {
 }
 
 .headers {
+    /* Organiza os elementos em linha, distribuindo o espaço entre eles */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,11 +35,13 @@ body {
 }
 
 .headers h2 {
+    /* Define o tamanho da fonte do cabeçalho */
     font-size: 24px;
     margin: 0;
 }
 
 .add-user-btn {
+    /* Define a aparência do botão de adicionar usuário */
     background-color: #0c5c9d;
     color: white;
     border: none;
@@ -46,14 +53,17 @@ body {
 }
 
 .add-user-btn:hover {
+    /* Altera a cor de fundo do botão ao passar o cursor sobre ele */
     background-color: #064273;
 }
 
 .table {
+    /* Define a largura total da tabela */
     width: 100%;
 }
 
 .table-header {
+    /* Organiza os cabeçalhos da tabela em linha com aparência distinta */
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -63,6 +73,7 @@ body {
 }
 
 .table-row {
+    /* Organiza as linhas da tabela em linha, com aparência distinta e preenchimento */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,17 +85,20 @@ body {
 }
 
 .column, .table-cell {
+    /* Define a flexibilidade e o alinhamento do texto nas células da tabela */
     flex: 1;
     text-align: left;
     padding: 10px;
 }
 
 .name-cell {
+    /* Organiza o conteúdo da célula de nome em linha, permitindo a inclusão de uma imagem */
     display: flex;
     align-items: center;
 }
 
 .name-cell img {
+    /* Define o tamanho e a forma da imagem na célula de nome */
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -92,25 +106,28 @@ body {
 }
 
 .actions {
+    /* Organiza as ações em linha e define o espaço entre elas */
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
 .actions img {
+    /* Define o tamanho das imagens nas ações e permite o cursor de ponteiro */
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-
 button {
+    /* Define o cursor de ponteiro e remove a borda padrão */
     cursor: pointer;
     border: white;
     background: none;
 }
 
 .imagem-redonda {
+    /* Define o tamanho e a forma da imagem redonda */
     width: 100%;
     height: auto;
     border-radius: 50%;
@@ -118,6 +135,7 @@ button {
 }
 
 .image-container {
+    /* Define o tamanho e a forma do contêiner da imagem, organizando o conteúdo */
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -128,6 +146,7 @@ button {
 }
 
 #header {
+    /* Organiza o cabeçalho com cor de fundo fixa, cor do texto e dimensões */
     display: flex;
     background-color: #064273;
     color: #fff;
@@ -137,6 +156,7 @@ button {
 }
 
 #menu {
+    /* Organiza os itens do menu em linha com espaço entre eles */
     display: flex;
     gap: 30px;
     font-weight: 800;
@@ -144,66 +164,77 @@ button {
 }
 
 a {
+    /* Define a cor e remove a decoração dos links */
     color: white;
     text-decoration: none;
 }
 
 #header-content {
+    /* Organiza o conteúdo do cabeçalho em linha e adiciona preenchimento */
     width: 100%;
     display: flex;
     padding: 20px;
     justify-content: space-between;
-
 }
 
 /* Responsividade */
 /* Regras de responsividade ativadas a partir de 992px */
 @media (max-width: 1292px) {
     .container {
+        /* Ajusta a largura e o preenchimento do contêiner em telas menores */
         width: 95%;
         padding: 10px;
     }
 
     header h1 {
+        /* Reduz o tamanho da fonte do cabeçalho em telas menores */
         font-size: 36px;
     }
 
     .header {
+        /* Altera a direção do flex para coluna e alinha os itens ao início */
         flex-direction: column;
         align-items: flex-start;
     }
 
     .header h2 {
+        /* Reduz o tamanho da fonte do cabeçalho em telas menores */
         font-size: 20px;
         margin-bottom: 10px;
     }
 
     .add-user-btn {
+        /* Reduz o tamanho da fonte e o preenchimento do botão em telas menores */
         font-size: 14px;
         padding: 8px 16px;
     }
 
     .table-header, .table-row {
+        /* Altera a direção do flex para coluna e alinha os itens ao início */
         flex-direction: column;
         align-items: flex-start;
     }
 
     .table-header {
+        /* Ajusta o preenchimento do cabeçalho da tabela em telas menores */
         padding: 5px;
     }
 
     .column, .table-cell {
+        /* Ajusta o preenchimento e a largura das colunas e células em telas menores */
         padding: 5px;
         width: 100%;
     }
 
     .actions {
+        /* Ajusta o alinhamento e o espaço entre as ações em telas menores */
         justify-content: flex-start;
         gap: 10px;
     }
 
     /* Alteração da responsividade para .table-cell */
     .table-cell {
+        /* Ajusta a flexibilidade e a largura das células em telas menores */
         flex: none;
         width: 100%;
         display: block;
@@ -212,24 +243,29 @@ a {
 
 @media (max-width: 768px) {
     header h1 {
+        /* Reduz ainda mais o tamanho da fonte do cabeçalho em telas menores */
         font-size: 28px;
     }
 
     .header h2 {
+        /* Reduz o tamanho da fonte do cabeçalho em telas menores */
         font-size: 18px;
     }
 
     .add-user-btn {
+        /* Reduz o tamanho da fonte e o preenchimento do botão em telas menores */
         font-size: 12px;
         padding: 6px 12px;
     }
 
     .table-header, .table-row {
+        /* Ajusta o preenchimento e a margem das linhas da tabela em telas menores */
         padding: 5px;
         margin: 5px 0;
     }
 
     .column, .table-cell {
+        /* Ajusta o preenchimento e a largura das colunas e células em telas menores */
         padding: 5px;
         width: 100%;
     }

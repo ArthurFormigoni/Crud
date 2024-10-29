@@ -1,4 +1,5 @@
-body{
+body {
+    /* Configura o layout principal para centralizar o conteúdo, com altura mínima de 100vh e um fundo com imagem. */
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,24 +9,32 @@ body{
     font-family: 'Jost', sans-serif;
     background: url("../Imagens/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg") no-repeat center/ cover;
 }
-.main{
+
+.main {
+    /* Define as dimensões e a aparência do container principal, com uma imagem de fundo e sombra. */
     width: 350px;
     height: 500px;
-    background: red;
+    background: red; /* Esta linha pode ser removida, já que a imagem de fundo substitui. */
     overflow: hidden;
     background: url("../Imagens/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg") no-repeat center/ cover;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
-#chk{
+
+#chk {
+    /* Esconde o elemento do checkbox. */
     display: none;
 }
-.signup{
+
+.signup {
+    /* Define a posição do container de registro, ocupando toda a largura e altura. */
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
-label{
+
+label {
+    /* Configura as propriedades do rótulo, centralizando e ajustando a fonte. */
     color: #fff;
     font-size: 2.3em;
     justify-content: center;
@@ -35,7 +44,9 @@ label{
     cursor: pointer;
     transition: .5s ease-in-out;
 }
-input{
+
+input {
+    /* Define as propriedades de entrada de dados, como largura, altura e margens. */
     width: 60%;
     height: 20px;
     background: #e0dede;
@@ -47,7 +58,9 @@ input{
     outline: none;
     border-radius: 5px;
 }
-button{
+
+button {
+    /* Configura as propriedades do botão, como tamanho, cor e forma. */
     width: 60%;
     height: 40px;
     margin: 10px auto;
@@ -64,22 +77,28 @@ button{
     transition: .2s ease-in;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
+    /* Altera a cor de fundo do botão ao passar o mouse. */
     background: #053862;
 }
-.login{
+
+.login {
+    /* Define as dimensões e a transformação do container de login. */
     height: 460px;
     background: #eee;
     border-radius: 60% / 10%;
     transform: translateY(-180px);
     transition: .8s ease-in-out;
 }
-.login label{
-    color: #064273;
 
+.login label {
+    /* Define a cor do rótulo dentro do container de login. */
+    color: #064273;
 }
 
-#incorreto{
+#incorreto {
+    /* Configura a aparência da mensagem de erro. */
     color: red;
     text-align: center;
 }

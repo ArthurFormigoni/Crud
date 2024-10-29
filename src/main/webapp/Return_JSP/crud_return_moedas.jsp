@@ -22,7 +22,7 @@
             <form action="adm"><button type="submit"><a >ADM</a></button></form>
             <form action="moedas"><button type="submit"><a >Moedas</a></button></form>
             <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
-            <a href="https://delfis-project.github.io/delfis-restrict-area">Grafico</a>
+            <a href="https://delfis-project.github.io/delfis-restrict-area">Gráficos</a>
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@
 
         <div class="table">
             <div class="table-header">
-                <div class="column">id_usuario</div>
+                <div class="column">ID</div>
                 <div class="column">Nome</div>
                 <div class="column">Total_moedas</div>
                 <div class="column"></div> <!-- Coluna vazia para ações (editar/excluir) -->

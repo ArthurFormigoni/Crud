@@ -1,9 +1,13 @@
 body {
+    /* Define a fonte padrão e centraliza o texto, além de adicionar uma margem superior */
+
+
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
 }
 .button {
+    /* Configura o botão com margem, preenchimento, tamanho da fonte e características visuais, incluindo cor de fundo e bordas arredondadas */
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
@@ -14,5 +18,6 @@ body {
     border-radius: 5px;
 }
 .button:hover {
+    /* Mantém a cor de fundo do botão ao passar o cursor sobre ele */
     background-color: #064273;
 }

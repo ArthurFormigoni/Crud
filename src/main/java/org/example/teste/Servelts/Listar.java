@@ -235,13 +235,13 @@ public class Listar extends Conexao {
             // Configuração da conexão (substitua com seus dados)
             conectar();
             // Consulta SQL corrigida
-            String sql = "SELECT usuario.id_usuario AS usuario_id, " +
-                    "usuario.nome AS nome_usuario, " +
-                    "SUM(moedas.quantidade) AS total_moedas " +
-                    "FROM usuario " +
-                    "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario " +
-                    // Defina o valor desse parâmetro no pstmt
-                    "GROUP BY usuario.id_usuario, usuario.nome";
+            String sql = "SELECT usuario.id_usuario AS usuario_id, \n" +
+                    "       usuario.nome AS nome_usuario, \n" +
+                    "       SUM(moedas.quantidade) AS total_moedas \n" +
+                    "FROM usuario \n" +
+                    "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \n" +
+                    "GROUP BY usuario.id_usuario, usuario.nome \n" +
+                    "ORDER BY usuario.id_usuario;";
 
             PreparedStatement pstmt = getConn().prepareStatement(sql);
 
