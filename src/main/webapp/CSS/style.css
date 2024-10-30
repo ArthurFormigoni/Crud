@@ -14,7 +14,7 @@ body {
     /* Define as dimensões e a aparência do container principal, com uma imagem de fundo e sombra. */
     width: 350px;
     height: 500px;
-    background: red; /* Esta linha pode ser removida, já que a imagem de fundo substitui. */
+    background: red; 
     overflow: hidden;
     background: url("../Imagens/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg") no-repeat center/ cover;
     border-radius: 10px;
