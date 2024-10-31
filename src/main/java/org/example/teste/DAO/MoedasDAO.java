@@ -1,15 +1,13 @@
 package org.example.teste.DAO;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import org.example.teste.Connection.Conexao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CoinsDAO extends Conexao {
+public class MoedasDAO extends Conexao {
 
         private Connection conn;
         private PreparedStatement pstmt;
