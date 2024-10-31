@@ -56,8 +56,8 @@
                 <jsp:param name="id_usuario" value="<%= coin.getId_usuario() %>" />
                 <jsp:param name="nome" value="<%= coin.getNome() %>" />
                 <jsp:param name="total_moedas" value="<%= coin.getTotal_moedas() %>" />
+                <jsp:param name="id_moedas" value="<%= coin.getId_moedas() %>" />
             </jsp:include>
-
             <%
                 }
             } else {

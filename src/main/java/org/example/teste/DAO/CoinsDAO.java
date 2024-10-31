@@ -151,14 +151,14 @@ public class CoinsDAO extends Conexao {
         }
 
     }
-    public boolean substituirMoedas(int quantidade, int id_moedas, int fk_usuario){
+    public boolean substituirMoedas(int quantidade, int id_moedas, int id_usuario){
         try{
             conectar();
 
             pstmt = getConnection().prepareStatement("UPDATE moedas SET quantidade = ? WHERE id_moedas = ? AND fk_usuario = ?");
             pstmt.setInt(1,quantidade);
             pstmt.setInt(2,id_moedas);
-            pstmt.setInt(3,fk_usuario);
+            pstmt.setInt(3,id_usuario);
 
 
             pstmt.executeUpdate();
