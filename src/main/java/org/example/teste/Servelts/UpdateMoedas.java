@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.teste.DAO.AdmDAO;
-import org.example.teste.DAO.CoinsDAO;
+import org.example.teste.DAO.MoedasDAO;
 import org.example.teste.Model.Moedas;
 
 import java.io.*;
@@ -35,7 +35,7 @@ public class UpdateMoedas extends HttpServlet {
                 int id_moedas = Integer.parseInt(idMoedasStr);
                 int id_usuario = Integer.parseInt(idUsuarioStr);
 
-                CoinsDAO coins2 = new CoinsDAO();
+                MoedasDAO coins2 = new MoedasDAO();
                 coins2.substituirMoedas(quantidade, id_moedas, id_usuario);
             } catch (NumberFormatException e) {
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Quantidade inválida");
