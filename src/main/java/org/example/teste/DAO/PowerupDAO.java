@@ -17,13 +17,12 @@ public class PowerupDAO extends Conexao {
         conectar();
         try {
             pstmt = conn.prepareStatement("INSERT INTO powerup (nome, quantidade, imagem_loja_url, id_powerup, preco_moedas, duracao)" +
-                    " VALUES (?, ?, ?, ?, ?, ?)");
+                    " VALUES (?, ?, 'imagem_url', ?+1, ?, ?, false, false)");
             pstmt.setString(1, nome);
             pstmt.setInt(2, qnt);
-            pstmt.setString(3, img);
-            pstmt.setInt(4, id_powerup);
-            pstmt.setInt(5, preco);
-            pstmt.setDouble(6, duracao);
+            pstmt.setInt(3, id_powerup);
+            pstmt.setInt(4, preco);
+            pstmt.setDouble(5, duracao);
             pstmt.execute();
         } catch (SQLException sqe) {
             sqe.printStackTrace();
