@@ -1,41 +1,43 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: joaocamargo-ieg
-  Date: 28/10/2024
-  Time: 08:36
-  To change this template use File | Settings | File Templates.
+  Informações do autor e data de criação do arquivo (geradas automaticamente pelo IntelliJ IDEA)
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%-- Define o tipo de conteúdo da página como HTML e o idioma como Java --%>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Poder</title>
-    <link rel="stylesheet" href="CSS/styleADM.css">
+    <meta charset="UTF-8"> <%-- Define a codificação de caracteres como UTF-8 --%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <%-- Torna a página responsiva em diferentes dispositivos --%>
+    <title>Adicionar Poder</title> <%-- Define o título da página --%>
+    <link rel="stylesheet" href="CSS/styleADM.css"> <%-- Link para o arquivo de estilo CSS externo --%>
 </head>
 <body>
 <div class="main">
-    <input type="checkbox" id="chk" aria-hidden="true">
+    <input type="checkbox" id="chk" aria-hidden="true"> <%-- Checkbox oculto, possivelmente usado para alternar o formulário --%>
 
     <div class="signup">
-        <form action="adicionarPoder" >
-            <label for="chk" aria-hidden="true">Delfis!</label>
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="text" name="qtd" placeholder="Quantidade" required>
-            <input type="number" name="preco" placeholder="Preco" required>
-            <button class="sla">Adicionar</button>
+        <form action="adicionarPoder" > <%-- Formulário com ação para adicionar um poder --%>
+            <label for="chk" aria-hidden="true">Delfis!</label> <%-- Rótulo do formulário --%>
+            <input type="text" name="name" placeholder="Name" required> <%-- Campo de texto para o nome, obrigatório --%>
+            <input type="text" name="qtd" placeholder="Quantidade" required> <%-- Campo de texto para a quantidade, obrigatório --%>
+            <input type="number" name="preco" placeholder="Preco" required> <%-- Campo numérico para o preço, obrigatório --%>
+            <button class="sla">Adicionar</button> <%-- Botão para enviar o formulário --%>
         </form>
     </div>
-        <% int teste=0;
+
+        <%
+        // Inicializa a variável 'teste' com valor 0
+        int teste=0;
+
+        // Verifica se existe um atributo "verificar" na requisição
         if (request.getAttribute("verificar") != null){
+            // Define 'teste' com o valor do atributo "verificar"
             teste = (int) request.getAttribute("verificar");
         }
-        if (teste==1){
-    %>
-    <p id="incorreto">Dados inseridos incorretamente</p>
-        <%}
 
+        // Se 'teste' for igual a 1, exibe uma mensagem de erro
+        if (teste == 1){
     %>
+    <p id="incorreto">Dados inseridos incorretamente</p> <%-- Mensagem de erro exibida caso os dados estejam incorretos --%>
+        <%} %>
 
 </body>
 </html>
