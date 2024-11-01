@@ -9,73 +9,73 @@ import java.sql.SQLException;
 
 // Classe para gerenciar dados de usuários premium
 public class UsuariosPremuimDAO extends Conexao {
-    private Connection conn;
-    private PreparedStatement pstmt;
+    private Connection conn; // Conexão com o banco de dados
+    private PreparedStatement pstmt; // Comando SQL preparado
 
     // Insere um novo usuário premium
     public boolean insert(String sql) {
-        conectar();
+        conectar(); // Conecta ao banco de dados
         try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.execute();
-            return true;
+            pstmt = conn.prepareStatement(sql); // Prepara o comando SQL
+            pstmt.execute(); // Executa o comando
+            return true; // Retorna sucesso
         } catch (SQLException sqe) {
             sqe.printStackTrace();
-            return false;
+            return false; // Retorna falha
         } finally {
-            desconectar();
+            desconectar(); // Fecha a conexão
         }
     }
 
     // Consulta registros de usuário com base na SQL fornecida
     public ResultSet select(String sql) {
-        conectar();
+        conectar(); // Conecta ao banco de dados
         ResultSet rset = null;
         try {
-            pstmt = conn.prepareStatement(sql);
-            rset = pstmt.executeQuery();
+            pstmt = conn.prepareStatement(sql); // Prepara o comando SQL
+            rset = pstmt.executeQuery(); // Executa a consulta
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            desconectar();
+            desconectar(); // Fecha a conexão
         }
-        return rset;
+        return rset; // Retorna o resultado
     }
 
     // Atualiza usuário para plano premium
     public boolean addPremiumUser(int userId) {
         try {
-            conectar();
+            conectar(); // Conecta ao banco de dados
             pstmt = getConnection().prepareStatement("UPDATE usuario SET fk_plano = 2 WHERE id_usuario = ?");
-            pstmt.setInt(1, userId);
-            pstmt.execute();
-            return true;
+            pstmt.setInt(1, userId); // Define o ID do usuário
+            pstmt.execute(); // Executa a atualização
+            return true; // Retorna sucesso
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return false; // Retorna falha
         } finally {
-            desconectar();
+            desconectar(); // Fecha a conexão
         }
     }
 
-    // Deleta o usuário do plano premium
+    // Remove o usuário do plano premium
     public boolean delete(int userId) {
         try {
-            conectar();
+            conectar(); // Conecta ao banco de dados
             pstmt = getConnection().prepareStatement("UPDATE usuario SET fk_plano = 1 WHERE id_usuario = ?");
-            pstmt.setInt(1, userId);
-            pstmt.execute();
-            return true;
+            pstmt.setInt(1, userId); // Define o ID do usuário
+            pstmt.execute(); // Executa a atualização
+            return true; // Retorna sucesso
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return false; // Retorna falha
         } finally {
-            desconectar();
+            desconectar(); // Fecha a conexão
         }
     }
 
-    // Método para deletar usuário
+    // Método auxiliar para deletar usuário
     public boolean deleteUser(int userId) {
-        return delete(userId);
+        return delete(userId); // Reutiliza o método delete
     }
 }
