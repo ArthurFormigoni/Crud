@@ -237,11 +237,11 @@ public class Listar extends Conexao {
             // Consulta SQL corrigida
             String sql = "SELECT usuario.id_usuario AS usuario_id, \n" +
                     "       usuario.nome AS nome_usuario, \n" +
-                    "       SUM(moedas.quantidade) AS total_moedas \n" +
+                    "       moedas.id_moedas, \n" +
+                    "       moedas.quantidade \n" +
                     "FROM usuario \n" +
                     "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario \n" +
-                    "GROUP BY usuario.id_usuario, usuario.nome \n" +
-                    "ORDER BY usuario.id_usuario;";
+                    "ORDER BY usuario.id_usuario, moedas.id_moedas;";
 
             PreparedStatement pstmt = getConn().prepareStatement(sql);
 
@@ -262,7 +262,8 @@ public class Listar extends Conexao {
                 Usuario_Moedas moedas = new Usuario_Moedas();
                 moedas.setId_usuario(rs.getInt("usuario_id"));
                 moedas.setNome(rs.getString("nome_usuario"));
-                moedas.setTotal_moedas(rs.getInt("total_moedas"));
+                moedas.setId_moedas(rs.getInt("id_moedas"));
+                moedas.setTotal_moedas(rs.getInt("quantidade"));
 
                 listaMoedas.add(moedas);
             }
@@ -277,6 +278,58 @@ public class Listar extends Conexao {
         }
 
         return listaMoedas;
+    }
+
+    public Usuario_Moedas listarMoedasId(int id) {
+        Usuario_Moedas moedas = new Usuario_Moedas();
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            conectar();
+            // Consulta SQL corrigida
+            String sql = "SELECT usuario.id_usuario AS usuario_id, \n" +
+                    "       usuario.nome AS nome_usuario, \n" +
+                    "       moedas.id_moedas, \n" +
+                    "       moedas.quantidade \n" +
+                    "FROM usuario \n" +
+                    "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario\n" +
+                    "where usuario.id_usuario = ?\n" +
+                    "ORDER BY usuario.id_usuario, moedas.id_moedas ;";
+
+            PreparedStatement pstmt = getConn().prepareStatement(sql);
+            pstmt.setInt(1, id);
+
+            // Definir o parâmetro "?" na query
+
+
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado!");
+            } else {
+                System.out.println("Registros encontrados!");
+            }
+
+            // Processa os resultados do banco de dados e cria objetos Usuario_Moedas
+            while (rs.next()) {
+                moedas.setId_usuario(rs.getInt("usuario_id"));
+                moedas.setNome(rs.getString("nome_usuario"));
+                moedas.setId_moedas(rs.getInt("id_moedas"));
+                moedas.setTotal_moedas(rs.getInt("quantidade"));
+
+            }
+
+            // Fecha os recursos do banco de dados
+            rs.close();
+            pstmt.close();
+            getConnection().close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return moedas;
     }
 }//Métodos e Classe - Fim
 

@@ -5,29 +5,50 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.teste.DAO.AdmDAO;
-import org.example.teste.DAO.CoinsDAO;
+import org.example.teste.DAO.MoedasDAO;
 import org.example.teste.Model.Moedas;
 
 import java.io.*;
-@WebServlet(name="mudarMoedas",value = "/mudarMoedas")
-public class UpdateMoedas extends HttpServlet{
+@WebServlet(name="mudarMoedas", value = "/mudarMoedas")
+public class UpdateMoedas extends HttpServlet {
     @Override
-    // Métodos - Início.
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int quantidade = Integer.parseInt(req.getParameter("quantidade"));
-        int id_moedas = Integer.parseInt(req.getParameter("id_moedas"));
-        int fk_usuario = Integer.parseInt(req.getParameter("fk_usuario"));
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        CoinsDAO coins2 = new CoinsDAO();
-        coins2.substituirMoedas(quantidade,id_moedas,fk_usuario);
+
+        // Verifica se 'quantidade' está nulo ou vazio
+        String quantidadeStr = req.getParameter("quantidade");
+        String idMoedasStr = req.getParameter("id_moedas");
+        String idUsuarioStr = req.getParameter("usuario_id");
+
+
+            try {
+                // Tenta converter quantidadeStr para um inteiro
+                int quantidade = Integer.parseInt(quantidadeStr);
+
+                // Verifica outros parâmetros
+
+                if (idMoedasStr == null || idUsuarioStr == null) {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetros 'id_moedas' ou 'fk_usuario' ausentes.");
+                    return;
+                }
+
+                int id_moedas = Integer.parseInt(idMoedasStr);
+                int id_usuario = Integer.parseInt(idUsuarioStr);
+
+                MoedasDAO coins2 = new MoedasDAO();
+                coins2.substituirMoedas(quantidade, id_moedas, id_usuario);
+            } catch (NumberFormatException e) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Quantidade inválida");
+                return;
+            }
 
         // Define o tipo de conteúdo da resposta como HTML
-
         resp.setContentType("text/html");
 
-        // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
+        // Encaminha a requisição e a resposta para a página de retorno
         req.getRequestDispatcher("/Return_JSP/update_return.jsp").forward(req, resp);
     }
-}//Métodos e Classe - Fim
+}
+//Métodos e Classe - Fim
 
 

@@ -11,6 +11,8 @@ public class Usuario_Moedas {
     private int id_usuario;
     private String nome;
     private int total_moedas;
+    private int id_moedas;
+
     //Atributos - Fim
 
 // Métodos - Início
@@ -45,6 +47,14 @@ public class Usuario_Moedas {
         this.total_moedas = total_moedas;
     }
 
+    public void setId_moedas(int id_moedas) {
+        this.id_moedas = id_moedas;
+    }
+
+    public int getId_moedas() {
+        return id_moedas;
+    }
+
     //Getters e Setters - Fim
 
     //toString - Início
@@ -52,6 +62,7 @@ public class Usuario_Moedas {
     public String toString() {
         return
                 "Id_usuario "+ this.id_usuario+
+                "Id_moedas"+ this.id_moedas+
                 "Nome: "+this.nome+
                 "Total_Moedas "+this.total_moedas;
     }//toString - Fim

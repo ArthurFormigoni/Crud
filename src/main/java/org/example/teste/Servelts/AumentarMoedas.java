@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.teste.DAO.AdmDAO;
-import org.example.teste.DAO.CoinsDAO;
+import org.example.teste.DAO.MoedasDAO;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,7 +35,7 @@ public class AumentarMoedas extends HttpServlet {
                 int fkUsuario = Integer.parseInt(fkUsuarioParam);
 
 
-                CoinsDAO coinsDAO = new CoinsDAO();
+                MoedasDAO coinsDAO = new MoedasDAO();
                 coinsDAO.aumentarMoedas(quantidade,idMoedas, fkUsuario);
                 System.out.println("Aumentou as moedas do usuário com o registro ID: " + fkUsuario);
             } else {

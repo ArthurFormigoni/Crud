@@ -11,7 +11,8 @@
 
     <div class="table-cell actions">
         <form action="update_moedas">
-            <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
+            <input type="hidden" name="id_usuario" value="<%= request.getParameter("id_usuario") %>">
+            <input type="hidden" name="id_moedas" value="<%= request.getParameter("id_moedas") %>">
             <button type="submit"><img src="Imagens/pen%201.svg" alt="Edit"></button>
         </form>
     </div>
