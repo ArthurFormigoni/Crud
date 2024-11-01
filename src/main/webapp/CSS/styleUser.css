@@ -1,4 +1,6 @@
 body{
+    /* Define a fonte padrão e centraliza o texto, além de definir a altura miníma para 100vh */
+
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,6 +11,8 @@ body{
     background: #064273 no-repeat center/ cover;
 }
 .main{
+    /* Define as dimensões e a aparência do container principal, com borda curvada e sombriada. */
+
     width: 350px;
     height: 600px;
     background: #064273;
@@ -17,9 +21,13 @@ body{
     box-shadow: 5px 20px 50px #000;
 }
 #chk{
+    /* Esconde o elemento do checkbox. */
+
     display: none;
 }
 .signup{
+    /* Define a posição do container de registro, ocupando toda a largura e altura. */
+
     display: flex;
     position: relative;
     width:100%;
@@ -30,6 +38,8 @@ body{
     color: #fff;
 }
 label{
+    /* Configura as propriedades do rótulo, centralizando e ajustando a fonte. */
+
     color: #fff;
     font-size: 2.3em;
     justify-content: center;
@@ -40,6 +50,8 @@ label{
     transition: .5s ease-in-out;
 }
 input{
+    /* Define as propriedades de entrada de dados, como largura, altura e margens. */
+
     width: 60%;
     height: 20px;
     background: #e0dede;
@@ -54,6 +66,8 @@ input{
 
 
 .login{
+    /* Define as dimensões e a transformação do container de login. */
+
     height: 460px;
     background: #eee;
     border-radius: 60% / 10%;
@@ -61,6 +75,8 @@ input{
     transition: .8s ease-in-out;
 }
 .login label{
+    /* Define a cor do rótulo dentro do container de login. */
+
     color: #064273;
 
 }
@@ -69,6 +85,8 @@ input{
     background-color: #fff;
 }
 #incorreto{
+    /* Configura a aparência da mensagem de erro. */
+
     color: red;
     text-align: center;
 }
@@ -122,6 +140,7 @@ input{
     display: block;
 }
 
+/*Define o estilo todos os paragrafos*/
 p{
     display: flex;
     font-size: 23px;
