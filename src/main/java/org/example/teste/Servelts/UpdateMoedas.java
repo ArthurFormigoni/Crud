@@ -4,9 +4,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.DAO.AdmDAO;
 import org.example.teste.DAO.MoedasDAO;
-import org.example.teste.Model.Moedas;
+
 
 import java.io.*;
 @WebServlet(name="mudarMoedas", value = "/mudarMoedas")

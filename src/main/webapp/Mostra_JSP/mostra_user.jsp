@@ -11,7 +11,12 @@
     <div class="table-cell"><%= request.getParameter("pontos") %></div>
     <div class="table-cell"><%= request.getParameter("data_criacao") %></div>
     <div class="table-cell actions">
-        <a href="#"><img src="Imagens/pen%201.svg" alt="Edit"></a>
+
+
+        <form action="update_user">
+            <button><a ><img src="Imagens/pen%201.svg" alt="Edit"></a></button>
+            <input type="hidden" name="id_user" value="<%= request.getParameter("id") %>">
+        </form>
 
 
         <form action="deletar_usuario_premuim" method="post">

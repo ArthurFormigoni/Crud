@@ -51,7 +51,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException  e) {
             e.printStackTrace();
@@ -96,12 +96,57 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException  e) {
             e.printStackTrace();
         }
         return listaUsuarios;
+    }
+    public UsuariosPremium listarUsuarioPremuimID(int id){
+        UsuariosPremium usuarios = new UsuariosPremium();
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            conectar();
+            PreparedStatement stmt = getConn().prepareStatement("select * from usuario join plano on plano.id_plano = usuario.fk_plano where fk_plano = 2 and id_usuario = ?");
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado!");
+
+            } else {
+                System.out.println("Registros encontrados!");
+
+            }
+
+            // Processa os resultados do banco de dados e cria objetos Adm_
+            while (rs.next()) {
+                usuarios.setId_usuario(rs.getInt("id_usuario"));
+                usuarios.setFk_ranking(rs.getInt("fk_ranking"));
+                usuarios.setFk_plano(rs.getInt("fk_plano"));
+                usuarios.setNome(rs.getString("nome"));
+                usuarios.setEmail(rs.getString("email"));
+                usuarios.setSenha(rs.getString("senha"));
+                usuarios.setDt_nasc(rs.getDate("dt_nasc")); // Use java.sql.Date
+                usuarios.setNivel(rs.getInt("nivel"));
+                usuarios.setImagem_url(rs.getString("imagem_url"));
+                usuarios.setPontos(rs.getInt("pontos"));
+                usuarios.setDt_criacao(rs.getDate("dt_criacao"));
+                usuarios.setDt_validade(rs.getDate("dt_validade"));
+
+
+            }
+            // Fecha os recursos do banco de dados
+            rs.close();
+            stmt.close();
+            getConn().close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return usuarios;
     }
 
     public List listarAdm(){
@@ -138,7 +183,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -180,7 +225,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -220,7 +265,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             stmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException sql) {
             sql.printStackTrace();
@@ -271,7 +316,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             pstmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException e) {
             e.printStackTrace();

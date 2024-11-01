@@ -46,7 +46,7 @@ public class UsuariosPremuimDAO extends Conexao {
     public boolean addPremiumUser(int userId) {
         try {
             conectar();
-            pstmt = getConnection().prepareStatement("UPDATE usuario SET fk_plano = 2 WHERE id_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE usuario SET fk_plano = 2 WHERE id_usuario = ?");
             pstmt.setInt(1, userId);
             pstmt.execute();
             return true;
@@ -62,7 +62,7 @@ public class UsuariosPremuimDAO extends Conexao {
     public boolean delete(int userId) {
         try {
             conectar();
-            pstmt = getConnection().prepareStatement("UPDATE usuario SET fk_plano = 1 WHERE id_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE usuario SET fk_plano = 1 WHERE id_usuario = ?");
             pstmt.setInt(1, userId);
             pstmt.execute();
             return true;
@@ -77,5 +77,26 @@ public class UsuariosPremuimDAO extends Conexao {
     // Método para deletar usuário
     public boolean deleteUser(int userId) {
         return delete(userId);
+    }
+
+    public boolean upadateUserPremuim(String nome,String senha , int pontos, String dt_nasc,String email , int userId){
+        try {
+            conectar();
+            pstmt = getConn().prepareStatement("UPDATE usuario SET nome = ? , senha =? ,pontos = ? ,dt_nasc = ? , email = ?  WHERE id_usuario = ?");
+            pstmt.setString(1, nome);
+            pstmt.setString(2, senha);
+            pstmt.setInt(3, pontos);
+            pstmt.setDate(4, java.sql.Date.valueOf(dt_nasc));
+            pstmt.setString(5, email);
+            pstmt.setInt(6, userId);
+            pstmt.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            desconectar();
+        }
+
     }
 }

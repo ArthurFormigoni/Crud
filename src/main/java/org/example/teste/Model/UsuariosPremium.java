@@ -22,6 +22,7 @@ public class UsuariosPremium {
     private Date dt_criacao; // ou LocalDate
     private String login;
     private int fk_role_usuario;
+    private Date dt_validade;
     //Atributos - Fim
 
 // Métodos - Início
@@ -30,7 +31,7 @@ public class UsuariosPremium {
     public UsuariosPremium() {
     }
 
-    public UsuariosPremium(int id_usuario, int fk_ranking, int fk_plano, String nome, String email, String senha, Date dt_nasc, int nivel, String imagem_url, int pontos, Date dt_criacao, String login, int fk_role_usuario) {
+    public UsuariosPremium(int id_usuario, int fk_ranking, int fk_plano, String nome, String email, String senha, Date dt_nasc, int nivel, String imagem_url, int pontos, Date dt_criacao, String login, int fk_role_usuario, Date dt_validade) {
         this.id_usuario = id_usuario;
         this.fk_ranking = fk_ranking;
         this.fk_plano = fk_plano;
@@ -44,7 +45,9 @@ public class UsuariosPremium {
         this.dt_criacao = dt_criacao;
         this.login = login;
         this.fk_role_usuario = fk_role_usuario;
+        this.dt_validade = dt_validade;
     }
+
     //Construtor - Fim
 
     //Getters e Setters - Início
@@ -151,13 +154,21 @@ public class UsuariosPremium {
     public void setFk_role_usuario(int fk_role_usuario) {
         this.fk_role_usuario = fk_role_usuario;
     }
+
+    public Date getDt_validade() {
+        return dt_validade;
+    }
+
+    public void setDt_validade(Date dt_validade) {
+        this.dt_validade = dt_validade;
+    }
     //Getters e Setters - Fim
 
     //toString - Início
     public String toString() {
         return "Nome: " + this.nome + "Senha: " + this.senha + "Email: " + this.email + "Data Nacimento: " + this.dt_nasc +
                 "Level: " + this.nivel + "Url: " + this.imagem_url + "Pontos: " + this.pontos + "Data Abertura: " + this.dt_criacao +
-                "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano+"login: "+this.login+"fk_role_usuario: "+this.fk_role_usuario;
+                "Ranking: " + this.fk_ranking + "Id: " + this.id_usuario + "Id do plano: " + this.fk_plano+"login: "+this.login+"fk_role_usuario: "+this.fk_role_usuario+"Data de validade: "+this.dt_validade;
     }//toString - Fim
 
 }//Métodos e Classe - Fim
