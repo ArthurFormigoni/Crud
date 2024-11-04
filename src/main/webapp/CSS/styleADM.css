@@ -76,3 +76,9 @@ h1 {
     color: white;
     margin-top: 20px;
 }
+
+#chk {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+    }
