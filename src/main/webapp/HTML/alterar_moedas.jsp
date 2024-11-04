@@ -13,8 +13,11 @@
     <div class="signup"> <!-- Seção do formulário de cadastro -->
         <form action="aumentar_moedas"> <!-- Formulário que envia dados para o servidor -->
             <label for="chk" aria-hidden="true">Delfis!</label> <!-- Rótulo do formulário -->
+            <p>Quantidade</p>
             <input type="text" name="quantidade" placeholder="quantidade" required> <!-- Campo para inserir a quantidade -->
+            <p>FK_usuario</p>
             <input type="text" name="fk_usuario" placeholder="fk_usuario" required> <!-- Campo para inserir o ID do usuário -->
+            <p>ID_Moedas</p>
             <input type="text" name="id_moedas" placeholder="id_moedas" required> <!-- Campo para inserir o ID das moedas -->
             <button class="sla">Adicionar</button> <!-- Botão para enviar o formulário -->
         </form>

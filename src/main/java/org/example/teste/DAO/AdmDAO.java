@@ -6,7 +6,7 @@ import org.example.teste.Connection.Conexao;
 
 import java.sql.*;
 
-// Classe AdmDAO, que herda da classe Conexao
+// Classe AdmDAO, que herda da classe Conexao,0
 public class AdmDAO extends Conexao {
     private PreparedStatement pstmt; // Declaração do objeto PreparedStatement para executar consultas SQL
 
