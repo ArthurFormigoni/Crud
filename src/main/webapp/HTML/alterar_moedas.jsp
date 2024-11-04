@@ -26,7 +26,7 @@
     <%
         int teste = 0; // Variável para verificar a condição de erro
 
-        // Se o atributo "verificar" existir na requisição, ele atualiza o valor de 'teste'
+        // Se o atributo "verificar" existir na requisição, ele atualiza o valor de "teste"
         if (request.getAttribute("verificar") != null) {
             teste = (int) request.getAttribute("verificar");
         }
