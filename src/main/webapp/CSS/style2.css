@@ -1,4 +1,5 @@
 body {
+    /* Define a fonte padrão e centraliza o texto, além de colocar a margin e padding para 0 */
     font-family: Arial, sans-serif;
     background-color: #092032;
     margin: 0;
@@ -7,16 +8,18 @@ body {
 }
 
 .container {
+    /*Configura o container*/
     width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
 #header2 {
-    text-align: center;
+    text-align: center; /*Alinha o texto para o centro*/
 }
 
 .content {
+    /*Personaliza o container class="content"*/
     background-color: #102F48;
     border-radius: 10px;
     padding: 20px;
@@ -24,6 +27,7 @@ body {
 }
 
 .headers {
+    /*Personaliza uma classe de cabeçalho*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,12 +35,14 @@ body {
 }
 
 .headers h2 {
+    /*Personaliza o h2 dessa classe*/
     font-size: 24px;
     margin: 0;
     color: white;
 }
 
 .add-user-btn {
+    /*Configura o botão de add user*/
     background-color: #064273;
     color: white;
     border: none;
@@ -48,14 +54,17 @@ body {
 }
 
 .add-user-btn:hover {
+    /*Configura o hover*/
     background-color: #03355D;
 }
 
 .table {
+    /*Configura uma tabela*/
     width: 100%;
 }
 
 .table-header {
+    /*Configura o  cabeçalho da tabela*/
     display: flex;
     justify-content: space-between;
     padding: 10px;
