@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.teste.Listar.Listar;
 
 import java.io.*;
 //Importações - Fim
@@ -30,6 +31,6 @@ public class Adicionar_premuim extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/HTML/pagina_adicionar_premuim.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Adicionar_JSP/pagina_adicionar_premuim.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

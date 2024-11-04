@@ -1,6 +1,6 @@
 //Importações  - Início
 
-package org.example.teste.Servelts;
+package org.example.teste.Listar;
 
 import org.example.teste.Connection.Conexao;
 import org.example.teste.Model.*;
@@ -150,7 +150,7 @@ public class Listar extends Conexao {
     }
 
     public List listarAdm(){
-        List<Adm_> listaADM = new ArrayList<>();
+        List<Adm> listaADM = new ArrayList<>();
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
@@ -168,7 +168,7 @@ public class Listar extends Conexao {
 
             // Processa os resultados do banco de dados e cria objetos Adm_
             while (rs.next()) {
-                Adm_ adm = new Adm_();
+                Adm adm = new Adm();
                 adm.setId_adm(rs.getInt("id_adm")); // Aqui está correto
                 adm.setLogin(rs.getString("login")); // Aqui está correto
                 adm.setSenha(rs.getString("senha")); // Aqui está correto
@@ -191,8 +191,8 @@ public class Listar extends Conexao {
         return listaADM;
     }
 
-    public Adm_ listarAdmID(int id){
-        Adm_ adm = new Adm_();
+    public Adm listarAdmID(int id){
+        Adm adm = new Adm();
         // Conectar ao banco de dados e buscar os dados
         try {
             // Configuração da conexão (substitua com seus dados)
@@ -368,7 +368,7 @@ public class Listar extends Conexao {
             // Fecha os recursos do banco de dados
             rs.close();
             pstmt.close();
-            getConnection().close();
+            getConn().close();
 
         } catch (SQLException e) {
             e.printStackTrace();

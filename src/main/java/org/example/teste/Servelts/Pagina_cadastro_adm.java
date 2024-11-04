@@ -20,7 +20,7 @@ public class Pagina_cadastro_adm extends HttpServlet {
     // Método doGet para tratar requisições HTTP GET
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html"); // Define o tipo de conteúdo da resposta
-        request.getRequestDispatcher("HTML/pagina_cadastroADM.jsp").forward(request, response);
+        request.getRequestDispatcher("Cadastro_JSP/pagina_cadastroADM.jsp").forward(request, response);
         // Redireciona a requisição para a página JSP "pagina_cadastroADM.jsp"
     }
 }

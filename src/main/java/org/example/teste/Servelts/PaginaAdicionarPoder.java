@@ -22,7 +22,7 @@ public class PaginaAdicionarPoder extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        request.getRequestDispatcher("HTML/adicionar_poder.jsp").forward(request, response);
+        request.getRequestDispatcher("Adicionar_JSP/adicionar_poder.jsp").forward(request, response);
 
     }
 }//Métodos e Classe - Fim

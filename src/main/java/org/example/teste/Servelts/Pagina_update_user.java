@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.teste.Listar.Listar;
 
 import java.io.*;
 //Importações - Fim
@@ -26,6 +27,6 @@ public class Pagina_update_user extends HttpServlet {
         resp.setContentType("text/html");
 
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/HTML/pagina_update_usuarioPremuim.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Update_JSP/pagina_update_usuarioPremuim.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

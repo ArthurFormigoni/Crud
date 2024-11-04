@@ -1,4 +1,4 @@
-<%@ page import="org.example.teste.Model.Adm_" %>
+<%@ page import="org.example.teste.Model.Adm" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>

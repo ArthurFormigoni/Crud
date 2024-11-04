@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="org.example.teste.Model.Adm_" %>
+<%@ page import="org.example.teste.Model.Adm" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,9 +52,9 @@
 
             <!-- Iterando sobre a lista de administradores -->
             <%
-                List<Adm_> administradores = (List<Adm_>) request.getAttribute("listaADM");
+                List<Adm> administradores = (List<Adm>) request.getAttribute("listaADM");
                 if (administradores != null && !administradores.isEmpty()) {
-                    for (Adm_ adm : administradores) {
+                    for (Adm adm : administradores) {
             %>
             <jsp:include page="/Mostra_JSP/mostra_adm.jsp">
                 <jsp:param name="imagem_url" value="<%= adm.getImagem_url() %>" />

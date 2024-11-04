@@ -29,12 +29,10 @@ public class Conexao {
         }
     }
 
-    // Método para obter a conexão atual
-    public Connection getConnection() {
-        return conn; // Retorna o objeto de conexão
-    }
 
-    // Método alternativo para obter a conexão atual
+
+
+    // Método para obter a conexão atual
     public Connection getConn() {
         return conn; // Retorna o objeto de conexão
     }

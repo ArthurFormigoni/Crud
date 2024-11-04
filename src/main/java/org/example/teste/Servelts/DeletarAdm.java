@@ -6,8 +6,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.teste.Listar.Listar;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 
 // Servlet mapeado para deletar administradores via URL "/deletar_adm"
 @WebServlet(name = "deletar_adm", value = "/deletar_adm")

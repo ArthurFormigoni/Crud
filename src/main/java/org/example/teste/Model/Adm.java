@@ -1,6 +1,12 @@
-package Classes;
+//Importações - Início
 
-public class Adm_ {
+package org.example.teste.Model;
+
+//Importações - Fim
+
+//Classe - Início
+public class Adm {
+    //Atributos - Início
     String login;
     String senha;
     String nome;
@@ -9,8 +15,13 @@ public class Adm_ {
     String dt_criacao;
     String email;
     int id_adm;
+    //Atributos - Fim
 
-    public Adm_(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
+    //Métodos - Início
+    //Construtor - Início
+    public Adm(){}
+
+    public Adm(String login, String senha, String nome, String data_nascimento, String imagem_url, String dt_criacao, String email, int id_adm) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
@@ -19,7 +30,10 @@ public class Adm_ {
         this.dt_criacao = dt_criacao;
         this.email = email;
         this.id_adm = id_adm;
-    }
+    }//Construtor - Fim
+
+
+    //Getters e Setters - Início
 
     public String getLogin() {
         return login;
@@ -84,8 +98,9 @@ public class Adm_ {
     public void setId_adm(int id_adm) {
         this.id_adm = id_adm;
     }
+    //Getters e Setters - Fim
 
-
+   //toString - Início
     @Override
     public String toString() {
         return "Login: "+this.login+
@@ -96,5 +111,7 @@ public class Adm_ {
                 "Dt_criacao: "+this.dt_criacao+
                 "Email: "+this.email+
                 "Id_adm"+this.id_adm ;
-    }
-}
+
+
+    }// toString - Fim
+}//Métodos e Classe - Fim

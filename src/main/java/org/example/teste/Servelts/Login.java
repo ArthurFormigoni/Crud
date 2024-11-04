@@ -5,8 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.Model.Adm_;
-import org.example.teste.Model.Powerup;
+import org.example.teste.Model.Adm;
 
 import java.io.*;
 import java.sql.*;
@@ -27,7 +26,7 @@ public class Login extends HttpServlet {
             PrintWriter out = resp.getWriter();
 
             while (rs.next()) {
-                Adm_ adm = new Adm_();
+                Adm adm = new Adm();
                 adm.setSenha(rs.getString("senha"));
                 adm.setLogin(rs.getString("login"));
                 if (user.equals(adm.getLogin()) && senha.equals(adm.getSenha())) {
