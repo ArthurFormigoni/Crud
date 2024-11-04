@@ -47,9 +47,8 @@ public class CadastrarADM extends HttpServlet {
                 request.setAttribute("verificar", 2);
                 request.getRequestDispatcher("Return_JSP/cadastro_return.jsp").forward(request, response);
 
-            } else {
-                // Dados inválidos: exibe mensagem de erro em HTML
-                out.println("<html><head><title>Erro</title></head><body><h1>Erro</h1></body></html>");
+            }else {
+
             }
 
         } catch (Exception e) {

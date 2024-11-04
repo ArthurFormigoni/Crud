@@ -7,7 +7,7 @@
     <meta charset="UTF-8"> <%-- Define a codificação de caracteres como UTF-8 --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <%-- Torna a página responsiva em diferentes dispositivos --%>
     <title>Adicionar Poder</title> <%-- Define o título da página --%>
-    <link rel="stylesheet" href="CSS/styleADM.css"> <%-- Link para o arquivo de estilo CSS externo --%>
+    <link rel="stylesheet" href="CSS/styleCadastro.css"> <%-- Link para o arquivo de estilo CSS externo --%>
 </head>
 <body>
 <div class="main">

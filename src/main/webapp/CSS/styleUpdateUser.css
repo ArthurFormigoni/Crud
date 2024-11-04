@@ -137,5 +137,16 @@ form button:hover {
     color: red;
     text-align: center;
 }
+.lista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 200px;
+}
+
+ul{
+    background-color: #e0dede;
+    border-radius: 10px;
+}
 
 
