@@ -43,7 +43,7 @@ public class CadastrarADM extends HttpServlet {
 
                 // Dados válidos: cadastra o novo administrador e redireciona para a página de sucesso
                 AdmDAO admDAO = new AdmDAO();
-                admDAO.cadastrarADM(nome, username, password, dt_nasc, email);
+                admDAO.cadastrarADM(username, password, nome, dt_nasc, email);
                 request.setAttribute("verificar", 2);
                 request.getRequestDispatcher("Return_JSP/cadastro_return.jsp").forward(request, response);
 
