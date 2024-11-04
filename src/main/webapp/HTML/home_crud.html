@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a página para ser responsiva -->
-    <title>Painel de Controle</title> <!-- Título da página -->
-    <link rel="stylesheet" href="CSS/home_crud.css"> <!-- Importa o estilo da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="CSS/home_crud.css">
 </head>
 <body>
-<div class="sidebar"> <!-- Barra lateral com informações do administrador -->
-    <img src="Imagens/image%2018.svg" alt="Admin"> <!-- Imagem do administrador -->
-    <h1>Delfis! ADM</h1> <!-- Título da seção de administrador -->
-    <p>Admin</p> <!-- Identificação do usuário como "Admin" -->
-</div>
+    <div class="sidebar">
+        <img src="Imagens/image%2018.svg" alt="Admin">
+        <h1>Delfis! ADM</h1>
+        <p>Admin</p>
+    </div>
+    <div class="main-content">
+        <form action="usuarios_premuim" >
+            <button type="submit">
+                <div class="card">
+                    <img src="Imagens/Vector.svg" alt="Usuario Premium">
+                    <p>Usuario Premium</p>
+                </div>
+            </button>
+        </form>
+        <form action="adm">
+            <button type="submit" >
+                <div class="card">
+                    <img src="Imagens/Vector%201.svg" alt="ADM">
+                    <p>ADM</p>
+                </div>
+            </button>
+        </form>
+        <form action="moedas" >
+            <button type="submit">
+                <div class="card">
+                    <img src="Imagens/Group.svg" alt="Moedas">
+                    <p>Moedas</p>
+                </div>
+            </button>
+        </form>
+        <form action="poderes">
+            <button>
+                <div class="card">
+                    <img src="Imagens/image%2017%20(Traced).svg" alt="Poderes">
+                    <p>Poderes</p>
+                </div>
+            </button>
+        </form>
 
-<div class="main-content"> <!-- Conteúdo principal com formulários e links -->
 
-    <!-- Formulário para acesso à seção de Usuários Premium -->
-    <form action="usuarios_premuim">
-        <button type="submit">
-            <div class="card"> <!-- Card com ícone e descrição -->
-                <img src="Imagens/Vector.svg" alt="Usuario Premium"> <!-- Ícone do usuário premium -->
-                <p>Usuario Premium</p> <!-- Descrição -->
-            </div>
-        </button>
-    </form>
-
-    <!-- Formulário para acesso à seção de administração -->
-    <form action="adm">
-        <button type="submit">
+        <a href="https://delfis-project.github.io/delfis-restrict-area">
             <div class="card">
-                <img src="Imagens/Vector%20(1).svg" alt="ADM"> <!-- Ícone da seção ADM -->
-                <p>ADM</p> <!-- Descrição -->
+                <img src="Imagens/image%2018%20(Traced).svg" alt="Poderes">
+                <p>Grafico</p>
             </div>
-        </button>
-    </form>
+        </a>
 
-    <!-- Formulário para acesso à seção de moedas -->
-    <form action="moedas">
-        <button type="submit">
-            <div class="card">
-                <img src="Imagens/Group.svg" alt="Moedas"> <!-- Ícone de moedas -->
-                <p>Moedas</p> <!-- Descrição -->
-            </div>
-        </button>
-    </form>
 
-    <!-- Formulário para acesso à seção de poderes -->
-    <form action="poderes">
-        <button>
-            <div class="card">
-                <img src="Imagens/image%2017.svg" alt="Poderes"> <!-- Ícone de poderes -->
-                <p>Poderes</p> <!-- Descrição -->
-            </div>
-        </button>
-    </form>
-
-    <!-- Link externo para gráficos do projeto -->
-    <a href="https://delfis-project.github.io/delfis-restrict-area">
-        <div class="card">
-            <img src="Imagens/grafico.svg" alt="Grafico"> <!-- Ícone de gráfico -->
-            <p>Grafico</p> <!-- Descrição -->
-        </div>
-    </a>
-</div>
+    </div>
 </body>
 </html>

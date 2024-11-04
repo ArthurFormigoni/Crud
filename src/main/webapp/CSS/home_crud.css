@@ -1,15 +1,14 @@
 body {
-    /* Define a fonte e configura o layout para ocupar toda a altura da visualização. */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     height: 100vh;
+    color: white;
 }
 
 .sidebar {
-    /* Configura a barra lateral com fundo escuro e centraliza o conteúdo. */
-    background-color: #003366;
+    background-color: #092032;
     width: 20%;
     padding: 20px;
     color: white;
@@ -20,7 +19,6 @@ body {
 }
 
 .sidebar img {
-    /* Define a aparência da imagem na barra lateral, tornando-a circular. */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -28,20 +26,17 @@ body {
 }
 
 .sidebar h1 {
-    /* Configura o título na barra lateral. */
     margin: 0;
     font-size: 24px;
 }
 
 .sidebar p {
-    /* Define as margens e o tamanho da fonte para os parágrafos na barra lateral. */
     margin: 5px 0;
     font-size: 16px;
 }
 
 .main-content {
-    /* Configura a área principal com fundo claro e organiza o conteúdo. */
-    background-color: #f4f4f4;
+    background-color: #102F48;
     width: 80%;
     padding: 20px;
     display: flex;
@@ -51,65 +46,59 @@ body {
 }
 
 .card {
-    /* Define a aparência dos cartões, incluindo tamanho e distribuição do conteúdo. */
     width: 200px;
-    background-color: #ffffff;
+    background-color: #064273;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     margin: 10px;
-    transition: transform 0.2s; /* Habilita a transição na transformação. */
+    transition: transform 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .card:hover {
-    /* Aplica um movimento ao passar o mouse sobre o cartão. */
     transform: translateY(-5px);
 }
 
 .card img {
-    /* Define o tamanho da imagem dentro do cartão. */
     width: 50px;
     height: 60px;
     margin-bottom: 10px;
 }
 
 .card p {
-    /* Configura as margens e o tamanho da fonte para o texto no cartão. */
     margin: 0;
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: white;
 }
 
 /* Cores personalizadas para cada cartão */
 .card:nth-child(1) {
-    background-color: #e8f4ff;
+    background-color: #03355D;
 }
 
 .card:nth-child(2) {
-    background-color: #ffedf0;
+    background-color: #064273;
 }
 
 .card:nth-child(3) {
-    background-color: #fff9e6;
+    background-color: #85C1F2;
 }
 
 .card:nth-child(4) {
-    background-color: #e8f4ff;
+    background-color: #B7DEFF;
 }
 
 a {
-    /* Remove o sublinhado dos links. */
     text-decoration: none;
 }
 
 button {
-    /* Define o cursor e a aparência do botão. */
     cursor: pointer;
-    border: white;
+    border: none;
     background: none;
 }
