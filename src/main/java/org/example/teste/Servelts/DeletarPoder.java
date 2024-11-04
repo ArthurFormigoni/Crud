@@ -5,6 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.example.teste.DAO.PowerupDAO;
+import org.example.teste.Listar.Listar;
 
 @WebServlet(name = "deletar_poder", value = "/deletar_poder")
 public class DeletarPoder extends HttpServlet {
@@ -15,7 +16,7 @@ public class DeletarPoder extends HttpServlet {
             // Captura o ID do administrador enviado no request e tenta deletá-lo do banco de dados
             int id = Integer.parseInt(request.getParameter("id_powerup"));
             PowerupDAO pdao = new PowerupDAO();
-            pdao.deletePoderes(id);
+            pdao.delete(id);
             System.out.println("Deletou o registro com o ID: " + id);
         } catch (Exception e) {
             e.printStackTrace();

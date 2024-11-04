@@ -26,7 +26,7 @@ public class UpdatePoder extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
 
         PowerupDAO pdao = new PowerupDAO();
-        pdao.updatePoder(id, nome, quantidade, preco);
+
         // Define o tipo de conteúdo da resposta como HTML
 
         resp.setContentType("text/html");
