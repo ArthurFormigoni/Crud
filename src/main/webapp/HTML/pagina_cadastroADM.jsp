@@ -28,10 +28,10 @@
     </div>
     <div class="lista">
         <ul>
-            <li>Nome: no mínimo 3 caractéres</li>
-            <li>Login: no mínimo 5 caractéres</li>
-            <li>Senha: deve conter números e letras</li>
-            <li>Email: no mínimo 4 caractéres antes do @</li>
+            <li>Nome: no mínimo 3 digitos</li>
+            <li>Login: no mínimo 5 digitos</li>
+            <li>Senha: deve conter numeros e letras</li>
+            <li>Email: no mínimo 4 digitos antes do @</li>
         </ul>
     </div>
     <% int teste=0;
