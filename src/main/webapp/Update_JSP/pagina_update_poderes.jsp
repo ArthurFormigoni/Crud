@@ -7,18 +7,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal</title>
-    <link rel="stylesheet" href="CSS/styleADM.css">
+    <link rel="stylesheet" href="CSS/moedas.css">
 </head>
 <body>
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
-        <form action="mudarMoedas" method="post">
-            <label for="chk" aria-hidden="true">Delfis!</label>
+        <form action="mudarPoder" method="post">
+            <label for="chk" aria-hidden="true"></label>
+            <h1>DELFIS!</h1>
+            <p>Nome</p>
+            <input type="text" name="nome" placeholder="nome">
             <p>Quantidade</p>
-            <input type="text" name="quantidade" placeholder="quantidade">
-            <input type="hidden" name= "usuario_id" placeholder= "ID_Usuario" value="${moedas.id_usuario}" />
-            <input type="hidden" name= "id_moedas" placeholder= "ID_Moedas" value="${moedas.id_moedas}" />
+            <input type="text" name= "quantidade" placeholder= "quantidade">
+            <p>Preço</p>
+            <input type="text" name= "preco" placeholder= "preco">
+            <input type="hidden" name="poderes" placeholder="poderes" value="${poderes.id_powerup}" />
             <button class="sla">Atualizar</button>
         </form>
 

@@ -25,7 +25,7 @@ public class DeletarPoder extends HttpServlet {
 
         // Após deletar, prepara e redireciona para uma página com a lista atualizada de administradores
         Listar mostra = new Listar();
-        request.setAttribute("listaADM", mostra.listarPoderes());
+        request.setAttribute("listaPoderes", mostra.listarPoderes());
         response.setContentType("text/html");
         request.getRequestDispatcher("Return_JSP/crud_return_poderes.jsp").forward(request, response);
     }

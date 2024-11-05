@@ -7,7 +7,7 @@
     <meta charset="UTF-8"> <%-- Define a codificação de caracteres como UTF-8 --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <%-- Torna a página responsiva em diferentes dispositivos --%>
     <title>Adicionar Poder</title> <%-- Define o título da página --%>
-    <link rel="stylesheet" href="CSS/styleADM.css"> <%-- Link para o arquivo de estilo CSS externo --%>
+    <link rel="stylesheet" href="CSS/moedas.css"> <%-- Link para o arquivo de estilo CSS externo --%>
 </head>
 <body>
 <div class="main">
@@ -15,10 +15,14 @@
 
     <div class="signup">
         <form action="adicionarPoder" > <%-- Formulário com ação para adicionar um poder --%>
-            <label for="chk" aria-hidden="true">Delfis!</label> <%-- Rótulo do formulário --%>
+            <label for="chk" aria-hidden="true"></label> <%-- Rótulo do formulário --%>
+            <h1>DELFIS!</h1>
+            <p>Nome</p>
             <input type="text" name="name" placeholder="Name" required> <%-- Campo de texto para o nome, obrigatório --%>
+            <p>Quantidade</p>
             <input type="text" name="qtd" placeholder="Quantidade" required> <%-- Campo de texto para a quantidade, obrigatório --%>
-            <input type="number" name="preco" placeholder="Preco" required> <%-- Campo numérico para o preço, obrigatório --%>
+            <p>Preço</p>
+            <input type="text" name="preco" placeholder="Preco" required> <%-- Campo numérico para o preço, obrigatório --%>
             <button class="sla">Adicionar</button> <%-- Botão para enviar o formulário --%>
         </form>
     </div>
