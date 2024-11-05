@@ -7,15 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal</title>
-    <link rel="stylesheet" href="CSS/moedas.css">
+    <link rel="stylesheet" href="CSS/styleADM.css">
 </head>
 <body>
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
         <form action="mudarMoedas" method="post">
-            <label for="chk" aria-hidden="true"></label>
-            <h1>DELFIS!</h1>
+            <label for="chk" aria-hidden="true">Delfis!</label>
             <p>Quantidade</p>
             <input type="text" name="quantidade" placeholder="quantidade">
             <input type="hidden" name= "usuario_id" placeholder= "ID_Usuario" value="${moedas.id_usuario}" />

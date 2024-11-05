@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/HTML/adicionar_poder.jsp" value="file://$PROJECT_DIR$/src/main/webapp/HTML" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/HTML/alterar_moedas.jsp" value="file://$PROJECT_DIR$/src/main/webapp/HTML" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/HTML/home_crud.html" value="file://$PROJECT_DIR$/src/main/webapp/HTML" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/HTML/pagina_adicionar_premuim.jsp" value="file://$PROJECT_DIR$/src/main/webapp/HTML" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/HTML/pagina_update.jsp" value="file://$PROJECT_DIR$/src/main/webapp/HTML" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/crud_return.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />

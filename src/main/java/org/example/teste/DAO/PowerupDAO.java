@@ -11,7 +11,7 @@ import java.sql.*;
 public class PowerupDAO extends Conexao {
 
     private PreparedStatement pstmt;
-
+    private ResultSet rs;
 
     // CREATE: insere um novo registro de powerup
     public boolean insert(String nome, int qnt, String img, int id_powerup, int preco, double duracao) {
@@ -51,15 +51,10 @@ public class PowerupDAO extends Conexao {
     }
 
     // UPDATE: executa uma atualização com a consulta SQL fornecida
-    public boolean updatePoder(int id_powerup, String nome, int qnt, double preco) {
+    public boolean update(String sql) {
         conectar();
         try {
-            pstmt = conn.prepareStatement("UPDATE powerup SET nome = ?, quantidade = ?, preco = ? WHERE id_powerup = ?"
-            );
-            pstmt.setString(1, nome);
-            pstmt.setInt(2, qnt);
-            pstmt.setDouble(3, preco);
-            pstmt.setInt(4, id_powerup);
+            pstmt = conn.prepareStatement(sql);
             pstmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,7 +64,6 @@ public class PowerupDAO extends Conexao {
         }
         return true;
     }
-
 
     // DELETE: exclui um registro de powerup pelo ID
     public boolean delete(int id_powerup) {

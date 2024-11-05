@@ -8,7 +8,7 @@
     <div class="table-cell"><%= request.getParameter("nome") %></div>
     <div class="table-cell"><%= request.getParameter("quantidade") %></div>
     <div class="table-cell"><%= request.getParameter("id_powerup") %></div>
-    <div class="table-cell"><%= request.getParameter("preco_poderes") %></div>
+    <div class="table-cell"><%= request.getParameter("preco_moedas") %></div>
     <div class="table-cell"><%= request.getParameter("initial_time") %></div>
     <div class="table-cell"><%= request.getParameter("duracao") %></div>
     <div class="table-cell"><%= request.getParameter("final_time") %></div>
@@ -16,11 +16,16 @@
 
 
     <div class="table-cell actions">
+        <a href="#"><img src="Imagens/pen%201.svg" alt="Edit"></a>
+        <form  >
+            <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
+            <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
+        </form>
         <form action="deletar_poder" method="post">
             <input type="hidden" name="id_powerup" value="<%= request.getParameter("id_powerup") %>">
             <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
         </form>
-        <form action="update_poder" method="get">
+        <form action="update_poder">
             <input type="hidden" name="id_powerup" value="<%= request.getParameter("id_powerup") %>">
             <button type="submit"><img src="Imagens/pen%201.svg" alt="Edit"></button>
         </form>
