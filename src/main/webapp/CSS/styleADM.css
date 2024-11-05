@@ -94,3 +94,9 @@ h1 {
         position: absolute;
         opacity: 0;
     }
+
+#chk {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+    }
