@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a visualização para dispositivos móveis -->
     <title>Portal</title> <!-- Define o título da página -->
-    <link rel="stylesheet" href="CSS/styleADM.css"> <!-- Importa o arquivo CSS externo para estilizar a página -->
+    <link rel="stylesheet" href="CSS/moedas.css"> <!-- Importa o arquivo CSS externo para estilizar a página -->
 </head>
 <body>
 <div class="main"> <!-- Container principal da página -->
@@ -12,7 +12,8 @@
 
     <div class="signup"> <!-- Seção do formulário de cadastro -->
         <form action="aumentar_moedas"> <!-- Formulário que envia dados para o servidor -->
-            <label for="chk" aria-hidden="true">Delfis!</label> <!-- Rótulo do formulário -->
+            <label for="chk" aria-hidden="true"></label> <!-- Rótulo do formulário -->
+            <h1>DELFIS!</h1>
             <p>Quantidade</p>
             <input type="text" name="quantidade" placeholder="quantidade" required> <!-- Campo para inserir a quantidade -->
             <p>FK_usuario</p>
