@@ -50,7 +50,7 @@ public class PowerupDAO extends Conexao {
         return rset;
     }
 
-    // UPDATE: executa uma atualização com a consulta SQL fornecida
+    // UPDATE: executa uma atualização dos atributos com a consulta SQL fornecida
     public boolean update(String sql) {
         conectar();
         try {

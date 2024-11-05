@@ -1,60 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle</title>
-    <link rel="stylesheet" href="CSS/home_crud.css">
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>Painel de Controle</title> <!-- Título da página -->
+    <link rel="stylesheet" href="CSS/home_crud.css"> <!-- Estilo CSS -->
 </head>
 <body>
-<div class="sidebar">
-    <img src="Imagens/image%2018.svg" alt="Admin">
-    <h1>Delfis! ADM</h1>
-    <p>Admin</p>
+<div class="sidebar"> <!-- Barra lateral -->
+    <img src="Imagens/image%2018.svg" alt="Admin"> <!-- Imagem do administrador -->
+    <h1>Delfis! ADM</h1> <!-- Nome do painel -->
+    <p>Admin</p> <!-- Descrição -->
 </div>
-<div class="main-content">
-    <form action="usuarios_premuim" >
+<div class="main-content"> <!-- Conteúdo principal -->
+    <!-- Botão para acessar usuários premium -->
+    <form action="usuarios_premuim">
         <button type="submit">
-            <div class="card">
+            <div class="card"> <!-- Cartão do usuário premium -->
                 <img src="Imagens/Vector.svg" alt="Usuario Premium">
                 <p>Usuario Premium</p>
             </div>
         </button>
     </form>
+
+    <!-- Botão para acessar a página do ADM -->
     <form action="adm">
-        <button type="submit" >
-            <div class="card">
+        <button type="submit">
+            <div class="card"> <!-- Cartão do ADM -->
                 <img src="Imagens/Vector%201.svg" alt="ADM">
                 <p>ADM</p>
             </div>
         </button>
     </form>
-    <form action="moedas" >
+
+    <!-- Botão para acessar a página de moedas -->
+    <form action="moedas">
         <button type="submit">
-            <div class="card">
+            <div class="card"> <!-- Cartão de moedas -->
                 <img src="Imagens/Group.svg" alt="Moedas">
                 <p>Moedas</p>
             </div>
         </button>
     </form>
+
+    <!-- Botão para acessar a página de poderes -->
     <form action="poderes">
         <button>
-            <div class="card">
+            <div class="card"> <!-- Cartão de poderes -->
                 <img src="Imagens/image%2017%20(Traced).svg" alt="Poderes">
                 <p>Poderes</p>
             </div>
         </button>
     </form>
 
-
+    <!-- Link para gráfico externo -->
     <a href="https://delfis-project.github.io/delfis-restrict-area">
-        <div class="card">
-            <img src="Imagens/image%2018%20(Traced).svg" alt="Poderes">
+        <div class="card"> <!-- Cartão do gráfico -->
+            <img src="Imagens/image%2018%20(Traced).svg" alt="Grafico">
             <p>Grafico</p>
         </div>
     </a>
-
-
 </div>
 </body>
 </html>
