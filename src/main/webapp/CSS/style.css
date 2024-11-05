@@ -1,104 +1,89 @@
 body {
-    /* Configura o layout principal para centralizar o conteúdo, com altura mínima de 100vh e um fundo com imagem. */
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    font-family: 'Jost', sans-serif;
-    background: url("../Imagens/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg") no-repeat center/ cover;
+    height: 100vh;
+    background: radial-gradient(58.43% 103.88% at 56.74% 50%, #092032 0%, #03355D 100%);
 }
 
-.main {
-    /* Define as dimensões e a aparência do container principal, com uma imagem de fundo e sombra. */
-    width: 350px;
-    height: 500px;
-    background: red; 
-    overflow: hidden;
-    background: url("../Imagens/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg") no-repeat center/ cover;
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
+.login-container {
+    width: 410px;
+    height: 491px;
+    background: rgba(6, 66, 115, 0.28); /* #064273 com opacidade */
+    backdrop-filter: blur(8.89323px);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 80px;
+    gap: 40px;
+    box-sizing: border-box;
 }
 
-#chk {
-    /* Esconde o elemento do checkbox. */
-    display: none;
-}
-
-.signup {
-    /* Define a posição do container de registro, ocupando toda a largura e altura. */
-    position: relative;
+.login-title {
     width: 100%;
-    height: 100%;
-}
-
-label {
-    /* Configura as propriedades do rótulo, centralizando e ajustando a fonte. */
-    color: #fff;
-    font-size: 2.3em;
-    justify-content: center;
-    display: flex;
-    margin: 60px;
     font-weight: bold;
-    cursor: pointer;
-    transition: .5s ease-in-out;
-}
-
-input {
-    /* Define as propriedades de entrada de dados, como largura, altura e margens. */
-    width: 60%;
-    height: 20px;
-    background: #e0dede;
-    justify-content: center;
-    display: flex;
-    margin: 20px auto;
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-}
-
-button {
-    /* Configura as propriedades do botão, como tamanho, cor e forma. */
-    width: 60%;
-    height: 40px;
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: #064273;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 20px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: .2s ease-in;
-    cursor: pointer;
-}
-
-button:hover {
-    /* Altera a cor de fundo do botão ao passar o mouse. */
-    background: #053862;
-}
-
-.login {
-    /* Define as dimensões e a transformação do container de login. */
-    height: 460px;
-    background: #eee;
-    border-radius: 60% / 10%;
-    transform: translateY(-180px);
-    transition: .8s ease-in-out;
-}
-
-.login label {
-    /* Define a cor do rótulo dentro do container de login. */
-    color: #064273;
-}
-
-#incorreto {
-    /* Configura a aparência da mensagem de erro. */
-    color: red;
+    font-size: 24px;
+    line-height: 30px;
+    color: white;
     text-align: center;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-size: 13px;
+    line-height: 16px;
+    color: white;
+}
+
+.input-field {
+    padding: 16px;
+    border: 1px solid #85C1F2;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #092032;
+    width: 100%;
+}
+
+.sign-in-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+    background: #102F48;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in-button:hover {
+    background: #03355D; /* Tom de destaque ao passar o mouse */
+}
+
+/* Estilo para a imagem */
+.logo {
+    width: 100px;
+    height: auto;
+}
+/* Estilo para mensagem de erro */
+#incorreto {
+    color: #FF6B6B;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
 }
