@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.teste.Model.Adm" %>
 
+<!-- Código HTML - Início -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -110,7 +111,7 @@
                 }
             } else {
             %>
-            <div>Nenhum administrador encontrado.</div>
+            <div>Nenhum administrador encontrado.</div> <!-- Mensagem de que nada foi encontrado -->
             <%
                 }
             %>
@@ -120,3 +121,4 @@
 <script src="java_script/script.js"></script>
 </body>
 </html>
+<!-- Código HTML - Fim -->
