@@ -1,3 +1,5 @@
+//Importações  - Início
+
 package org.example.teste.Servelts;
 
 import jakarta.servlet.ServletException;
@@ -9,9 +11,13 @@ import org.example.teste.Model.Adm;
 
 import java.io.*;
 import java.sql.*;
+//Importações - Fim
 
+//Classe - Início
 @WebServlet(name="adm",value = "/login")
 public class Login extends HttpServlet {
+
+    // Métodos - Início
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String user = req.getParameter("txt");
@@ -40,4 +46,4 @@ public class Login extends HttpServlet {
             a.printStackTrace();
         }
     }
-}
+}//Métodos e Classe - Fim
