@@ -7,30 +7,31 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.Listar.Listar;
+import org.example.teste.DAO.AdmDAO;
+import org.example.teste.DAO.PowerupDAO;
 
 import java.io.*;
 //Importações - Fim
 
 
 //Classe - Início
-@WebServlet(name="adicionar_premuim",value = "/adicionar_premuim")
-public class Adicionar_premuim extends HttpServlet {
+@WebServlet(name="mudarPoder",value = "/mudarPoder")
+public class UpdatePoder extends HttpServlet {
     @Override
     // Métodos - Início.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Listar mostra = new Listar();
+        String nome =req.getParameter("name");
+        int quantidade = Integer.parseInt(req.getParameter("qtd"));
+        double preco = Double.parseDouble(req.getParameter("preco"));
+        int id = Integer.parseInt(req.getParameter("id"));
 
+        PowerupDAO pdao = new PowerupDAO();
 
-
-        // A lista de usuários é adicionada ao request
-        req.setAttribute("listaUsuarios", mostra.listarUsuario());
+        // Define o tipo de conteúdo da resposta como HTML
 
         resp.setContentType("text/html");
 
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/Adicionar_JSP/pagina_adicionar_premuim.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Return_JSP/update_return.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

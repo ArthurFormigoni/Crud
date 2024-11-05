@@ -30,6 +30,8 @@ public class AdmDAO extends Conexao {
         } catch (Exception e) {
             e.printStackTrace(); // Imprime o stack trace em caso de erro
             return false; // Retorna falso se houver erro
+        }finally {
+            desconectar();
         }
     }
 

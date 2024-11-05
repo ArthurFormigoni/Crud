@@ -9,38 +9,10 @@ import java.sql.SQLException;
 
 // Classe para gerenciar dados de usuários premium
 public class UsuariosPremuimDAO extends Conexao {
-    private Connection conn;
     private PreparedStatement pstmt;
 
     // Insere um novo usuário premium
-    public boolean insert(String sql) {
-        conectar();
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.execute();
-            return true;
-        } catch (SQLException sqe) {
-            sqe.printStackTrace();
-            return false;
-        } finally {
-            desconectar();
-        }
-    }
 
-    // Consulta registros de usuário com base na SQL fornecida
-    public ResultSet select(String sql) {
-        conectar();
-        ResultSet rset = null;
-        try {
-            pstmt = conn.prepareStatement(sql);
-            rset = pstmt.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            desconectar();
-        }
-        return rset;
-    }
 
     // Atualiza usuário para plano premium
     public boolean addPremiumUser(int userId) {

@@ -1,7 +1,7 @@
 package org.example.teste.Servelts;
 
 // Importações necessárias para a configuração do Servlet e acesso ao modelo e DAO de usuários
-import org.example.teste.Model.UsuariosPremium;
+import org.example.teste.Listar.Listar;
 import org.example.teste.DAO.UsuariosPremuimDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 // Configuração do Servlet para responder às requisições na URL /deletar_usuario_premuim
 @WebServlet(name = "deletar_usuario_premuim", value = "/deletar_usuario_premuim")

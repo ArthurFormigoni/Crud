@@ -19,7 +19,7 @@ public class Pagina_aumentar_moedas extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        request.getRequestDispatcher("HTML/alterar_moedas.jsp").forward(request, response);
+        request.getRequestDispatcher("Adicionar_JSP/adicionar_moedas.jsp").forward(request, response);
 
     }
 }//Métodos e Classe - Fim

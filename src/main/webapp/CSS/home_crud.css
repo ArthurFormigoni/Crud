@@ -1,4 +1,5 @@
 body {
+    /* Configura o layout principal para centralizar o conteúdo, com altura mínima de 100vh e um fundo com imagem. */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body {
 }
 
 .sidebar {
+    /*Configura a sidebar*/
     background-color: #092032;
     width: 20%;
     padding: 20px;
@@ -19,6 +21,7 @@ body {
 }
 
 .sidebar img {
+    /*Configura as imgs da sidebar*/
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -26,11 +29,13 @@ body {
 }
 
 .sidebar h1 {
+    /*Configura o h1 da sidebar*/
     margin: 0;
     font-size: 24px;
 }
 
 .sidebar p {
+    /*Configura o paragrafo da sidebar*/
     margin: 5px 0;
     font-size: 16px;
 }
@@ -39,13 +44,14 @@ body {
     background-color: #102F48;
     width: 80%;
     padding: 20px;
-    display: flex;
+    display: flex;/* Necessário para posicionar a lista */
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .card {
+    /*Configura a classe card*/
     width: 200px;
     background-color: #064273;
     border-radius: 8px;
@@ -60,16 +66,19 @@ body {
 }
 
 .card:hover {
+    /*Configuração de hover*/
     transform: translateY(-5px);
 }
 
 .card img {
+    /*Imagem da card*/
     width: 50px;
     height: 60px;
     margin-bottom: 10px;
 }
 
 .card p {
+    /*Paragrafo da card*/
     margin: 0;
     font-size: 18px;
     font-weight: bold;
@@ -93,10 +102,12 @@ body {
     background-color: #B7DEFF;
 }
 
+/* Tira todas as decorações do a*/
 a {
     text-decoration: none;
 }
 
+/*Configura um botão*/
 button {
     cursor: pointer;
     border: none;
