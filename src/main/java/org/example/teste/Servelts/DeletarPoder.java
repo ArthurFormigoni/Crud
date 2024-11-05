@@ -1,26 +1,22 @@
 package org.example.teste.Servelts;
-
-import org.example.teste.DAO.AdmDAO; // Classe de acesso a dados para operações com administradores
+import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import org.example.teste.DAO.PowerupDAO;
 import org.example.teste.Listar.Listar;
 
-import java.io.IOException;
-
-// Servlet mapeado para deletar administradores via URL "/deletar_adm"
-@WebServlet(name = "deletar_adm", value = "/deletar_adm")
-public class DeletarAdm extends HttpServlet {
+@WebServlet(name = "deletar_poder", value = "/deletar_poder")
+public class DeletarPoder extends HttpServlet {
 
     // Método que lida com requisições POST para deletar um administrador
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             // Captura o ID do administrador enviado no request e tenta deletá-lo do banco de dados
-            int id = Integer.parseInt(request.getParameter("id_adm"));
-            AdmDAO adm2 = new AdmDAO();
-            adm2.deleteAdm(id);
+            int id = Integer.parseInt(request.getParameter("id_powerup"));
+            PowerupDAO pdao = new PowerupDAO();
+            pdao.delete(id);
             System.out.println("Deletou o registro com o ID: " + id);
         } catch (Exception e) {
             e.printStackTrace();
@@ -29,9 +25,8 @@ public class DeletarAdm extends HttpServlet {
 
         // Após deletar, prepara e redireciona para uma página com a lista atualizada de administradores
         Listar mostra = new Listar();
-        request.setAttribute("listaADM", mostra.listarAdm());
+        request.setAttribute("listaADM", mostra.listarPoderes());
         response.setContentType("text/html");
-        request.getRequestDispatcher("Return_JSP/crud_return_adm.jsp").forward(request, response);
+        request.getRequestDispatcher("Return_JSP/crud_return_poderes.jsp").forward(request, response);
     }
 }
-

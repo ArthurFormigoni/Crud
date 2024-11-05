@@ -21,5 +21,13 @@
             <input type="hidden" name="id_adm" value="<%= request.getParameter("id_adm") %>">
             <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
         </form>
+        <form action="deletar_poder" method="post">
+            <input type="hidden" name="id_powerup" value="<%= request.getParameter("id_powerup") %>">
+            <button type="submit"><a href="#"><img src="Imagens/trash%201.svg" alt="Delete"></a> </button>
+        </form>
+        <form action="update_poder">
+            <input type="hidden" name="id_powerup" value="<%= request.getParameter("id_powerup") %>">
+            <button type="submit"><img src="Imagens/pen%201.svg" alt="Edit"></button>
+        </form>
     </div>
 </div>

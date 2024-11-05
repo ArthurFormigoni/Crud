@@ -9,20 +9,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - Lista de Poderes</title>
 
-    <link rel="stylesheet" href="CSS/style2.css">
+    <link rel="stylesheet" href="CSS/styleReturn.css">
 </head>
 
 <body>
-<div id="header">
-    <div id="header-content">
-        <form action="home"><button type="submit"><a>Delfis</a></button></form>
-        <div id="menu">
-            <form action="usuarios_premuim"><button type="submit"><a >Usuário Premium</a></button></form>
-            <form action="adm"><button type="submit"><a >ADM</a></button></form>
-            <form action="moedas"><button type="submit"><a >Moedas</a></button></form>
-            <form action="poderes"><button type="submit"><a >Poderes</a></button></form>
-            <a href="https://delfis-project.github.io/delfis-restrict-area">Grafico</a>
-        </div>
+<div class="sidebar">
+    <button id="toggleBtn">☰</button>
+    <div class="menu">
+        <!-- Botão Delfis -->
+        <form action="home" class="menu-item">
+            <button type="submit">
+                <img src="Imagens/home.svg" alt="Ícone Delfis" class="image_icon" >
+                <span>Delfis</span>
+            </button>
+        </form>
+
+        <!-- Botão Usuário Premium -->
+        <form action="usuarios_premuim" method="get" class="menu-item">
+            <button type="submit" >
+                <img src="Imagens/Vector.svg" alt="Ícone Usuário Premium" class="image_icon" >
+                <span>Usuário Premium</span>
+            </button>
+        </form>
+
+        <!-- Botão ADM -->
+        <form action="adm" class="menu-item">
+            <button type="submit" >
+                <img src="Imagens/Vector%201.svg" alt="Ícone ADM" class="image_icon" >
+                <span>ADM</span>
+            </button>
+        </form>
+
+        <!-- Botão Moedas -->
+        <form action="moedas" class="menu-item">
+            <button type="submit" >
+                <img src="Imagens/Group.svg" alt="Ícone Moedas" class="image_icon" >
+                <span>Moedas</span>
+            </button>
+        </form>
+
+        <!-- Botão Poderes -->
+        <form action="poderes" class="menu-item">
+            <button type="submit" >
+                <img src="Imagens/image%2017%20(Traced).svg" alt="Ícone Poderes" class="image_icon" >
+                <span>Poderes</span>
+            </button>
+        </form>
+
+        <!-- Link para Gráfico -->
+        <a href="https://delfis-project.github.io/delfis-restrict-area" class="menu-item" >
+            <img src="Imagens/image%2018%20(Traced).svg" alt="Ícone Gráfico" class="image_icon" >
+            <span>Gráfico</span>
+        </a>
     </div>
 </div>
 <br><br><br><br>
@@ -81,6 +119,6 @@
         </div>
     </div>
 </div>
-
+<script src="java_script/script.js"></script>
 </body>
 </html>
