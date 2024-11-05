@@ -61,6 +61,7 @@
             <img src="Imagens/image%2018%20(Traced).svg" alt="Ícone Gráfico" class="image_icon" >
             <span>Gráfico</span>
         </a>
+
     </div>
 </div>
 <br><br><br><br>

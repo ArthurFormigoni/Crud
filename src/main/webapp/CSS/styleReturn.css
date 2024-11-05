@@ -190,13 +190,16 @@ a {
 .menu-item {
     text-decoration: none;
     color: #fff;
-    padding: 15px;
+    padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     transition: background-color 0.3s, padding-left 0.3s;
+    height: 48px; /* Ajuste a altura para garantir o alinhamento */
 }
+
 
 .menu-item i.icon {
     margin-right: 10px;
@@ -227,6 +230,7 @@ a {
     padding-left: 20px;
     /* Deslocamento no hover */
 }
+
 
 #toggleBtn {
     background: none;
