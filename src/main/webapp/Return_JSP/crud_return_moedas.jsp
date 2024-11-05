@@ -2,7 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.teste.Model.Usuario_Moedas" %>
 
-
+<!-- Código HTML - Início -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -100,7 +100,7 @@
                 }
             } else {
             %>
-            <div>Nenhuma moeda encontrada.</div>
+            <div>Nenhuma moeda encontrada.</div> <!-- Mensagem de que nada foi encontrado -->
             <%
                 }
             %>
@@ -110,3 +110,4 @@
 <script src="java_script/script.js"></script>
 </body>
 </html>
+<!-- Código HTML - Fim -->

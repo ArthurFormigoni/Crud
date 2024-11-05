@@ -1,5 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!-- Código HTML - Início -->
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,8 +11,9 @@
 </head>
 <body>
 <form action="home">
-    <h1>Usuário Administrador Alterado!</h1>
-    <button class="button" type="submit">Voltar para a Página Inicial</button>
+    <h1>Usuário Administrador Alterado!</h1> <!-- Mensagem de sucesso -->
+    <button class="button" type="submit">Voltar para a Página Inicial</button> <!--Volta para Menu dos adm -->
 </form>
 </body>
 </html>
+<!-- Código HTML - Fim -->
