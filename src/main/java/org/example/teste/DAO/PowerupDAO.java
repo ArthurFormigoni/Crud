@@ -45,6 +45,7 @@ public class PowerupDAO extends Conexao {
             desconectar();
         }
         return true;
+
     }
 
     public boolean updatePoder(int id_powerup, String nome, int qnt, double preco) {
