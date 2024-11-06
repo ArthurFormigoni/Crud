@@ -13,23 +13,21 @@
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
-        <form action="mudarPoder" method="post">
-            <label for="chk" aria-hidden="true"></label>
+        <form action="mudarPoder" method="POST">
+            <!-- Campo ID (oculto) -->
+            <input type="hidden" name="id_powerup" value="${param.id_powerup}" />
             <h1>DELFIS!</h1>
+            <label for="nome">Nome do Power-up:</label>
+            <input type="text" id="nome" name="nome" value="${param.nome}" required />
 
-            <p>Nome</p>
-            <input type="text" name="nome" placeholder="nome">
+            <label for="quantidade">Quantidade:</label>
+            <input type="text" id="quantidade" name="quantidade" value="${param.quantidade}" required />
 
-            <p>Quantidade</p>
-            <input type="text" name= "quantidade" placeholder= "quantidade">
+            <label for="preco">Preço (em Moedas):</label>
+            <input type="text" step="0.01" id="preco" name="preco" value="${param.preco}" required />
 
-            <p>Preço</p>
-            <input type="text" name= "preco" placeholder= "preco">
-
-            <input type="hidden" name="poderes" placeholder="poderes" value="${poderes.id_powerup}" />
             <button class="sla">Atualizar</button>
         </form>
-
     </div>
     <%
         int teste = 0;
