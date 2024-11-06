@@ -45,7 +45,7 @@ public class UpdateMoedas extends HttpServlet {
         resp.setContentType("text/html");
 
         // Encaminha a requisição e a resposta para a página de retorno
-        req.getRequestDispatcher("/Return_JSP/update_return.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Return_JSP/update_return_moedas.jsp").forward(req, resp);
     }
 }
 //Métodos e Classe - Fim
