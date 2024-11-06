@@ -23,6 +23,7 @@
             <input type="text" name="qtd" placeholder="Quantidade" required> <%-- Campo de texto para a quantidade, obrigatório --%>
             <p>Preço</p>
             <input type="text" name="preco" placeholder="Preco" required> <%-- Campo numérico para o preço, obrigatório --%>
+            <input type="hidden" name="id_powerup" value="${poderes.id_powerup}">
             <button class="sla">Adicionar</button> <%-- Botão para enviar o formulário --%>
         </form>
     </div>

@@ -39,7 +39,7 @@ public class AdmDAO extends Conexao {
     public boolean deleteAdm(int admId) {
         try {
             conectar(); // Conecta ao banco de dados
-            pstmt = getConn().prepareStatement("DELETE FROM adm WHERE id_adm = ?"); // Prepara a consulta de exclusão
+            pstmt = getConn().prepareStatement("UPDATE adm SET is_deleted = true WHERE id_adm = ?"); // Prepara a consulta de exclusão
             pstmt.setInt(1, admId); // Define o ID do administrador a ser excluído
             pstmt.execute(); // Executa a consulta
         } catch (Exception e) {
@@ -56,7 +56,7 @@ public class AdmDAO extends Conexao {
         try {
             conectar(); // Conecta ao banco de dados
             // Prepara a consulta de atualização
-            pstmt = getConn().prepareStatement("UPDATE adm SET login = ?, senha = ?, nome = ?, dt_nasc = ?, email = ? WHERE id_adm = ?");
+            pstmt = getConn().prepareStatement("UPDATE adm SET login = ?, senha = ?, nome = ?, dt_nasc = ?, email = ?, is_updated = true     WHERE id_adm = ?");
             pstmt.setString(1, login);
             pstmt.setString(2, senha);
             pstmt.setString(3, nome);
