@@ -15,7 +15,7 @@ public class Pagina_update_poder extends HttpServlet {
         int idPowerup = Integer.parseInt(req.getParameter("id_powerup"));
 
         Listar mostra = new Listar();
-        req.setAttribute("poderes", mostra.listarPoderes());
+        req.setAttribute("poderes", mostra.listarPoderPorId(idPowerup));
         resp.setContentType("text/html");
 
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"

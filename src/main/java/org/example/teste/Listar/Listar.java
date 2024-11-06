@@ -190,6 +190,45 @@ public class Listar extends Conexao {
         }
         return listaADM;
     }
+    public Powerup listarPoderPorId(int idPowerup) {
+        Powerup poder = new Powerup();  // Inicializa como null para garantir que não haja valor retornado se o ID não for encontrado
+        // Conectar ao banco de dados e buscar os dados
+        try {
+            // Configuração da conexão (substitua com seus dados)
+            conectar();
+            PreparedStatement stmt = getConn().prepareStatement( "SELECT * FROM powerup WHERE id_powerup = ? AND is_deleted = false");// Usando um filtro pelo ID
+            stmt.setInt(1, idPowerup);
+            ResultSet rs = stmt.executeQuery();
+
+
+            if (!rs.isBeforeFirst()) { // Verifica se o ResultSet está vazio
+                System.out.println("Nenhum registro encontrado para o ID " + idPowerup);
+            } else {
+                System.out.println("Registro encontrado para o ID " + idPowerup);
+                // Processa o resultado do banco de dados e cria o objeto Powerup
+                if (rs.next()) {  // A consulta retornará no máximo um registro devido ao filtro pelo ID
+                    poder.setId_powerup(rs.getInt("id_powerup"));
+                    poder.setNome(rs.getString("nome"));
+                    poder.setQuantidade(rs.getInt("quantidade"));
+                    poder.setImagem_loja_url(rs.getString("imagem_loja_url"));
+                    poder.setPreco_moedas(rs.getInt("preco_moedas"));
+                    poder.setInitial_time(rs.getString("initial_time"));
+                    poder.setDurucao(rs.getString("duracao"));
+                    poder.setFinal_time(rs.getString("final_time"));
+                }
+            }
+
+            // Fecha os recursos do banco de dados
+            rs.close();
+            stmt.close();
+            getConn().close();
+
+        } catch (SQLException sql) {
+            sql.printStackTrace();
+        }
+
+        return poder;
+    }
 
     public Adm listarAdmID(int id){
         Adm adm = new Adm();
@@ -272,6 +311,7 @@ public class Listar extends Conexao {
         }
         return listaPoderes;
     }
+
 
     public List<Usuario_Moedas> listarMoedas() {
         List<Usuario_Moedas> listaMoedas = new ArrayList<>();

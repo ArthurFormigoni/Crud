@@ -98,4 +98,23 @@ public class PowerupDAO extends Conexao {
         }
         return true;
     }
+
+    public boolean updatePoder(int id_powerup, String nome, int qnt, double preco) {
+        conectar();
+        try {
+            pstmt = conn.prepareStatement("UPDATE powerup SET nome = ? , quantidade = ?, preco_moedas = ? WHERE id_powerup = ?");
+            pstmt.setString(1, nome);
+            pstmt.setInt(2, qnt);
+            pstmt.setDouble(3, preco);
+            pstmt.setInt(4, id_powerup);
+
+            pstmt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            desconectar();
+        }
+        return true;
+    }
 }

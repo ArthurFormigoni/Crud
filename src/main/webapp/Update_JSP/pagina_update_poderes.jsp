@@ -16,12 +16,16 @@
         <form action="mudarPoder" method="post">
             <label for="chk" aria-hidden="true"></label>
             <h1>DELFIS!</h1>
+
             <p>Nome</p>
             <input type="text" name="nome" placeholder="nome">
+
             <p>Quantidade</p>
             <input type="text" name= "quantidade" placeholder= "quantidade">
+
             <p>Preço</p>
             <input type="text" name= "preco" placeholder= "preco">
+
             <input type="hidden" name="poderes" placeholder="poderes" value="${poderes.id_powerup}" />
             <button class="sla">Atualizar</button>
         </form>
