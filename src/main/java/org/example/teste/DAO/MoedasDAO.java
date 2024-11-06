@@ -42,7 +42,8 @@ public class MoedasDAO extends Conexao {
             pstmt.setInt(3, id_usuario);
             pstmt.executeUpdate();
             return true;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return false;
         }finally {
