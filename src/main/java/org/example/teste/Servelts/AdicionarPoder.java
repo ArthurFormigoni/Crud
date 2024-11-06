@@ -20,8 +20,8 @@ public class AdicionarPoder extends HttpServlet {
 
         // Obtém os parâmetros 'name', 'quantidade' e 'preco' passados pela requisição
 
-        String nome = req.getParameter("nome");
-        int quantidade = Integer.parseInt(req.getParameter("quantidade"));
+        String nome = req.getParameter("name");
+        int quantidade = Integer.parseInt(req.getParameter("qtd"));
         int preco = Integer.parseInt(req.getParameter("preco"));
 
 
