@@ -19,9 +19,11 @@ public class AdicionarPoder extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // Obtém os parâmetros 'name', 'quantidade' e 'preco' passados pela requisição
-        String nome = req.getParameter("name");
-        int quantidade = Integer.parseInt(req.getParameter("qtd"));
+
+        String nome = req.getParameter("nome");
+        int quantidade = Integer.parseInt(req.getParameter("quantidade"));
         int preco = Integer.parseInt(req.getParameter("preco"));
+        int id_powerup = Integer.parseInt(req.getParameter("id_powerup"));
 
         // Define o tipo de conteúdo da resposta como HTML
         resp.setContentType("text/html");
@@ -30,7 +32,7 @@ public class AdicionarPoder extends HttpServlet {
         PowerupDAO pdao = new PowerupDAO();
 
         // Adiciona um novo poder ao banco de dados usando o DAO
-        pdao.adicionar_poder(nome, quantidade, preco);
+        pdao.adicionar_poder(nome, quantidade, id_powerup ,preco);
 
         // Redireciona para a página de confirmação após a adição
         req.getRequestDispatcher("Return_JSP/adicionar_poder_return.jsp").forward(req, resp);

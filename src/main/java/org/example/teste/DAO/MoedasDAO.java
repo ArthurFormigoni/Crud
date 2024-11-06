@@ -18,7 +18,7 @@ public class MoedasDAO extends Conexao {
     public boolean aumentarMoedas(int quantidade, int id_moedas, int fk_usuario) {
         try {
             conectar();
-            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = quantidade + ? WHERE id_moedas = ? AND fk_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = quantidade + ?, is_updated = true WHERE id_moedas = ? AND fk_usuario = ?");
             pstmt.setInt(1, quantidade);
             pstmt.setInt(2, id_moedas);
             pstmt.setInt(3, fk_usuario);
@@ -36,7 +36,7 @@ public class MoedasDAO extends Conexao {
     public boolean substituirMoedas(int quantidade, int id_moedas, int id_usuario) {
         try {
             conectar();
-            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = ? WHERE id_moedas = ? AND fk_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE moedas SET quantidade = ?, is_updated = true WHERE id_moedas = ? AND fk_usuario = ?");
             pstmt.setInt(1, quantidade);
             pstmt.setInt(2, id_moedas);
             pstmt.setInt(3, id_usuario);
