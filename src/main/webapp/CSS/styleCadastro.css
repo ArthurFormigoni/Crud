@@ -1,74 +1,83 @@
-/* Configurações gerais */
+/* Configurações gerais para remover margens e paddings padrão e definir box-sizing */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Estilos para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #092032;
-    color: #ffffff;
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    display: flex; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 100vh; /* Define a altura da página como altura da tela */
+    background-color: #092032; /* Fundo azul escuro */
+    color: #ffffff; /* Cor do texto em branco */
 }
 
+/* Container para centralizar o conteúdo da mensagem */
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #ffffff;
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
+    max-width: 400px; /* Limite de largura */
+    width: 100%; /* Largura total no celular */
+    padding: 20px; /* Espaçamento interno */
 }
 
+/* Caixa de mensagem com fundo, bordas arredondadas e sombra */
 .message-box {
-    background-color: #102F48;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #102F48; /* Fundo azul mais claro */
+    padding: 40px 30px; /* Espaçamento interno */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação de transição */
 }
 
+/* Efeito ao passar o mouse na caixa de mensagem */
 .message-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px); /* Eleva a caixa */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Aumenta a sombra */
 }
 
+/* Estilos para o título */
 h1 {
     font-size: 26px;
     margin-bottom: 15px;
     color: #ffffff;
 }
 
+/* Estilos para o parágrafo */
 p {
     font-size: 16px;
     color: #ffffff;
     margin-bottom: 20px;
 }
 
+/* Estilos para o botão */
 .button {
     margin-top: 20px;
-    padding: 12px 30px;
+    padding: 12px 30px; /* Espaçamento interno */
     font-size: 16px;
-    cursor: pointer;
-    background: linear-gradient(90deg, #064273, #03355D);
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    background: linear-gradient(90deg, #064273, #03355D); /* Gradiente no fundo */
     color: #ffffff;
     border: none;
-    border-radius: 8px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
 }
 
+/* Efeito ao passar o mouse no botão */
 .button:hover {
-    background: linear-gradient(90deg, #03355D, #064273);
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(6, 66, 115, 0.3);
+    background: linear-gradient(90deg, #03355D, #064273); /* Inverte as cores do gradiente */
+    transform: scale(1.05); /* Aumenta o botão ligeiramente */
+    box-shadow: 0 4px 12px rgba(6, 66, 115, 0.3); /* Adiciona sombra */
 }
 
+/* Efeito ao clicar no botão */
 .button:active {
-    transform: scale(0.98);
+    transform: scale(0.98); /* Reduz o botão ligeiramente */
 }

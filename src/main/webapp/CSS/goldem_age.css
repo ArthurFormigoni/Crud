@@ -1,13 +1,16 @@
+/* Remove margens e padding de todos os elementos para resetar o estilo padrão */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Configura fonte padrão para o corpo da página */
 body {
     font-family: arial, helvetica, sans-serif;
     font-size: 12px;
 }
 
+/* Estilo do cabeçalho */
 #header {
     display: flex;
     background-color: #064273;
@@ -16,6 +19,7 @@ body {
     width: 100%;
 }
 
+/* Estiliza imagens dos jogos com sombras e bordas arredondadas */
 .img_jogos {
     -moz-box-shadow: 0 3px 10px 0 #000000;
     -webkit-box-shadow: 0 3px 10px 0 #000000;
@@ -24,32 +28,35 @@ body {
     width: 270px;
 }
 
+/* Card para dividir o layout em 3 partes */
 .card {
     width: 33%;
     padding: 10px;
 }
 
+/* Estilo para a área premium */
 #premuim {
     display: flex;
     justify-content: space-between;
     font-size: 55px;
     color: #fff;
     width: 100%;
-
 }
 
+/* Área #area3 com fundo azul */
 #area3 {
     background-color: #064273;
 }
 
+/* Estilo para o conteúdo do cabeçalho */
 #header-content {
     width: 100%;
     display: flex;
     padding: 20px;
     justify-content: space-between;
-
 }
 
+/* Configuração de área secundária */
 #area2 {
     font-size: 20px;
     height: 100%;
@@ -59,22 +66,24 @@ body {
     display: flex;
 }
 
+/* Definição para seções gerais */
 .area {
     height: 400px;
     padding: 40px;
 }
 
+/* Área 1 com fundo azul */
 #area1 {
     background-color: #064273;
 }
 
+/* Estilo para imagem de computador com bordas arredondadas */
 .img_computador {
     width: 100%;
     border-radius: 30px;
 }
 
-#container-img {}
-
+/* Botões sem borda e cursor padrão */
 button {
     cursor: pointer;
     border: none;
@@ -82,6 +91,7 @@ button {
     color: white;
 }
 
+/* Conteúdo da área 1 centralizado */
 #area1-content {
     display: flex;
     width: 100%;
@@ -90,16 +100,19 @@ button {
     align-items: center;
 }
 
+/* Menu de navegação com espaçamento */
 #menu {
     display: flex;
     gap: 30px;
     font-weight: 800;
 }
 
+/* Definição da largura do ícone de golfinho */
 #golfinhoSemFundo {
     width: 200px;
 }
 
+/* Estilo para links do menu */
 .menu li a {
     color: #ffffff;
     text-decoration: none;
@@ -107,6 +120,7 @@ button {
     display: block;
 }
 
+/* Efeito hover para links do menu */
 .menu li a:hover {
     background: #333;
     color: #fff;
@@ -115,6 +129,7 @@ button {
     text-shadow: 0px 0px 5px #fff;
 }
 
+/* Submenu escondido inicialmente */
 .menu li ul {
     position: absolute;
     top: 25px;
@@ -123,19 +138,20 @@ button {
     display: none;
 }
 
+/* Exibe submenu ao passar o mouse */
 .menu li:hover ul,
 .menu li.over ul {
     display: block;
 }
 
+/* Estilo dos itens do submenu */
 .menu li ul li {
     border: 1px solid #c0c0c0;
     display: block;
     width: 150px;
 }
 
-
-
+/* Container de layout flexível */
 container1 {
     display: flex;
     background-color: beige;
@@ -143,20 +159,15 @@ container1 {
     margin-bottom: 30px;
 }
 
-
-
 container2 {
     display: inline-flex;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 5px;
     justify-content: space-evenly;
     width: 99%;
     flex-wrap: wrap;
-
 }
 
+/* Estilo do componente quadrado */
 .quadrado {
     text-align: center;
     padding-top: 10px;
@@ -169,98 +180,84 @@ container2 {
     justify-content: space-evenly;
     -moz-box-shadow: 0 3px 10px 0 #000000;
     -webkit-box-shadow: 0 3px 10px 0 #000000;
-
 }
 
+/* Ajuste de padding para parágrafos */
 p {
     padding-left: 10px;
     padding-right: 10px;
 }
 
+/* Links sem sublinhado */
 a {
     color: white;
     text-decoration: none;
 }
 
+/* Estilo do rodapé */
 .rodape {
     background-color: #064273;
     color: white;
-    height: auto;
-    width: 100%;
     font-size: 14px;
     font-family: helvetica;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
+/* Links do rodapé */
 .rodape a {
     text-decoration: none;
     color: white;
 }
 
-
-
+/* Conteúdo do rodapé em layout flexível */
 .rodape-div {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: auto;
-    align-items: stretch;
     padding: 60px 10px 40px 10px;
     box-sizing: border-box;
 }
 
-.rodape-div-1,
-.rodape-div-2,
-.rodape-div-3,
-.rodape-div-4 {
+/* Colunas individuais do rodapé */
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
     display: flex;
     width: calc(25% - 20px);
     padding: 10px;
     box-sizing: border-box;
 }
 
+/* Texto do rodapé */
 .rodape span {
     font-size: 20px;
     color: white;
 }
 
+/* Direitos reservados no rodapé */
 .rodape-direitos {
     width: 100%;
     background-color: black;
     padding: 10px;
-    margin: 0;
     text-align: center;
-    box-sizing: border-box;
     position: relative;
     bottom: 0;
 }
 
-/* Mobile */
+/* Layout responsivo para mobile */
 @media (max-width: 768px) {
-
-    .rodape-div-1,
-    .rodape-div-2,
-    .rodape-div-3,
-    .rodape-div-4 {
-        width: calc(50% - 20px);
-        /* Ajustado para 50% para 2 colunas */
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: calc(50% - 20px); /* Ajuste para 2 colunas */
         padding: 10px;
         box-sizing: border-box;
-        /* Para garantir que o padding seja incluído na largura total */
     }
 
     .rodape-div {
         padding: 60px 0px 40px 0px;
         box-sizing: border-box;
-        /* Para garantir que o padding seja incluído na largura total */
     }
 }
 
-
-
+/* Fonte personalizada Quicksand */
 .quicksand {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -268,192 +265,97 @@ a {
     font-style: normal;
 }
 
-
-
+/* Estilo do container principal */
 .general {
-
     width: 1519px;
     height: 1024px;
     background: #064273;
-
 }
 
+/* Seção de conteúdo */
 .content {
     margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 24px;
-
-
-    width: 639px;
-    height: 364px;
-    left: 64px;
-    top: 80px;
 }
 
+/* Título do plano premium */
 .plano-premium-hugo {
     width: 639px;
-    height: 184px;
-
-
-    font-style: normal;
     font-weight: 800;
     font-size: 72px;
     line-height: 92px;
-
     color: #FFFFFF;
-
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
+/* Descrição longa */
 .descricao-longa {
     width: 591px;
-    height: 66px;
-
-
-    font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 33px;
-
     color: #FFFFFF;
-
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
+/* Botão primário */
 .primary-button {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     padding: 24px 40px;
-    padding-bottom: 10px;
-    gap: 10px;
     text-align: center;
-
-    width: 108px;
-    height: 36px;
-
     background: #FFFFFF;
     border-radius: 40px;
-
-
-    flex: none;
-    order: 2;
-    flex-grow: 0;
 }
 
+/* Texto do botão "Assinar" */
 .assinar {
-    width: 108px;
-    height: 18px;
-
-
-    font-style: normal;
-    font-weight: 400;
     font-size: 25px;
-    line-height: 18px;
-
     color: #000000;
-
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
-
-
+/* Estilo do frame */
 .frame {
     margin: 20px;
-    box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     padding: 24px 22px;
     gap: 16px;
-
     width: 25%;
-    height: 238px;
-
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: inset -8px -8px 24px rgba(0, 0, 0, 0.25), inset 4px 4px 24px rgba(255, 255, 255, 0.2);
     border-radius: 16px;
-
-    flex: none;
-    order: auto;
-    flex-grow: 0;
     transition: 1s;
 }
 
+/* Ícones dentro do frame */
 .icons {
     width: 32px;
     height: 32px;
-
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
-.vector {
-
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-}
-
-
+/* Título dentro do frame */
 .title {
-    width: 192px;
-    height: 30px;
-
-
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-
     color: #FFFFFF;
-
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
+/* Descrição curta */
 .descricao-curta {
     width: 100%;
-    height: 96px;
-
-
-    font-style: normal;
-    font-weight: 400;
-    font-size: 100%;
     line-height: 24px;
-
     color: #FFFFFF;
-
-    flex: none;
-    order: 2;
-    flex-grow: 0;
 }
 
+/* Efeito hover no frame */
 .frame:hover {
-
     width: 350px;
     height: 288px;
     transition: 1s;
 }
 
-.lista1{
+/* Estilo para lista */
+.lista1 {
     padding-left: 40px;
 }

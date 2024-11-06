@@ -25,7 +25,7 @@
         </form>
 
         <!-- Botão Usuário Premium -->
-        <form action="usuarios_premium" method="get" class="menu-item">
+        <form action="usuarios_premuim" method="get" class="menu-item">
             <button type="submit" >
                 <img src="Imagens/Vector.svg" alt="Ícone Usuário Premium" class="image_icon" >
                 <span>Usuário Premium</span>
@@ -72,7 +72,7 @@
     <div class="content">
         <div class="headers">
             <h2>Users</h2>
-            <form action="adicionar_premium"><button type="submit" class="add-user-btn">Adicionar premuim a um usuario</button></form>
+            <form action="adicionar_premuim"><button type="submit" class="add-user-btn">Adicionar premuim a um usuario</button></form>
         </div>
 
         <div class="table">
