@@ -1,6 +1,6 @@
 // Importações - Início
 
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 
 import java.util.regex.Pattern;
 import jakarta.servlet.ServletException;

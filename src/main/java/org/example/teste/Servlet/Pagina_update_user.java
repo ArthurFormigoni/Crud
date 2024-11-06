@@ -1,32 +1,32 @@
 //Importações  - Início
 
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.DAO.UsuariosPremiumDAO;
+import org.example.teste.Listar.Listar;
 
 import java.io.*;
 //Importações - Fim
 
 
 //Classe - Início
-@WebServlet(name="adicionar_plano",value = "/adicionar_plano")
-public class Adicionar_plano extends HttpServlet {
+@WebServlet(name="pagina_update_user",value = "/update_user")
+public class Pagina_update_user extends HttpServlet {
     @Override
     // Métodos - Início.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UsuariosPremiumDAO usuariosPremiumDAO = new UsuariosPremiumDAO();
-        int id = Integer.parseInt(req.getParameter("id_usuario"));
-        usuariosPremiumDAO.addPremiumUser(id);
+        // Define o tipo de conteúdo da resposta como HTML
+        int id = Integer.parseInt(req.getParameter("id_user"));
+
+        Listar mostra = new Listar();
+        req.setAttribute("user", mostra.listarUsuarioPremuimID(id));
         resp.setContentType("text/html");
 
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/Return_JSP/adicionar_plano_adm.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Update_JSP/pagina_update_usuarioPremuim.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

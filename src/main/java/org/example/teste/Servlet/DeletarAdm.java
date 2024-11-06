@@ -1,4 +1,4 @@
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 
 import org.example.teste.DAO.AdmDAO; // Classe de acesso a dados para operações com administradores
 import jakarta.servlet.ServletException;

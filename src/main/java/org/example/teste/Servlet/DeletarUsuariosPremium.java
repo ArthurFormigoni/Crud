@@ -1,4 +1,4 @@
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 
 // Importações necessárias para a configuração do Servlet e acesso ao modelo e DAO de usuários
 import org.example.teste.Listar.Listar;

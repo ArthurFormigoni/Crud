@@ -1,16 +1,14 @@
 // Importações - Início
 
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.DAO.AdmDAO; // Classe para operações de banco de dados relacionadas ao administrador
 
 import java.io.IOException;
-import java.io.PrintWriter;
 //Importações - Fim
 
 // Define o Servlet "pagina_adm" acessível via URL "/pagina_adm"

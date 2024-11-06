@@ -1,6 +1,6 @@
-package org.example.teste.Servelts;
+package org.example.teste.Servlet;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
