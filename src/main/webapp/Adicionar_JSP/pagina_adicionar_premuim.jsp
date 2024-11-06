@@ -1,7 +1,7 @@
-<%@ page import="org.example.teste.Model.Adm" %> <!-- Importa a classe Adm_ do pacote org.example.teste.Model -->
+
 <%@ page import="java.util.List" %> <!-- Importa a classe List para manipulação de listas -->
 <%@ page import="org.example.teste.Model.UsuariosPremium" %> <!-- Importa a classe UsuariosPremium do pacote org.example.teste.Model -->
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

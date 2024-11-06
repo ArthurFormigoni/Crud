@@ -13,7 +13,7 @@ public class Pagina_update_moedas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Define o tipo de conteúdo da resposta como HTML
-        int idMoedas = Integer.parseInt(req.getParameter("id_moedas"));
+        int idMoedas = Integer.parseInt(req.getParameter("id_usuario"));
 
         Listar mostra = new Listar();
         req.setAttribute("moedas", mostra.listarMoedasId(idMoedas));

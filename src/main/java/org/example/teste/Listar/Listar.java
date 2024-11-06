@@ -372,14 +372,7 @@ public class Listar extends Conexao {
             // Configuração da conexão (substitua com seus dados)
             conectar();
             // Consulta SQL corrigida
-            String sql = "SELECT usuario.id_usuario AS usuario_id, \n" +
-                    "       usuario.nome AS nome_usuario, \n" +
-                    "       moedas.id_moedas, \n" +
-                    "       moedas.quantidade \n" +
-                    "FROM usuario \n" +
-                    "LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario\n" +
-                    "where usuario.id_usuario = ?\n" +
-                    "ORDER BY usuario.id_usuario, moedas.id_moedas ;";
+            String sql = "SELECT usuario.id_usuario AS usuario_id, usuario.nome AS nome_usuario, moedas.id_moedas,moedas.quantidade FROM usuario LEFT JOIN moedas ON usuario.id_usuario = moedas.fk_usuario where usuario.id_usuario = ? ORDER BY usuario.id_usuario, moedas.id_moedas ;";
 
             PreparedStatement pstmt = getConn().prepareStatement(sql);
             pstmt.setInt(1, id);
