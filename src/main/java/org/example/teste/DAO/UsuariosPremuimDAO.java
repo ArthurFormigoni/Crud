@@ -34,7 +34,7 @@ public class UsuariosPremuimDAO extends Conexao {
     public boolean delete(int userId) {
         try {
             conectar();
-            pstmt = getConn().prepareStatement("UPDATE usuario SET fk_plano = 1, is_updated = true WHERE id_usuario = ?");
+            pstmt = getConn().prepareStatement("UPDATE usuario SET fk_plano = 1 WHERE id_usuario = ?");
             pstmt.setInt(1, userId);
             pstmt.execute();
             return true;
