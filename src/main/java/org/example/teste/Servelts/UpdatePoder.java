@@ -42,7 +42,7 @@ public class UpdatePoder extends HttpServlet {
             // Se a atualização for bem-sucedida
             if (sucesso) {
                 // Enviar o usuário para a página de sucesso
-                req.getRequestDispatcher("Return_JSP/update_return.jsp").forward(req, resp);
+                req.getRequestDispatcher("Return_JSP/update_return_poderes.jsp").forward(req, resp);
             } else {
                 // Se não houver alteração, ou se o id não foi encontrado
                 resp.sendError(HttpServletResponse.SC_NOT_MODIFIED, "Nenhuma alteração foi realizada.");

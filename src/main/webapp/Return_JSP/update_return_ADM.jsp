@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="message-box">
-        <h1>Poder Adicionado com Sucesso!</h1> <!-- Mensagem de sucesso -->
-        <p>O poder foi adicionado ao perfil com sucesso. Clique abaixo para retornar à página inicial.</p>
+        <h1>Usuário Administrador Alterado com Sucesso!</h1> <!-- Mensagem de sucesso -->
+        <p>As alterações no usuário administrador foram salvas com sucesso. Clique abaixo para retornar à página inicial.</p>
         <form action="home"><button class="button" type="submit">Voltar para a Página Inicial</button></form>
     </div>
 </div>

@@ -1,23 +1,74 @@
-body {
-    /* Define a fonte padrão e centraliza o texto, além de adicionar uma margem superior */
-
-
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
+/* Configurações gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #092032;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+}
+
+.message-box {
+    background-color: #102F48;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.message-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
 .button {
-    /* Configura o botão com margem, preenchimento, tamanho da fonte e características visuais, incluindo cor de fundo e bordas arredondadas */
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 30px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #064273;
-    color: white;
+    background: linear-gradient(90deg, #064273, #03355D);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
+
 .button:hover {
-    /* Mantém a cor de fundo do botão ao passar o cursor sobre ele */
-    background-color: #064273;
+    background: linear-gradient(90deg, #03355D, #064273);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(6, 66, 115, 0.3);
+}
+
+.button:active {
+    transform: scale(0.98);
 }
