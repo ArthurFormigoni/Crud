@@ -11,8 +11,8 @@ import org.example.teste.Listar.Listar;
 //Importações - Fim
 
 //Classe - Início
-@WebServlet(name = "admServelet", value = "/adm")
-public class AdmServelet extends HttpServlet {
+@WebServlet(name = "admServlet", value = "/adm")
+public class AdmServlet extends HttpServlet {
 
     // Métodos - Início
 

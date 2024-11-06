@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.teste.DAO.AdmDAO;
-import org.example.teste.DAO.UsuariosPremuimDAO;
+import org.example.teste.DAO.UsuariosPremiumDAO;
 
 import java.io.*;
 //Importações - Fim
@@ -27,8 +27,8 @@ public class UpadateUser extends HttpServlet {
         String email = req.getParameter("email");
         int id = Integer.parseInt(req.getParameter("id_user"));
 
-        UsuariosPremuimDAO userpr = new UsuariosPremuimDAO();
-        userpr.upadateUserPremuim(nome,senha,pontos,dt_nasc,email,id);
+        UsuariosPremiumDAO userpr = new UsuariosPremiumDAO();
+        userpr.updateUserPremium(nome,senha,pontos,dt_nasc,email,id);
 
 
         // Define o tipo de conteúdo da resposta como HTML

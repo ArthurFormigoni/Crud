@@ -14,8 +14,8 @@ import java.io.*;
 
 
 //Classe - Início
-@WebServlet(name="adicionar_premuim",value = "/adicionar_premuim")
-public class Adicionar_premuim extends HttpServlet {
+@WebServlet(name="adicionar_premium",value = "/adicionar_premium")
+public class Adicionar_premium extends HttpServlet {
     @Override
     // Métodos - Início.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,6 +31,6 @@ public class Adicionar_premuim extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/Adicionar_JSP/pagina_adicionar_premuim.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Adicionar_JSP/pagina_adicionar_premium.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

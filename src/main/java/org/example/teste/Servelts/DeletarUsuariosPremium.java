@@ -2,7 +2,7 @@ package org.example.teste.Servelts;
 
 // Importações necessárias para a configuração do Servlet e acesso ao modelo e DAO de usuários
 import org.example.teste.Listar.Listar;
-import org.example.teste.DAO.UsuariosPremuimDAO;
+import org.example.teste.DAO.UsuariosPremiumDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 // Configuração do Servlet para responder às requisições na URL /deletar_usuario_premuim
-@WebServlet(name = "deletar_usuario_premuim", value = "/deletar_usuario_premuim")
-public class DeletarUsuariosPremuim extends HttpServlet {
+@WebServlet(name = "deletar_usuario_premium", value = "/deletar_usuario_premium")
+public class DeletarUsuariosPremium extends HttpServlet {
 
     // Método para tratamento de requisições POST
     @Override
@@ -24,7 +24,7 @@ public class DeletarUsuariosPremuim extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id_user"));
 
             // Instancia o DAO de usuários premium para realizar a operação de exclusão
-            UsuariosPremuimDAO usa = new UsuariosPremuimDAO();
+            UsuariosPremiumDAO usa = new UsuariosPremiumDAO();
             usa.deleteUser(id);  // Chama o método de exclusão do DAO
             System.out.println("Deletou o premium com o ID: " + id);
 

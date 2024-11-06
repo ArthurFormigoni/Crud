@@ -7,7 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.teste.DAO.UsuariosPremuimDAO;
+import org.example.teste.DAO.UsuariosPremiumDAO;
 
 import java.io.*;
 //Importações - Fim
@@ -19,9 +19,9 @@ public class Adicionar_plano extends HttpServlet {
     @Override
     // Métodos - Início.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UsuariosPremuimDAO usuariosPremuimDAO = new UsuariosPremuimDAO();
+        UsuariosPremiumDAO usuariosPremiumDAO = new UsuariosPremiumDAO();
         int id = Integer.parseInt(req.getParameter("id_usuario"));
-        usuariosPremuimDAO.addPremiumUser(id);
+        usuariosPremiumDAO.addPremiumUser(id);
         resp.setContentType("text/html");
 
         resp.setContentType("text/html");

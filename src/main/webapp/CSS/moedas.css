@@ -132,3 +132,7 @@ button:hover {
     position: absolute;
     opacity: 0;
 }
+
+p {
+    color: white;
+}
