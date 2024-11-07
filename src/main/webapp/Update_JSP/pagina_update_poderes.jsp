@@ -39,11 +39,11 @@
 
     <!-- Verificação de erro: Se a variável 'verificar' for igual a 1, exibe a mensagem de erro -->
     <%
-        int teste = 0;  <!-- Inicializa a variável teste -->
-        if (request.getAttribute("verificar") != null) {  <!-- Verifica se a variável de atributo 'verificar' existe na requisição -->
-        teste = (int) request.getAttribute("verificar");  <!-- Atribui o valor de 'verificar' à variável teste -->
+        int teste = 0;
+        if (request.getAttribute("verificar") != null) {
+        teste = (int) request.getAttribute("verificar");
         }
-        if (teste == 1) {  <!-- Se o valor de 'teste' for 1, exibe a mensagem de erro -->
+        if (teste == 1) {
     %>
     <p id="incorreto">Dados inseridos incorretamente</p> <!-- Mensagem de erro quando os dados são inseridos incorretamente -->
     <% } %> <!-- Fim do bloco de verificação -->

@@ -41,6 +41,6 @@ public class DeletarUsuariosPremium extends HttpServlet {
         // Define o tipo de conteúdo da resposta como HTML e encaminha para a página de retorno
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("Return_JSP/crud_return.jsp").forward(request, response);
+        request.getRequestDispatcher("Return_JSP/crud_return_user.jsp").forward(request, response);
     }
 }

@@ -23,7 +23,7 @@
         </form>
 
         <!-- Formulário para deletar o usuário -->
-        <form action="deletar_usuario_premuim" method="post">
+        <form action="deletar_usuario_premium" method="post">
             <input type="hidden" name="id_user" value="<%= request.getParameter("id") %>"> <!-- ID do usuário passado como parâmetro oculto -->
             <button type="submit"> <!-- Botão para submeter o formulário de deleção -->
                 <a><img src="Imagens/trash%201.svg" alt="Deletar"></a> <!-- Ícone de deleção -->

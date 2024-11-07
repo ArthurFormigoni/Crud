@@ -30,7 +30,7 @@
             </button>
         </form>
 
-        <form action="usuarios_premuim" method="get" class="menu-item">
+        <form action="usuarios_premium" method="get" class="menu-item">
             <button type="submit" >
                 <img src="Imagens/Vector.svg" alt="Ícone Usuário Premium" class="image_icon" >
                 <span>Usuário Premium</span>
@@ -107,7 +107,6 @@
             %>
             <!-- Inclusão de um arquivo JSP para mostrar as informações do poder -->
             <jsp:include page="/Mostra_JSP/mostra_poderes.jsp">
-                <!-- Passagem de parâmetros para o arquivo incluído -->
                 <jsp:param name="imagem_loja_url" value="<%= pwe.getImagem_loja_url() %>" />
                 <jsp:param name="nome" value="<%= pwe.getNome() %>" />
                 <jsp:param name="quantidade" value="<%= pwe.getQuantidade() %>" />

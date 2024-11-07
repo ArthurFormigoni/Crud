@@ -35,6 +35,6 @@ public class UpadateUser extends HttpServlet {
         resp.setContentType("text/html");
 
         // Encaminha a requisição e a resposta para a página "home_crud.html" localizada na pasta "HTML"
-        req.getRequestDispatcher("/Return_JSP/update_return_ADM.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Return_JSP/update_return_usuario.jsp").forward(req, resp);
     }
 }//Métodos e Classe - Fim

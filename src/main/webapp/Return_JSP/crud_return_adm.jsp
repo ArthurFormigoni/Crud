@@ -30,7 +30,7 @@
             </button>
         </form>
 
-        <form action="usuarios_premuim" method="get" class="menu-item">
+        <form action="usuarios_premium" method="get" class="menu-item">
             <button type="submit" >
                 <img src="Imagens/Vector.svg" alt="Ícone Usuário Premium" class="image_icon" >
                 <span>Usuário Premium</span>
@@ -106,7 +106,6 @@
             %>
             <!-- Inclusão de um arquivo JSP para mostrar as informações do administrador -->
             <jsp:include page="/Mostra_JSP/mostra_adm.jsp">
-                <!-- Passagem de parâmetros para o arquivo incluído -->
                 <jsp:param name="imagem_url" value="<%= adm.getImagem_url() %>" />
                 <jsp:param name="id_adm" value="<%= adm.getId_adm() %>" />
                 <jsp:param name="login" value="<%= adm.getLogin() %>" />

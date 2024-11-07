@@ -30,7 +30,7 @@
             </button>
         </form>
 
-        <form action="usuarios_premuim" method="get" class="menu-item">
+        <form action="usuarios_premium" method="get" class="menu-item">
             <button type="submit" >
                 <img src="Imagens/Vector.svg" alt="Ícone Usuário Premium" class="image_icon" >
                 <span>Usuário Premium</span>
@@ -101,7 +101,6 @@
             %>
             <!-- Inclusão de um arquivo JSP para mostrar as informações da moeda -->
             <jsp:include page="/Mostra_JSP/mostra_moedas.jsp">
-                <!-- Passagem de parâmetros para o arquivo incluído -->
                 <jsp:param name="id_usuario" value="<%= coin.getId_usuario() %>" />
                 <jsp:param name="nome" value="<%= coin.getNome() %>" />
                 <jsp:param name="total_moedas" value="<%= coin.getTotal_moedas() %>" />

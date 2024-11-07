@@ -11,7 +11,7 @@ import org.example.teste.Listar.Listar;
 //Importações - Fim
 
 
-@WebServlet(name = "usuartios_premuim", value = "/usuarios_premuim")
+@WebServlet(name = "usuartios_premium", value = "/usuarios_premium")
 public class UsuariosPremuim extends HttpServlet {
 
     // Métodos - Início
@@ -27,7 +27,7 @@ public class UsuariosPremuim extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("Return_JSP/crud_return.jsp").forward(request, response);
+        request.getRequestDispatcher("Return_JSP/crud_return_user.jsp").forward(request, response);
 
     }
 
