@@ -31,4 +31,4 @@ Jakarta EE
 É nessesario a IDE `IntelliJ IDEA`
 
 
-!(/^src\/main\/webapp\/Imagens\//Delfis!.png)
+!(src/main/webapp/Imagens/logo.svg)
