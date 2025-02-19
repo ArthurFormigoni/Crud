@@ -44,4 +44,4 @@ Como as dependências já estão dentro do Maven, não é necessário fazer nada
 Após clonar o projeto, abra o `IntelliJ IDEA` e execute o projeto.
 
 ## Informações de Licença
-
+Este projeto está licenciado sob a [MIT License](LICENSE). Consulte o arquivo `LICENSE`
