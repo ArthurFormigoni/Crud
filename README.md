@@ -36,8 +36,12 @@ Para compor o Servlet foi utilizado os seguintes Frameworks:
 Após a instalação do que é necessário, faça o comando abaixo na plataforma Git Bash:
 
 ```git bash
-git clone 
+git clone https://github.com/ArthurFormigoni/Crud.git
+```
 
+Como as dependências já estão dentro do Maven, não é necessário fazer nada.
 
-## Informações
+Após clonar o projeto, abra o `IntelliJ IDEA` e execute o projeto.
+
+## Informações de Licença
 
