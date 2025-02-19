@@ -29,3 +29,6 @@ Jakarta EE
  
 ## Como executar a instalação no notebook
 É nessesario a IDE `IntelliJ IDEA`
+
+
+!(/^src\/main\/webapp\/Imagens\//Delfis!.png)
