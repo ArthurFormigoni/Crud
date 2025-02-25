@@ -47,10 +47,10 @@ Após clonar o projeto, abra o `IntelliJ IDEA` e execute o projeto.
 Este projeto está licenciado sob a [MIT License](LICENSE). Consulte o arquivo `LICENSE`
 
 ## Autores
--Arthur Formigone
--Gustavo Munhoz
--João Vitor Camargo
--Ryan Lione
--Vitor de Mello
--Vitor Bughi
+-Arthur Formigone;
+-Gustavo Munhoz;
+-João Vitor Camargo;
+-Ryan Lionel;
+-Vitor de Mello;
+-Vitor Bughi;
 
